@@ -4,8 +4,5 @@ node_modules
 #webpack
 dist
 
-#babel
-lib
-
 #open-wc
 coverage
