@@ -1,0 +1,22 @@
+{
+  "name": "keto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boshimoto/keto.git"
+  },
+  "author": "Evan Lanese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boshimoto/keto/issues"
+  },
+  "homepage": "https://github.com/boshimoto/keto#readme",
+  "dependencies": {
+    "lit": "^2.6.1"
+  }
+}
