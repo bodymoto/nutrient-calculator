@@ -7,11 +7,16 @@ export class ElectElement extends LitElement {
 		super();
 	}
 
-	static styles = css``;
+	static styles = css`
+		:host {
+			margin: 20px;
+			border: 1px solid black;
+		}
+	`;
 
 	render() {
 		return html`
-
+			<p>elect-element is here!</p>
 		`;
 	}
 }

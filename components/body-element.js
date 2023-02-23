@@ -1,13 +1,15 @@
 import {LitElement, html, css} from 'lit';
+import {CountElement} from './count-element/count-element.js';
+import {ElectElement} from './elect-element/elect-element.js';
+import {FilterElement} from './filter-element/filter-element.js';
+import {OptionElement} from './option-element/option-element.js';
+
 
 export class BodyElement extends LitElement {
-	static properties = {
-		x: { type: String }
-	}
+	static properties = {}
 
 	constructor() {
 		super();
-		this.x = 'HELLO WORLD';
 	}
 
 	static styles = css`
@@ -21,9 +23,10 @@ export class BodyElement extends LitElement {
 
 	render() {
 		return html`
-		<h1>${this.x}</h1>
-
-		<p>When I was this and that then I did this and that.</p>
+		<count-element></count-element>
+		<elect-element></elect-element>
+		<filter-element></filter-element>
+		<option-element></option-element>
 		`;
 	}
 }
