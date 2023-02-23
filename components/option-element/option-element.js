@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import {ItemElement} from './items/item-element.js';
+import {ItemElement} from './item-element/item-element.js';
 
 export class OptionElement extends LitElement {
 	static properties = {

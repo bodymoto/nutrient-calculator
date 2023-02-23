@@ -1,12 +1,12 @@
 export const data = [
 	{
-		"src": "../components/option-element/img/banana.png",
+		"src": "./src/img/banana.png",
 	  "group": 'fruit',
 	  "name": 'banana',
 	  "count": 0
   },
   {
-  	"src": "../components/option-element/img/avocado.jpg",
+  	"src": "./src/img/avocado.jpg",
     "group": 'fruit',
     "name": 'avocado',
     "count": 0
