@@ -1,4 +1,5 @@
 import {LitElement, html, css} from 'lit';
+import {TargetElement} from './target-element/target-element.js';
 
 export class ElectElement extends LitElement {
 	static properties = {
@@ -20,7 +21,7 @@ export class ElectElement extends LitElement {
 
 	render() {
 		return html`
-			<p>elect-element is here!</p>
+			<target-element></target-element>
 		`;
 	}
 }
