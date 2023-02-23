@@ -1,10 +1,14 @@
 import {LitElement, html, css} from 'lit';
 
 export class ElectElement extends LitElement {
-	static properties = {}
+	static properties = {
+		selected: { type: Object }
+	}
 
 	constructor() {
 		super();
+
+		this.selected = {};
 	}
 
 	static styles = css`
