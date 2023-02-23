@@ -1,4 +1,5 @@
 import {LitElement, html, css} from 'lit';
+import {ItemElement} from './items/item-element.js';
 
 export class OptionElement extends LitElement {
 	static properties = {}
@@ -17,6 +18,8 @@ export class OptionElement extends LitElement {
 	render() {
 		return html`
 			<p>options-element is here!</p>
+
+			<item-element></item-element>
 		`;
 	}
 }
