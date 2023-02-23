@@ -8,17 +8,21 @@ import {OptionElement} from './option-element/option-element.js';
 export class BodyElement extends LitElement {
 	static properties = {
 		data: { type: Array },
-		count: { type: Number },
+		selected: { type: Object },
 		options: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
+		this.selected = {};
 		this.options = [];
 		
-		this.addEventListener('click-add', () => {
-			// do something to modify data.count...
+		this.addEventListener('click-add', (event) => {
+			const name = event.detail.target;
+			const element = this.data.filter( (object) => object.name === name);
+			this.selected = element[0]; // (1) {...}
+			// pass down object to elect-element
 		});
 	}
 
@@ -52,10 +56,10 @@ export class BodyElement extends LitElement {
 
 	render() {
 		// <count-element></count-element>
-		// <elect-element .count=${this.count}></elect-element>
 		// <filter-element></filter-element>
 		return html`
-		<option-element .data=${this.options}></option-element>
+		<elect-element .selected=${this.selected}></elect-element>
+		<option-element .options=${this.options}></option-element>
 		`;
 	}
 }
