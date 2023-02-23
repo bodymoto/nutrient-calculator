@@ -39,7 +39,7 @@ export class ItemElement extends LitElement {
 		};
 
     await this.updateComplete;
-		this.dispatchEvent(new CustomEvent('click-event', options));
+		this.dispatchEvent(new CustomEvent('click-add', options));
 	}
 
 	render() {
