@@ -6,10 +6,20 @@ import {OptionElement} from './option-element/option-element.js';
 
 
 export class BodyElement extends LitElement {
-	static properties = {}
+	static properties = {
+		data: { type: Array },
+		count: { type: Number }
+	}
 
 	constructor() {
 		super();
+		this.data = [];
+		
+		this.count = 0;
+		this.addEventListener('click-event', () => {
+			// listener for elect-element property
+			// do something, increase count?
+		});
 	}
 
 	static styles = css`
@@ -23,10 +33,10 @@ export class BodyElement extends LitElement {
 
 	render() {
 		// <count-element></count-element>
-		// <elect-element></elect-element>
+		// <elect-element .count=${this.count}></elect-element>
 		// <filter-element></filter-element>
 		return html`
-		<option-element></option-element>
+		<option-element .data=${this.data}></option-element>
 		`;
 	}
 }
