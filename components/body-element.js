@@ -22,10 +22,10 @@ export class BodyElement extends LitElement {
 	`;
 
 	render() {
+		// <count-element></count-element>
+		// <elect-element></elect-element>
+		// <filter-element></filter-element>
 		return html`
-		<count-element></count-element>
-		<elect-element></elect-element>
-		<filter-element></filter-element>
 		<option-element></option-element>
 		`;
 	}
