@@ -8,17 +8,17 @@ import {OptionElement} from './option-element/option-element.js';
 export class BodyElement extends LitElement {
 	static properties = {
 		data: { type: Array },
-		count: { type: Number }
+		count: { type: Number },
+		options: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
+		this.options = [];
 		
-		this.count = 0;
-		this.addEventListener('click-event', () => {
-			// listener for elect-element property
-			// do something, increase count?
+		this.addEventListener('click-add', () => {
+			// do something to modify data.count...
 		});
 	}
 
@@ -31,12 +31,31 @@ export class BodyElement extends LitElement {
 	  }
 	`;
 
+	generateOptions() {
+		this.data.forEach( (object) => {
+			let item = {};
+
+			item.src = object.src;
+			item.group = object.group;
+			item.name = object.name;
+			item.count = object.count;
+
+			this.options.push(item);
+		});
+	}
+
+	willUpdate(changedProperties) {
+		if (changedProperties.has('data')) {
+			this.generateOptions(); // (2) [{...}, {...}]
+		}
+	}
+
 	render() {
 		// <count-element></count-element>
 		// <elect-element .count=${this.count}></elect-element>
 		// <filter-element></filter-element>
 		return html`
-		<option-element .data=${this.data}></option-element>
+		<option-element .data=${this.options}></option-element>
 		`;
 	}
 }
