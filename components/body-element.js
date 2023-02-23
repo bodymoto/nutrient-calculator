@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit';
+import {LitElement, html, css} from 'lit';
 
 export class BodyElement extends LitElement {
 	static properties = {
@@ -10,8 +10,21 @@ export class BodyElement extends LitElement {
 		this.x = 'HELLO WORLD';
 	}
 
+	static styles = css`
+	  :host {
+	  	display: flex;
+	  	align-content: center;
+	  	justify-content: center;
+	  	flex-direction: column;
+	  }
+	`;
+
 	render() {
-		return html`<h1>${this.x}<h1>`;
+		return html`
+		<h1>${this.x}</h1>
+
+		<p>When I was this and that then I did this and that.</p>
+		`;
 	}
 }
 
