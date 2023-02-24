@@ -3,12 +3,12 @@ import {ItemElement} from './item-element/item-element.js';
 
 export class OptionElement extends LitElement {
 	static properties = {
-		options: { type: Array }
+		optionsData: { type: Array }
 	}
 
 	constructor() {
 		super();
-		this.options = [];
+		this.optionsData = [];
 	}
 
 	static styles = css`
@@ -23,7 +23,7 @@ export class OptionElement extends LitElement {
 			<p>options-element is here!</p>
 
 			${
-				this.options.map( (object) => {
+				this.optionsData.map( (object) => {
 					return html`
 					<item-element src=${object.src} name=${object.name}></item-element>
 					`
