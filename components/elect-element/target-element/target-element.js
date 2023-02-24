@@ -1,10 +1,14 @@
 import {LitElement, html, css} from 'lit';
 
 export class TargetElement extends LitElement {
-	static properties = {}
+	static properties = {
+		name: { type: String }
+	}
 
 	constructor() {
 		super();
+
+		this.name = '';
 	}
 
 	static styles = css``;
@@ -22,7 +26,7 @@ export class TargetElement extends LitElement {
 
 	render() {
 		return html`
-			<p @click=${this.handleClick}>target-element is here!</p>
+			<p @click=${this.handleClick}>${this.name}</p>
 		`;
 	}
 }
