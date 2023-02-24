@@ -7,8 +7,7 @@ export class TargetElement extends LitElement {
 		super();
 	}
 
-	static styles = css`
-	`;
+	static styles = css``;
 
 	async handleClick() {
 		const options = {
@@ -23,7 +22,7 @@ export class TargetElement extends LitElement {
 
 	render() {
 		return html`
-			<p @click=${this.handleClick}>elect-element is here!</p>
+			<p @click=${this.handleClick}>target-element is here!</p>
 		`;
 	}
 }
