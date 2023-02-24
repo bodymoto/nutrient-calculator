@@ -9,6 +9,7 @@ export class BodyElement extends LitElement {
 	static properties = {
 		data: { type: Array },
 		electData: { type: Array },
+		storage: { type: Array },
 		optionsData: { type: Array }
 	}
 
@@ -16,6 +17,7 @@ export class BodyElement extends LitElement {
 		super();
 		this.data = [];
 		this.electData = [];
+		this.storage = [];
 		this.optionsData = [];
 		
 		this.addEventListener('click-add', (event) => {
@@ -23,6 +25,19 @@ export class BodyElement extends LitElement {
 			this.electData = this.data.filter((object) => object.name === name); // (1) [{...}]
 
 			this.electData[0].count++;
+		});
+
+		this.addEventListener('click-subtract', (event) => {
+			const name = event.detail.target;
+			let clickedElement = this.storage.filter((object) => object.name === name); // (1) [{...}]
+
+			clickedElement[0].count--;
+
+			if (clickedElement[0].count <= 0) {
+				if (this.storage.includes(clickedElement[0])) {
+					this.storage = this.storage.filter((object) => object.name !== clickedElement[0].name);
+				};
+			};
 		});
 	}
 
@@ -59,7 +74,7 @@ export class BodyElement extends LitElement {
 		// <count-element></count-element>
 		// <filter-element></filter-element>
 		return html`
-		<elect-element .electData=${this.electData}></elect-element>
+		<elect-element .electData=${this.electData} .storage=${this.storage}></elect-element>
 		<option-element .optionsData=${this.optionsData}></option-element>
 		`;
 	}

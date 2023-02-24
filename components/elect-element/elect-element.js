@@ -12,19 +12,6 @@ export class ElectElement extends LitElement {
 
 		this.electData = []; // (1) [{...}]
 		this.storage = [];
-
-		this.addEventListener('click-subtract', (event) => {
-			const name = event.detail.target;
-			let clickedElement = this.storage.filter((object) => object.name === name); // (1) [{...}]
-
-			clickedElement[0].count--;
-
-			if (clickedElement[0].count <= 0) {
-				if (this.storage.includes(clickedElement[0])) {
-					this.storage = this.storage.filter((object) => object.name !== clickedElement[0].name);
-				};
-			};
-		});
 	}
 
 	static styles = css`
