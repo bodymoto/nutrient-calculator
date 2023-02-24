@@ -20,8 +20,6 @@ export class OptionElement extends LitElement {
 
 	render() {
 		return html`
-			<p>options-element is here!</p>
-
 			${
 				this.optionsData.map( (object) => {
 					return html`
