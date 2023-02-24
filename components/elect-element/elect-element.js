@@ -15,14 +15,15 @@ export class ElectElement extends LitElement {
 
 		this.addEventListener('click-subtract', (event) => {
 			const name = event.detail.target;
-			let test = this.storage.filter((object) => object.name === name); // (1) [{...}]
-			console.log(test);
-			// remove from storage: the value of test
+			let clickedElement = this.storage.filter((object) => object.name === name); // (1) [{...}]
 
-			
+			clickedElement[0].count--;
 
-			
-			// this.electData[0].count--;
+			if (clickedElement[0].count <= 0) {
+				if (this.storage.includes(clickedElement[0])) {
+					this.storage = this.storage.filter((object) => object.name !== clickedElement[0].name);
+				};
+			};
 		});
 	}
 
@@ -40,10 +41,11 @@ export class ElectElement extends LitElement {
 				return;
 			}
 
-			if (!this.storage.includes(this.electData[0]))
+			if (!this.storage.includes(this.electData[0])) {
 				this.storage.push(this.electData[0]);
 				// (2) [{...}, {...}]
-		}
+			};
+		};
 	}
 
 	render() {
