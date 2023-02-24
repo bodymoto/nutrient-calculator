@@ -8,21 +8,21 @@ import {OptionElement} from './option-element/option-element.js';
 export class BodyElement extends LitElement {
 	static properties = {
 		data: { type: Array },
-		selected: { type: Object },
-		options: { type: Array }
+		electData: { type: Array },
+		optionsData: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
-		this.selected = {};
-		this.options = [];
+		this.electData = [];
+		this.optionsData = [];
 		
 		this.addEventListener('click-add', (event) => {
 			const name = event.detail.target;
-			const element = this.data.filter( (object) => object.name === name);
-			this.selected = element[0]; // (1) {...}
-			// pass down object to elect-element
+			this.electData = this.data.filter((object) => object.name === name); // (1) [{...}]
+
+			this.electData[0].count++;
 		});
 	}
 
@@ -36,6 +36,7 @@ export class BodyElement extends LitElement {
 	`;
 
 	generateOptions() {
+		// extract the key/values necessary for OptionElement's
 		this.data.forEach( (object) => {
 			let item = {};
 
@@ -44,13 +45,13 @@ export class BodyElement extends LitElement {
 			item.name = object.name;
 			item.count = object.count;
 
-			this.options.push(item);
+			this.optionsData.push(item);
 		});
 	}
 
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
-			this.generateOptions(); // (2) [{...}, {...}]
+			this.generateOptions();
 		}
 	}
 
@@ -58,8 +59,8 @@ export class BodyElement extends LitElement {
 		// <count-element></count-element>
 		// <filter-element></filter-element>
 		return html`
-		<elect-element .selected=${this.selected}></elect-element>
-		<option-element .options=${this.options}></option-element>
+		<elect-element .electData=${this.electData}></elect-element>
+		<option-element .optionsData=${this.optionsData}></option-element>
 		`;
 	}
 }
