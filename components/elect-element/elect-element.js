@@ -53,7 +53,7 @@ export class ElectElement extends LitElement {
 		${
 			this.storage.map((item) => {
 				return html`
-				<target-element name=${item.name}></target-element>
+				<target-element name=${item.name} count=${item.count}></target-element>
 				`
 			})
 		}
