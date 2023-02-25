@@ -18,7 +18,7 @@ export class ElectElement extends LitElement {
 		:host {
 			margin: 20px;
 			border: 1px solid black;
-			height: 200px;
+			height: 100px;
 		}
 	`;
 
