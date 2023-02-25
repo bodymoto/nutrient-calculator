@@ -51,7 +51,7 @@ export class BodyElement extends LitElement {
 	`;
 
 	generateOptions() {
-		// extract the key/values necessary for OptionElement's
+		// extract the key/values necessary for OptionElement
 		this.data.forEach( (object) => {
 			let item = {};
 
@@ -66,15 +66,21 @@ export class BodyElement extends LitElement {
 
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
+			if (!this.data.length) {
+				return;
+			};
+
 			this.generateOptions();
-		}
+		};
 	}
 
 	render() {
 		// <count-element></count-element>
-		// <filter-element></filter-element>
 		return html`
 		<elect-element .electData=${this.electData} .storage=${this.storage}></elect-element>
+
+		<filter-element .filterData=${this.optionsData}></filter-element>
+
 		<option-element .optionsData=${this.optionsData}></option-element>
 		`;
 	}
