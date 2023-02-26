@@ -2,7 +2,10 @@ import {LitElement, html, css} from 'lit';
 
 export class FilterElement extends LitElement {
 	static properties = {
-		filterData: { type: Array }
+		filterData: { type: Array },
+		input: { type: Array },
+		search: { type: String },
+		arr: { type: Array }
 	}
 
 	constructor() {
@@ -11,6 +14,7 @@ export class FilterElement extends LitElement {
 		this.filterData = [];
 		this.input = [];
 		this.search = '';
+		this.arr = [];
 
 		this.addEventListener('input', (event) => {
 			if (event.data == null) {
@@ -20,24 +24,15 @@ export class FilterElement extends LitElement {
 			}
 			this.search = this.input.join('');
 
-			let names = [];
-			this.filterData.map((object) => {
-				names.push(object.name);
-			});
-
-			names.map((name) => {
-				this.search.split(" ").map((word) => {
-					if(name.indexOf(word) != -1) {
-						// name = banana
-						let bozo = this.filterData.filter((object) => {
-							object.name !== name;
-						})
-						console.log(bozo);
-						this.filterData = [...bozo];
+			this.arr = [];
+			this.filterData.map((word) => {
+				if (word.name.includes(this.search)) {
+					if(!this.arr.includes(word)) {
+						this.arr.push(word);
 					}
-				})
-			})
+				};
 
+			});
 		});
 	}
 
@@ -50,14 +45,17 @@ export class FilterElement extends LitElement {
 
 	willUpdate(changedProperties) {
 		console.log(changedProperties);
+		if (changedProperties.has('filterData')) {
+			this.arr = this.filterData;
+		}
 	}
 
 	render() {
 		return html`
 			<input autocomplete="off" type="search" />
-			<ul class="test">
+			<ul>
 				${
-					this.filterData.map((object) => {
+					this.arr.map((object) => {
 						return html`
 						<li>${object.name}</li>
 						`
