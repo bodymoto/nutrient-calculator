@@ -8,7 +8,13 @@ import {OptionElement} from './option-element/option-element.js';
 export class BodyElement extends LitElement {
 	static properties = {
 		data: { type: Array },
+		
 		electData: { type: Array },
+
+		keystroke: { type: Array },
+		search: { type: String },
+		arr: { type: Array },
+
 		storage: { type: Array },
 		optionsData: { type: Array }
 	}
@@ -16,10 +22,40 @@ export class BodyElement extends LitElement {
 	constructor() {
 		super();
 		this.data = [];
+
 		this.electData = [];
+
+		this.keystroke = [];
+		this.search = '';
+		this.arr = [];
+
 		this.storage = [];
 		this.optionsData = [];
+
+		// linked to filter-element
+		this.addEventListener('filter-input', (event) => {
+
+			if (event.detail.input == null) {
+				this.keystroke.pop();
+			} else {
+				this.keystroke.push(event.detail.input);
+			}
+			this.search = this.keystroke.join('');
+
+			// everything works up until here
+			// original line: this.arr = [];
+			// do something here with map
+			// maybe begin with a filter instead of map??
+			this.arr.map((word) => {
+				if (word.name.includes(this.search)) {
+					if(!this.arr.includes(word)) {
+						this.arr.push(word);
+					}
+				};
+			});
+		});
 		
+		// linked to item-element
 		this.addEventListener('click-add', (event) => {
 			const name = event.detail.target;
 			this.electData = this.data.filter((object) => object.name === name); // (1) [{...}]
@@ -27,6 +63,7 @@ export class BodyElement extends LitElement {
 			this.electData[0].count++;
 		});
 
+		// linked to elect-element
 		this.addEventListener('click-subtract', (event) => {
 			const name = event.detail.target;
 			let clickedElement = this.storage.filter((object) => object.name === name); // (1) [{...}]
@@ -71,6 +108,7 @@ export class BodyElement extends LitElement {
 			};
 
 			this.generateOptions();
+			this.arr = this.optionsData;
 		};
 	}
 
@@ -79,7 +117,7 @@ export class BodyElement extends LitElement {
 		return html`
 		<elect-element .electData=${this.electData} .storage=${this.storage}></elect-element>
 
-		<filter-element .filterData=${this.optionsData}></filter-element>
+		<filter-element .arr=${this.arr}></filter-element>
 
 		<option-element .optionsData=${this.optionsData}></option-element>
 		`;
