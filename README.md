@@ -10,6 +10,8 @@ The app is so easy, a child can use it. Let your child use it.
 
 Add pricing page -> a good metric to measure if people find the product valuable. Can just state the product is free..
 
+"We are not promoting a diet, style or what should be consumed. Eat what ever you like. We encourage you better understand the foods you do choose to consume. Brag about the calories intake of eating 3 whole pizza's. Or about the nutritional benefit of a side of brocolli. You do you."
+
 video tutorial -> wins
 
 metric tracking - free - https://mixpanel.com/home/
