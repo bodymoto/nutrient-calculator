@@ -14,7 +14,7 @@ export class BodyElement extends LitElement {
 		keystroke: { type: Array },
 		searching: { type: String },
 		searchData: { type: Array },
-		storage: { type: Array },
+		selectedData: { type: Array },
 		optionsData: { type: Array }
 	}
 
@@ -27,14 +27,13 @@ export class BodyElement extends LitElement {
 		this.keystroke = [];
 		this.searching = '';
 		this.searchData = [];
-		this.storage = [];
+		this.selectedData = [];
 		this.optionsData = [];
 
 		// linked to search-element
 		this.addEventListener('search-input', (event) => {
 
 			// build out search to prevent breaking if text is highlighted and clipped or cut with a mouse, rather than using backspace
-
 			if (event.detail.input == null) {
 				this.keystroke.pop();
 			} else {
@@ -52,26 +51,26 @@ export class BodyElement extends LitElement {
 			});
 		});
 		
-		// linked to item-element
+		// linked to elect-element
+		this.addEventListener('click-subtract', (event) => {
+			const name = event.detail.target;
+			let clickedElement = this.selectedData.filter((object) => object.name === name); // (1) [{...}]
+
+			clickedElement[0].count--;
+
+			if (clickedElement[0].count <= 0) {
+				if (this.selectedData.includes(clickedElement[0])) {
+					this.selectedData = this.selectedData.filter((object) => object.name !== clickedElement[0].name);
+				};
+			};
+		});
+
+		// linked to options-element
 		this.addEventListener('click-add', (event) => {
 			const name = event.detail.target;
 			this.electData = this.data.filter((object) => object.name === name); // (1) [{...}]
 
 			this.electData[0].count++;
-		});
-
-		// linked to elect-element
-		this.addEventListener('click-subtract', (event) => {
-			const name = event.detail.target;
-			let clickedElement = this.storage.filter((object) => object.name === name); // (1) [{...}]
-
-			clickedElement[0].count--;
-
-			if (clickedElement[0].count <= 0) {
-				if (this.storage.includes(clickedElement[0])) {
-					this.storage = this.storage.filter((object) => object.name !== clickedElement[0].name);
-				};
-			};
 		});
 	}
 
@@ -110,9 +109,10 @@ export class BodyElement extends LitElement {
 	}
 
 	render() {
-		// <count-element></count-element>
 		return html`
-		<elect-element .electData=${this.electData} .storage=${this.storage}></elect-element>
+		<count-element .totals=${this.selectedData}></count-element>
+
+		<elect-element .electData=${this.electData} .selectedData=${this.selectedData}></elect-element>
 
 		<search-element></search-element>
 
