@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import {CountElement} from './count-element/count-element.js';
 import {ElectElement} from './elect-element/elect-element.js';
-import {FilterElement} from './filter-element/filter-element.js';
+import {SearchElement} from './search-element/search-element.js';
 import {OptionElement} from './option-element/option-element.js';
 
 
@@ -12,8 +12,8 @@ export class BodyElement extends LitElement {
 		electData: { type: Array },
 
 		keystroke: { type: Array },
-		search: { type: String },
-		arr: { type: Array },
+		searching: { type: String },
+		searchData: { type: Array },
 		storage: { type: Array },
 		optionsData: { type: Array }
 	}
@@ -25,26 +25,28 @@ export class BodyElement extends LitElement {
 		this.electData = [];
 
 		this.keystroke = [];
-		this.search = '';
-		this.arr = [];
+		this.searching = '';
+		this.searchData = [];
 		this.storage = [];
 		this.optionsData = [];
 
-		// linked to filter-element
-		this.addEventListener('filter-input', (event) => {
+		// linked to search-element
+		this.addEventListener('search-input', (event) => {
+
+			// build out search to prevent breaking if text is highlighted and clipped or cut with a mouse, rather than using backspace
 
 			if (event.detail.input == null) {
 				this.keystroke.pop();
 			} else {
 				this.keystroke.push(event.detail.input);
 			}
-			this.search = this.keystroke.join('');
+			this.searching = this.keystroke.join('');
 
-			this.arr = [];
+			this.searchData = [];
 			this.optionsData.map((word) => {
-				if (word.name.includes(this.search)) {
-					if(!this.arr.includes(word)) {
-						this.arr.push(word);
+				if (word.name.includes(this.searching)) {
+					if(!this.searchData.includes(word)) {
+						this.searchData.push(word);
 					}
 				};
 			});
@@ -83,7 +85,7 @@ export class BodyElement extends LitElement {
 	`;
 
 	generateOptions() {
-		// extract the key/values necessary for OptionElement
+		// setup the values necessary for OptionElement
 		this.data.forEach( (object) => {
 			let item = {};
 
@@ -103,7 +105,7 @@ export class BodyElement extends LitElement {
 			};
 
 			this.generateOptions();
-			this.arr = this.optionsData;
+			this.searchData = this.optionsData;
 		};
 	}
 
@@ -112,9 +114,9 @@ export class BodyElement extends LitElement {
 		return html`
 		<elect-element .electData=${this.electData} .storage=${this.storage}></elect-element>
 
-		<filter-element .arr=${this.arr}></filter-element>
+		<search-element></search-element>
 
-		<option-element .arr=${this.arr} .optionsData=${this.optionsData}></option-element>
+		<option-element .searchData=${this.searchData} ></option-element>
 		`;
 	}
 }

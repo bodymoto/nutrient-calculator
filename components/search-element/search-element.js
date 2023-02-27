@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-export class FilterElement extends LitElement {
+export class SearchElement extends LitElement {
 	static properties = {}
 
 	constructor() {
@@ -27,15 +27,15 @@ export class FilterElement extends LitElement {
 		};
 
     await this.updateComplete;
-		this.dispatchEvent(new CustomEvent('filter-input', options));
+		this.dispatchEvent(new CustomEvent('search-input', options));
 	}
 
 	render() {
 		return html`
+			<label for="input">Search a food:</label>
 			<input autocomplete="off" type="search" name="input" />
-			<label for="input">Search a food</label>
 		`;
 	}
 }
 
-customElements.define('filter-element', FilterElement);
+customElements.define('search-element', SearchElement);

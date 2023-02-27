@@ -3,14 +3,13 @@ import {ItemElement} from './item-element/item-element.js';
 
 export class OptionElement extends LitElement {
 	static properties = {
-		optionsData: { type: Array },
-		arr: { type: Array }
+		searchData: { type: Array }
 	}
 
 	constructor() {
 		super();
-		this.optionsData = [];
-		this.arr = [];
+
+		this.searchData = [];
 	}
 
 	static styles = css`
@@ -23,7 +22,7 @@ export class OptionElement extends LitElement {
 	render() {
 		return html`
 			${
-				this.arr.map( (object) => {
+				this.searchData.map( (object) => {
 					return html`
 					<item-element src=${object.src} name=${object.name}></item-element>
 					`
