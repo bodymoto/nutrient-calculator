@@ -8,7 +8,7 @@ export const data = [
   },
   {
   	"src": "./src/img/avocado.jpg",
-    "group": 'fruit',
+    "group": 'vegetable',
     "name": 'avocado',
     "count": 0,
     "carbs": 7
