@@ -4,21 +4,21 @@ import {TargetElement} from './target-element/target-element.js';
 export class ElectElement extends LitElement {
 	static properties = {
 		electData: { type: Array },
-		storage: { type: Array }
+		selectedData: { type: Array }
 	}
 
 	constructor() {
 		super();
 
 		this.electData = []; // (1) [{...}]
-		this.storage = [];
+		this.selectedData = [];
 	}
 
 	static styles = css`
 		:host {
-			margin: 20px;
+			margin: 10px;
 			border: 1px solid black;
-			height: 100px;
+			height: 60px;
 		}
 	`;
 
@@ -28,8 +28,8 @@ export class ElectElement extends LitElement {
 				return;
 			}
 
-			if (!this.storage.includes(this.electData[0])) {
-				this.storage.push(this.electData[0]);
+			if (!this.selectedData.includes(this.electData[0])) {
+				this.selectedData.push(this.electData[0]);
 				// (2) [{...}, {...}]
 			};
 		};
@@ -38,7 +38,7 @@ export class ElectElement extends LitElement {
 	render() {
 		return html`
 		${
-			this.storage.map((item) => {
+			this.selectedData.map((item) => {
 				return html`
 				<target-element name=${item.name} count=${item.count}></target-element>
 				`
