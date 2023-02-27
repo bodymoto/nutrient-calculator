@@ -14,6 +14,7 @@ export class FilterElement extends LitElement {
 	static styles = css`
 		:host {
 			margin: 20px;
+			padding: 10px;
 			border: 1px solid black;
 		}
 	`;
