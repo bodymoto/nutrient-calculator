@@ -1,14 +1,10 @@
 import {LitElement, html, css} from 'lit';
 
 export class FilterElement extends LitElement {
-	static properties = {
-		arr: { type: Array }
-	}
+	static properties = {}
 
 	constructor() {
 		super();
-
-		this.arr = [];
 
 		this.addEventListener('input', (event) => {
 			this.handleInput(event);
@@ -33,24 +29,10 @@ export class FilterElement extends LitElement {
 		this.dispatchEvent(new CustomEvent('filter-input', options));
 	}
 
-	willUpdate(changedProperties) {
-		if (changedProperties.has('arr')) {
-			// console.log(this.arr);
-		}
-	}
-
 	render() {
 		return html`
-			<input autocomplete="off" type="search" />
-			<ul>
-				${
-					this.arr.map((object) => {
-						return html`
-						<li>${object.name}</li>
-						`
-					})
-				}
-			</ul>
+			<input autocomplete="off" type="search" name="input" />
+			<label for="input">Search a food</label>
 		`;
 	}
 }
