@@ -4,7 +4,7 @@ agree? how many people know how many nutrients and sugars they consume daily, ri
 *(Wealth is Wealth)*
 agree? how many people know how much is in their bank account, right now?
 
-By using this app you will discover what you didnt know about your idea but also how little you know about what goes into the foods you order, and are not cooking yourself.
+By using this app you will discover what you didnt know about your diet but also how little you know about what ingredients proportionally goes into the foods you order, and are not cooking yourself.
 
 The app is so easy, a child can use it. Let your child use it.
 
