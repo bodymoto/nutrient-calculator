@@ -1,10 +1,15 @@
 import {LitElement, html, css} from 'lit';
+import {GroupElement} from './group-element/group-element.js';
 
 export class FilterElement extends LitElement {
-	static properties = {}
+	static properties = {
+		filterData: { type: Array }
+	}
 
 	constructor() {
 		super();
+
+		this.filterData = [];
 	}
 
 	// search by object.group
@@ -17,7 +22,15 @@ export class FilterElement extends LitElement {
 	`;
 
 	render() {
-		return html``;
+		return html`
+			${
+				this.filterData.map((object) => {
+					return html`
+						<group-element name=${object.group}></group-element>
+					`
+				})
+			}
+		`;
 	}
 }
 

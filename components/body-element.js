@@ -117,7 +117,7 @@ export class BodyElement extends LitElement {
 
 		<search-element></search-element>
 
-		<filter-element></filter-element>
+		<filter-element .filterData=${this.optionsData}></filter-element>
 
 		<option-element .searchData=${this.searchData} ></option-element>
 		`;
