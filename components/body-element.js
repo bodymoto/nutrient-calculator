@@ -42,11 +42,8 @@ export class BodyElement extends LitElement {
 			}
 			this.search = this.keystroke.join('');
 
-			// everything works up until here
-			// original line: this.arr = [];
-			// do something here with map
-			// maybe begin with a filter instead of map??
-			this.arr.map((word) => {
+			this.arr = [];
+			this.optionsData.map((word) => {
 				if (word.name.includes(this.search)) {
 					if(!this.arr.includes(word)) {
 						this.arr.push(word);
