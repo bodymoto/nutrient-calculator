@@ -14,7 +14,6 @@ export class BodyElement extends LitElement {
 		keystroke: { type: Array },
 		search: { type: String },
 		arr: { type: Array },
-
 		storage: { type: Array },
 		optionsData: { type: Array }
 	}
@@ -28,7 +27,6 @@ export class BodyElement extends LitElement {
 		this.keystroke = [];
 		this.search = '';
 		this.arr = [];
-
 		this.storage = [];
 		this.optionsData = [];
 
@@ -116,7 +114,7 @@ export class BodyElement extends LitElement {
 
 		<filter-element .arr=${this.arr}></filter-element>
 
-		<option-element .optionsData=${this.optionsData}></option-element>
+		<option-element .arr=${this.arr} .optionsData=${this.optionsData}></option-element>
 		`;
 	}
 }
