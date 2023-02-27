@@ -13,7 +13,11 @@ export class TargetElement extends LitElement {
 		this.count = 0;
 	}
 
-	static styles = css``;
+	static styles = css`
+	 p {
+	 	margin: 5px;
+	 }
+	`;
 
 	async handleClick() {
 		this.count--;
