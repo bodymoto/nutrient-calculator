@@ -2,6 +2,7 @@ import {LitElement, html, css} from 'lit';
 import {CountElement} from './count-element/count-element.js';
 import {ElectElement} from './elect-element/elect-element.js';
 import {SearchElement} from './search-element/search-element.js';
+import {FilterElement} from './filter-element/filter-element.js';
 import {OptionElement} from './option-element/option-element.js';
 
 
@@ -115,6 +116,8 @@ export class BodyElement extends LitElement {
 		<elect-element .electData=${this.electData} .selectedData=${this.selectedData}></elect-element>
 
 		<search-element></search-element>
+
+		<filter-element></filter-element>
 
 		<option-element .searchData=${this.searchData} ></option-element>
 		`;
