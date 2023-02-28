@@ -2,13 +2,15 @@ import {LitElement, html, css} from 'lit';
 
 export class GroupElement extends LitElement {
 	static properties = {
-		name: { type: String }
+		name: { type: String },
+		checked: { type: Boolean }
 	}
 
 	constructor() {
 		super();
 
 		this.name = '';
+		this.checked = false;
 	}
 
 	static styles = css`
@@ -17,10 +19,27 @@ export class GroupElement extends LitElement {
 		}
 	`;
 
+	async handleClick() {
+		this.shadowRoot.querySelector('input').click();
+	}
+
+	async handleChecked(event) {
+		this.checked = event.target.checked;
+		
+		const options = {
+			detail: {	filter: this },
+			bubbles: true,
+			composed: true
+		};
+
+    await this.updateComplete;
+		this.dispatchEvent(new CustomEvent('filter-event', options));
+	}
+
 	render() {
 		return html`
-			<input @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} for=${this.label}>
-			<label @click=${this.handleClick} for=${this.label}>${this.name}</label>
+			<input @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} name=${this.name}>
+			<label @click=${this.handleClick} for=${this.name}>${this.name}</label>
 		`;
 	}
 }
