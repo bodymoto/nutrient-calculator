@@ -20,8 +20,10 @@ export class SearchElement extends LitElement {
 	`;
 
 	async handleInput(event) {
+		const value = this.shadowRoot.querySelector('input').value;
+		
 		const options = {
-			detail: {	input: event.data },
+			detail: {	input: value },
 			bubbles: true,
 			composed: true
 		};

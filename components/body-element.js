@@ -12,8 +12,7 @@ export class BodyElement extends LitElement {
 		
 		electData: { type: Array },
 
-		keystroke: { type: Array },
-		searching: { type: String },
+		searchValue: { type: String },
 		searchData: { type: Array },
 		selectedData: { type: Array },
 		optionsData: { type: Array }
@@ -25,26 +24,18 @@ export class BodyElement extends LitElement {
 
 		this.electData = [];
 
-		this.keystroke = [];
-		this.searching = '';
+		this.searchValue = '';
 		this.searchData = [];
 		this.selectedData = [];
 		this.optionsData = [];
 
 		// linked to search-element
 		this.addEventListener('search-input', (event) => {
-
-			// build out search to prevent breaking if text is highlighted and clipped or cut with a mouse, rather than using backspace
-			if (event.detail.input == null) {
-				this.keystroke.pop();
-			} else {
-				this.keystroke.push(event.detail.input);
-			}
-			this.searching = this.keystroke.join('');
+			this.searchValue = event.detail.input;
 
 			this.searchData = [];
 			this.optionsData.map((word) => {
-				if (word.name.includes(this.searching)) {
+				if (word.name.includes(this.searchValue)) {
 					if(!this.searchData.includes(word)) {
 						this.searchData.push(word);
 					}
