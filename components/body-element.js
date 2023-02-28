@@ -12,6 +12,8 @@ export class BodyElement extends LitElement {
 		
 		electData: { type: Array },
 
+		checked: { type: Object },
+
 		searchValue: { type: String },
 		searchData: { type: Array },
 		selectedData: { type: Array },
@@ -23,6 +25,8 @@ export class BodyElement extends LitElement {
 		this.data = [];
 
 		this.electData = [];
+
+		this.checked = {};
 
 		this.searchValue = '';
 		this.searchData = [];
@@ -64,6 +68,40 @@ export class BodyElement extends LitElement {
 
 			this.electData[0].count++;
 		});
+
+		// linked to filter-element
+		this.addEventListener('filter-event', (event) => {
+			const category = event.detail.filter.name; // 'vegetable'
+			const selected = event.detail.filter.checked; // true
+
+			this.checked[category] = selected; // { vegetable: true, dairy: false }
+
+			console.log(this.checked);
+			// this.filtered();
+		});
+	}
+
+	async filtered() {
+		/* 
+		need to compare, this.checked
+		(1) [{veg: true}]
+
+		with this.searchData
+		(1) [{src..., group..., name..., count...}]
+		*/
+
+		this.filteredData = this.data.filter(item => this.checked[item['group']]);
+
+		const options = {
+			detail: {
+				filteredData: this.filteredData,
+			},
+			bubbles: true,
+			composed: true
+		};
+
+    await this.updateComplete;
+		this.dispatchEvent(new CustomEvent('filter-data', options));
 	}
 
 	static styles = css`
@@ -97,6 +135,7 @@ export class BodyElement extends LitElement {
 
 			this.generateOptions();
 			this.searchData = this.optionsData;
+			console.log(this.searchData);
 		};
 	}
 
