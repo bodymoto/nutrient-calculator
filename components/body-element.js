@@ -12,6 +12,7 @@ export class BodyElement extends LitElement {
 		
 		electData: { type: Array },
 		added: { type: Array },
+		element: { type: Array },
 
 		checked: { type: Object },
 
@@ -27,6 +28,7 @@ export class BodyElement extends LitElement {
 
 		this.electData = [];
 		this.added = [];
+		this.element = [];
 
 		this.checked = {};
 
@@ -57,6 +59,13 @@ export class BodyElement extends LitElement {
 			this.electData.forEach((item) => {
 				item = Object.assign({}, item);
 				if (item.count === 0){
+					let arr = Object.values(this.element);
+					for(const value of this.searchData) {
+						if(item.name === value.name){
+							value.count = 0;
+						}
+					}
+					// console.log(this.searchData)
 					return;
 				}
 				arr.push(item);
@@ -65,8 +74,12 @@ export class BodyElement extends LitElement {
 		});
 
 		this.addEventListener('click-add', (event) => {
+			// console.log(this.searchData);
 			let element = event.detail.element;
 			element.count++;
+
+			// later referenced to reset count in subtract event due to same Object as OptionsElement
+			this.element[element.name] = element;
 
 			// a new Object triggers render later-on in target-element
 			element = Object.assign({}, element);
