@@ -2,7 +2,7 @@ import {LitElement, html, css} from 'lit';
 
 export class TargetElement extends LitElement {
 	static properties = {
-		element: { type: Object}
+		element: { type: Object }
 	}
 
 	constructor() {
@@ -19,17 +19,13 @@ export class TargetElement extends LitElement {
 
 	async handleClick() {
 		const options = {
-			detail: {	target: this.element.name },
+			detail: {	element: this.element },
 			bubbles: true,
 			composed: true
 		};
 
     await this.updateComplete;
 		this.dispatchEvent(new CustomEvent('click-subtract', options));
-	}
-
-	willUpdate(changedProperties) {
-		console.log(this.element);
 	}
 
 	render() {
