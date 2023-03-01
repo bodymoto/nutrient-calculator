@@ -16,7 +16,7 @@ export class TargetElement extends LitElement {
 	}
 
 	static styles = css`
-		 li {
+		 div {
 		 	margin: 2px;
 		 }
 	`;
@@ -33,9 +33,6 @@ export class TargetElement extends LitElement {
 	}
 
 	willUpdate(changedProperties) {
-		if (changedProperties.has('element')) {
-			console.log(this.shadowRoot);
-		}
 		this.name = this.element.name;
 		this.count = this.element.count;
 	}
