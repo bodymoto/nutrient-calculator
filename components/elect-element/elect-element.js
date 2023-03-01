@@ -32,6 +32,9 @@ export class ElectElement extends LitElement {
 		return html`
 			${
 				this.data.map((item) => {
+					if (item.count <= 0){
+						return;
+					}
 					return html`
 						<target-element .element=${item}></target-element>
 					`
