@@ -2,15 +2,13 @@ import {LitElement, html, css} from 'lit';
 
 export class ItemElement extends LitElement {
 	static properties = {
-		src: { type: String },
-		name: { type: String }
+		element: { type: Object }
 	}
 
 	constructor() {
 		super();
 
-		this.src = '';
-		this.name = '';
+		this.element = {};
 	}
 
 	static styles = css`
@@ -29,7 +27,7 @@ export class ItemElement extends LitElement {
 
 	async handleClick() {
 		const options = {
-			detail: {	target: this.name },
+			detail: {	element: this.element },
 			bubbles: true,
 			composed: true
 		};
@@ -40,7 +38,7 @@ export class ItemElement extends LitElement {
 
 	render() {
 		return html`
-			<img @click=${this.handleClick} src=${this.src} alt=${this.name} />
+			<img @click=${this.handleClick} src=${this.element.src} alt=${this.element.name} />
 		`;
 	}
 }
