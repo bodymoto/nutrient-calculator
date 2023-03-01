@@ -10,7 +10,7 @@ export class ElectElement extends LitElement {
 	constructor() {
 		super();
 
-		this.electData = []; // (1) [{...}]
+		this.electData = [];
 		this.selectedData = [];
 	}
 
@@ -28,22 +28,20 @@ export class ElectElement extends LitElement {
 				return;
 			}
 
-			if (!this.selectedData.includes(this.electData[0])) {
-				this.selectedData.push(this.electData[0]);
-				// (2) [{...}, {...}]
-			};
 		};
 	}
 
 	render() {
 		return html`
-		${
-			this.selectedData.map((item) => {
-				return html`
-				<target-element name=${item.name} count=${item.count}></target-element>
-				`
-			})
-		}
+		<ul>
+			${
+				this.electData.map((item) => {
+					return html`
+						<target-element .element=${item}></target-element>
+					`
+				})
+			}
+		</ul>
 		`;
 	}
 }
