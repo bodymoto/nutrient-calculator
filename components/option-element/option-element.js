@@ -22,9 +22,9 @@ export class OptionElement extends LitElement {
 	render() {
 		return html`
 			${
-				this.searchData.map( (object) => {
+				this.searchData.map((object) => {
 					return html`
-					<item-element src=${object.src} name=${object.name}></item-element>
+					<item-element .element=${object}></item-element>
 					`
 				})
 			}
