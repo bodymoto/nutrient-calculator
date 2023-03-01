@@ -11,9 +11,7 @@ export class BodyElement extends LitElement {
 		data: { type: Array },
 		
 		electData: { type: Array },
-		added: { type: Array },
-		element: { type: Array },
-		arr: {type:Array},
+		copyElements: { type: Array },
 
 		checked: { type: Object },
 
@@ -28,9 +26,7 @@ export class BodyElement extends LitElement {
 		this.data = [];
 
 		this.electData = [];
-		this.added = [];
-		this.element = [];
-		this.arr = [];
+		this.copyElements = [];
 
 		this.checked = {};
 
@@ -65,9 +61,9 @@ export class BodyElement extends LitElement {
 					// trigger render by reassigning Object in memory
 					value = Object.assign({}, value);
 				}
-				this.added[value.name] = value;
+				this.copyElements[value.name] = value;
 			}
-			this.data = Object.values(this.added);
+			this.data = Object.values(this.copyElements);
 		});
 
 		this.addEventListener('click-add', (event) => {
@@ -79,9 +75,9 @@ export class BodyElement extends LitElement {
 					// trigger render by reassigning Object in memory
 					value = Object.assign({}, value);
 				}
-				this.added[value.name] = value;
+				this.copyElements[value.name] = value;
 			}
-			this.data = Object.values(this.added);
+			this.data = Object.values(this.copyElements);
 		});
 
 		// linked to filter-element
@@ -117,9 +113,6 @@ export class BodyElement extends LitElement {
 			if (!this.data.length) {
 				return;
 			};
-
-			this.optionsData = this.data;
-			this.searchData = this.data;
 		};
 	}
 
