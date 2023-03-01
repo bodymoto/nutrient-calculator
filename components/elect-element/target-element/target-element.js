@@ -28,6 +28,11 @@ export class TargetElement extends LitElement {
 		this.dispatchEvent(new CustomEvent('click-subtract', options));
 	}
 
+	willUpdate(changedProperties) {
+		console.log(changedProperties);
+		// here???
+	}
+
 	render() {
 		return html`
 			<li @click=${this.handleClick}>${this.element.name}, x${this.element.count}</li>
