@@ -3,15 +3,13 @@ import {TargetElement} from './target-element/target-element.js';
 
 export class ElectElement extends LitElement {
 	static properties = {
-		electData: { type: Array },
-		selectedData: { type: Array }
+		electData: { type: Array }
 	}
 
 	constructor() {
 		super();
 
 		this.electData = [];
-		this.selectedData = [];
 	}
 
 	static styles = css`
@@ -27,7 +25,6 @@ export class ElectElement extends LitElement {
 			if (!this.electData.length) {
 				return;
 			}
-
 		};
 	}
 
