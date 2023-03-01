@@ -11,6 +11,7 @@ export class BodyElement extends LitElement {
 		data: { type: Array },
 		
 		electData: { type: Array },
+		added: { type: Array },
 
 		checked: { type: Object },
 
@@ -25,6 +26,7 @@ export class BodyElement extends LitElement {
 		this.data = [];
 
 		this.electData = [];
+		this.added = [];
 
 		this.checked = {};
 
@@ -61,47 +63,33 @@ export class BodyElement extends LitElement {
 			};
 		});
 
-		// linked to options-element
 		this.addEventListener('click-add', (event) => {
-			const name = event.detail.target;
-			this.electData = this.data.filter((object) => object.name === name); // (1) [{...}]
-
-			this.electData[0].count++;
+			let element = event.detail.element;
+			element.count++;
+			// a new Object triggers render later-on in target-element
+			element = Object.create(element);
+			// (2) { banana: {...}, avocado: {...} }
+			this.added[element.name] = element;
+			this.electData = Object.values(this.added);
 		});
 
 		// linked to filter-element
 		this.addEventListener('filter-event', (event) => {
-			const category = event.detail.filter.name; // 'vegetable'
-			const selected = event.detail.filter.checked; // true
+			const group = event.detail.filter.name; // 'fruit'
+			const checked = event.detail.filter.checked; // true
 
-			this.checked[category] = selected; // { vegetable: true, dairy: false }
+			let arr = this.data.filter((object) => {
+				if (object.group === group) {
+					console.log(object.group);
+				}
+			});
+			console.log(arr);
 
-			console.log(this.checked);
-			// this.filtered();
+			this.checked.group = group;
+			this.checked.checked = checked;
+			// {group: 'fruit', checked: true}
+
 		});
-	}
-
-	async filtered() {
-		/* 
-		need to compare, this.checked
-		(1) [{veg: true}]
-
-		with this.searchData
-		(1) [{src..., group..., name..., count...}]
-		*/
-
-		this.filteredData = this.data.filter(item => this.checked[item['group']]);
-
-		const options = {
-			detail: {
-				filteredData: this.filteredData,
-			},
-			bubbles: true,
-			composed: true
-		};
-
-    await this.updateComplete;
-		this.dispatchEvent(new CustomEvent('filter-data', options));
 	}
 
 	static styles = css`
@@ -113,19 +101,19 @@ export class BodyElement extends LitElement {
 	  }
 	`;
 
-	generateOptions() {
-		// setup the values necessary for OptionElement
-		this.data.forEach( (object) => {
-			let item = {};
+	// generateOptions() {
+	// 	// setup the values necessary for OptionElement
+	// 	this.data.forEach( (object) => {
+	// 		let item = {};
 
-			item.src = object.src;
-			item.group = object.group;
-			item.name = object.name;
-			item.count = object.count;
+	// 		item.src = object.src;
+	// 		item.group = object.group;
+	// 		item.name = object.name;
+	// 		item.count = object.count;
 
-			this.optionsData.push(item);
-		});
-	}
+	// 		this.optionsData.push(item);
+	// 	});
+	// }
 
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
@@ -133,21 +121,21 @@ export class BodyElement extends LitElement {
 				return;
 			};
 
-			this.generateOptions();
-			this.searchData = this.optionsData;
-			console.log(this.searchData);
+			// this.generateOptions();
+			this.optionsData = this.data;
+			this.searchData = this.data;
 		};
 	}
+
+		// <search-element></search-element>
+
+		// <filter-element .filterData=${this.optionsData}></filter-element>
 
 	render() {
 		return html`
 		<count-element .totals=${this.selectedData}></count-element>
 
 		<elect-element .electData=${this.electData} .selectedData=${this.selectedData}></elect-element>
-
-		<search-element></search-element>
-
-		<filter-element .filterData=${this.optionsData}></filter-element>
 
 		<option-element .searchData=${this.searchData} ></option-element>
 		`;
