@@ -3,13 +3,13 @@ import {TargetElement} from './target-element/target-element.js';
 
 export class ElectElement extends LitElement {
 	static properties = {
-		electData: { type: Array }
+		data: { type: Array }
 	}
 
 	constructor() {
 		super();
 
-		this.electData = [];
+		this.data = [];
 	}
 
 	static styles = css`
@@ -21,8 +21,8 @@ export class ElectElement extends LitElement {
 	`;
 
 	willUpdate(changedProperties) {
-		if (changedProperties.has('electData')) {
-			if (!this.electData.length) {
+		if (changedProperties.has('data')) {
+			if (!this.data.length) {
 				return;
 			}
 		};
@@ -30,15 +30,13 @@ export class ElectElement extends LitElement {
 
 	render() {
 		return html`
-		<ul>
 			${
-				this.electData.map((item) => {
+				this.data.map((item) => {
 					return html`
 						<target-element .element=${item}></target-element>
 					`
 				})
 			}
-		</ul>
 		`;
 	}
 }
