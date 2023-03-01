@@ -13,6 +13,7 @@ export class BodyElement extends LitElement {
 		electData: { type: Array },
 		added: { type: Array },
 		element: { type: Array },
+		arr: {type:Array},
 
 		checked: { type: Object },
 
@@ -29,6 +30,7 @@ export class BodyElement extends LitElement {
 		this.electData = [];
 		this.added = [];
 		this.element = [];
+		this.arr = [];
 
 		this.checked = {};
 
@@ -52,41 +54,34 @@ export class BodyElement extends LitElement {
 		});
 		
 		this.addEventListener('click-subtract', (event) => {
-			let element = event.detail.element;
-			element.count--;
+			let name = event.detail.name;
 
-			let arr = [];
-			this.electData.forEach((item) => {
-				item = Object.assign({}, item);
-				if (item.count === 0){
-					let arr = Object.values(this.element);
-					for(const value of this.searchData) {
-						if(item.name === value.name){
-							value.count = 0;
-						}
+			for (let value of this.data) {
+				if (value.name === name) {
+					value.count--;
+					if (value.count <= 0){
+						value.count = 0;
 					}
-					// console.log(this.searchData)
-					return;
+					// trigger render by reassigning Object in memory
+					value = Object.assign({}, value);
 				}
-				arr.push(item);
-			})
-			this.electData = arr;
+				this.added[value.name] = value;
+			}
+			this.data = Object.values(this.added);
 		});
 
 		this.addEventListener('click-add', (event) => {
-			// console.log(this.searchData);
-			let element = event.detail.element;
-			element.count++;
+			let name = event.detail.name;
 
-			// later referenced to reset count in subtract event due to same Object as OptionsElement
-			this.element[element.name] = element;
-
-			// a new Object triggers render later-on in target-element
-			element = Object.assign({}, element);
-
-			this.added[element.name] = element;
-			// (2) { banana: {...}, avocado: {...} }
-			this.electData = Object.values(this.added);
+			for (let value of this.data) {
+				if (value.name === name) {
+					value.count++;
+					// trigger render by reassigning Object in memory
+					value = Object.assign({}, value);
+				}
+				this.added[value.name] = value;
+			}
+			this.data = Object.values(this.added);
 		});
 
 		// linked to filter-element
@@ -136,9 +131,9 @@ export class BodyElement extends LitElement {
 		return html`
 		<count-element .totals=${this.electData}></count-element>
 
-		<elect-element .electData=${this.electData}></elect-element>
+		<elect-element .data=${this.data}></elect-element>
 
-		<option-element .searchData=${this.searchData} ></option-element>
+		<option-element .data=${this.data} ></option-element>
 		`;
 	}
 }
