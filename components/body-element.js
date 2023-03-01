@@ -17,7 +17,7 @@ export class BodyElement extends LitElement {
 
 		searchValue: { type: String },
 		searchData: { type: Array },
-		selectedData: { type: Array },
+
 		optionsData: { type: Array }
 	}
 
@@ -32,7 +32,7 @@ export class BodyElement extends LitElement {
 
 		this.searchValue = '';
 		this.searchData = [];
-		this.selectedData = [];
+
 		this.optionsData = [];
 
 		// linked to search-element
@@ -49,27 +49,30 @@ export class BodyElement extends LitElement {
 			});
 		});
 		
-		// linked to elect-element
 		this.addEventListener('click-subtract', (event) => {
-			const name = event.detail.target;
-			let clickedElement = this.selectedData.filter((object) => object.name === name); // (1) [{...}]
+			let element = event.detail.element;
+			element.count--;
 
-			clickedElement[0].count--;
-
-			if (clickedElement[0].count <= 0) {
-				if (this.selectedData.includes(clickedElement[0])) {
-					this.selectedData = this.selectedData.filter((object) => object.name !== clickedElement[0].name);
-				};
-			};
+			let arr = [];
+			this.electData.forEach((item) => {
+				item = Object.assign({}, item);
+				if (item.count === 0){
+					return;
+				}
+				arr.push(item);
+			})
+			this.electData = arr;
 		});
 
 		this.addEventListener('click-add', (event) => {
 			let element = event.detail.element;
 			element.count++;
+
 			// a new Object triggers render later-on in target-element
-			element = Object.create(element);
-			// (2) { banana: {...}, avocado: {...} }
+			element = Object.assign({}, element);
+
 			this.added[element.name] = element;
+			// (2) { banana: {...}, avocado: {...} }
 			this.electData = Object.values(this.added);
 		});
 
@@ -101,27 +104,12 @@ export class BodyElement extends LitElement {
 	  }
 	`;
 
-	// generateOptions() {
-	// 	// setup the values necessary for OptionElement
-	// 	this.data.forEach( (object) => {
-	// 		let item = {};
-
-	// 		item.src = object.src;
-	// 		item.group = object.group;
-	// 		item.name = object.name;
-	// 		item.count = object.count;
-
-	// 		this.optionsData.push(item);
-	// 	});
-	// }
-
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
 			if (!this.data.length) {
 				return;
 			};
 
-			// this.generateOptions();
 			this.optionsData = this.data;
 			this.searchData = this.data;
 		};
@@ -133,9 +121,9 @@ export class BodyElement extends LitElement {
 
 	render() {
 		return html`
-		<count-element .totals=${this.selectedData}></count-element>
+		<count-element .totals=${this.electData}></count-element>
 
-		<elect-element .electData=${this.electData} .selectedData=${this.selectedData}></elect-element>
+		<elect-element .electData=${this.electData}></elect-element>
 
 		<option-element .searchData=${this.searchData} ></option-element>
 		`;
