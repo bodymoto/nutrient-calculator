@@ -2,28 +2,24 @@ import {LitElement, html, css} from 'lit';
 
 export class TargetElement extends LitElement {
 	static properties = {
-		name: { type: String },
-		count: { type: Number }
+		element: { type: Object}
 	}
 
 	constructor() {
 		super();
 
-		this.name = '';
-		this.count = 0;
+		this.element = {};
 	}
 
 	static styles = css`
-	 p {
-	 	margin: 5px;
+	 li {
+	 	margin: 2px;
 	 }
 	`;
 
 	async handleClick() {
-		this.count--;
-
 		const options = {
-			detail: {	target: this.name },
+			detail: {	target: this.element.name },
 			bubbles: true,
 			composed: true
 		};
@@ -32,9 +28,13 @@ export class TargetElement extends LitElement {
 		this.dispatchEvent(new CustomEvent('click-subtract', options));
 	}
 
+	willUpdate(changedProperties) {
+		console.log(this.element);
+	}
+
 	render() {
 		return html`
-			<p @click=${this.handleClick}>${this.name}, x${this.count}</p>
+			<li @click=${this.handleClick}>${this.element.name}, x${this.element.count}</li>
 		`;
 	}
 }
