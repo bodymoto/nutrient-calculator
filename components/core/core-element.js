@@ -6,7 +6,7 @@ import {FilterElement} from './filter/filter-element.js';
 import {GridElement} from './grid/grid-element.js';
 
 
-export class BodyElement extends LitElement {
+export class CoreElement extends LitElement {
 	static styles = css`
 	  :host {
 	  	display: flex;
@@ -135,4 +135,4 @@ export class BodyElement extends LitElement {
 	}
 }
 
-customElements.define('body-element', BodyElement);
+customElements.define('core-element', CoreElement);

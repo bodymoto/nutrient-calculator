@@ -1,7 +1,7 @@
-import { BodyElement } from '../components/body-element.js';
+import { CoreElement } from '../components/core/core-element.js';
 import { data } from './data.js';
 
-const app = document.createElement('body-element');
+const app = document.createElement('core-element');
 
 app.data = data;
 
