@@ -1,7 +1,13 @@
 import {LitElement, html, css} from 'lit';
 
 export class SearchElement extends LitElement {
-	static properties = {}
+	static styles = css`
+		:host {
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid black;
+		}
+	`;
 
 	constructor() {
 		super();
@@ -11,13 +17,6 @@ export class SearchElement extends LitElement {
 		});
 	}
 
-	static styles = css`
-		:host {
-			margin: 10px;
-			padding: 10px;
-			border: 1px solid black;
-		}
-	`;
 
 	async handleInput(event) {
 		const value = this.shadowRoot.querySelector('input').value;

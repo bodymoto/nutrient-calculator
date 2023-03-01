@@ -1,7 +1,15 @@
 import {LitElement, html, css} from 'lit';
-import {TargetElement} from './target-element/target-element.js';
+import {ItemElement} from './item/item-element.js';
 
-export class ElectElement extends LitElement {
+export class ListElement extends LitElement {
+	static styles = css`
+		:host {
+			margin: 10px;
+			border: 1px solid black;
+			height: 60px;
+		}
+	`;
+
 	static properties = {
 		data: { type: Array }
 	}
@@ -11,14 +19,6 @@ export class ElectElement extends LitElement {
 
 		this.data = [];
 	}
-
-	static styles = css`
-		:host {
-			margin: 10px;
-			border: 1px solid black;
-			height: 60px;
-		}
-	`;
 
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
@@ -36,7 +36,7 @@ export class ElectElement extends LitElement {
 						return;
 					}
 					return html`
-						<target-element .element=${item}></target-element>
+						<item-element .element=${item}></item-element>
 					`
 				})
 			}
@@ -44,4 +44,4 @@ export class ElectElement extends LitElement {
 	}
 }
 
-customElements.define('elect-element', ElectElement);
+customElements.define('list-element', ListElement);

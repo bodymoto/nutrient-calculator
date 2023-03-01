@@ -1,12 +1,21 @@
 import {LitElement, html, css} from 'lit';
-import {CountElement} from './count-element/count-element.js';
-import {ElectElement} from './elect-element/elect-element.js';
-import {SearchElement} from './search-element/search-element.js';
-import {FilterElement} from './filter-element/filter-element.js';
-import {OptionElement} from './option-element/option-element.js';
+import {AggregateElement} from './aggregate/aggregate-element.js';
+import {ListElement} from './list/list-element.js';
+import {SearchElement} from './search/search-element.js';
+import {FilterElement} from './filter/filter-element.js';
+import {GridElement} from './grid/grid-element.js';
 
 
 export class BodyElement extends LitElement {
+	static styles = css`
+	  :host {
+	  	display: flex;
+	  	align-content: center;
+	  	justify-content: center;
+	  	flex-direction: column;
+	  }
+	`;
+
 	static properties = {
 		data: { type: Array },
 		
@@ -35,12 +44,12 @@ export class BodyElement extends LitElement {
 
 		this.optionsData = [];
 
-		// linked to search-element
+		// listening to SearchElement
 		this.addEventListener('search-input', (event) => {
 			this.searchValue = event.detail.input;
 
 			this.searchData = [];
-			this.optionsData.map((word) => {
+			this.data.map((word) => {
 				if (word.name.includes(this.searchValue)) {
 					if(!this.searchData.includes(word)) {
 						this.searchData.push(word);
@@ -49,6 +58,7 @@ export class BodyElement extends LitElement {
 			});
 		});
 		
+		// listening to ItemElement
 		this.addEventListener('click-subtract', (event) => {
 			let name = event.detail.name;
 
@@ -66,6 +76,7 @@ export class BodyElement extends LitElement {
 			this.data = Object.values(this.copyElements);
 		});
 
+		// listening to FoodButtonElement
 		this.addEventListener('click-add', (event) => {
 			let name = event.detail.name;
 
@@ -80,7 +91,7 @@ export class BodyElement extends LitElement {
 			this.data = Object.values(this.copyElements);
 		});
 
-		// linked to filter-element
+		// listening to FilterElement
 		this.addEventListener('filter-event', (event) => {
 			const group = event.detail.filter.name; // 'fruit'
 			const checked = event.detail.filter.checked; // true
@@ -99,15 +110,6 @@ export class BodyElement extends LitElement {
 		});
 	}
 
-	static styles = css`
-	  :host {
-	  	display: flex;
-	  	align-content: center;
-	  	justify-content: center;
-	  	flex-direction: column;
-	  }
-	`;
-
 	willUpdate(changedProperties) {
 		if (changedProperties.has('data')) {
 			if (!this.data.length) {
@@ -116,17 +118,19 @@ export class BodyElement extends LitElement {
 		};
 	}
 
-		// <search-element></search-element>
-
 		// <filter-element .filterData=${this.optionsData}></filter-element>
+
+		// FIX SEARCH!!
 
 	render() {
 		return html`
-		<count-element .totals=${this.electData}></count-element>
+		<aggregate-element .totals=${this.electData}></aggregate-element>
 
-		<elect-element .data=${this.data}></elect-element>
+		<list-element .data=${this.data}></list-element>
 
-		<option-element .data=${this.data} ></option-element>
+		<search-element></search-element>
+
+		<grid-element .data=${this.data} ></grid-element>
 		`;
 	}
 }

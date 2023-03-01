@@ -1,6 +1,12 @@
 import {LitElement, html, css} from 'lit';
 
-export class TargetElement extends LitElement {
+export class ItemElement extends LitElement {
+	static styles = css`
+		 div {
+		 	margin: 2px;
+		 }
+	`;
+	
 	static properties = {
 		element: { type: Object },
 		name: { type: String },
@@ -15,11 +21,6 @@ export class TargetElement extends LitElement {
 		this.count = null;
 	}
 
-	static styles = css`
-		 div {
-		 	margin: 2px;
-		 }
-	`;
 
 	async handleClick() {
 		const options = {
@@ -44,4 +45,4 @@ export class TargetElement extends LitElement {
 	}
 }
 
-customElements.define('target-element', TargetElement);
+customElements.define('item-element', ItemElement);

@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-export class CountElement extends LitElement {
+export class AggregateElement extends LitElement {
 	static properties = {
 		totals: { type: Array },
 		totalcarbs: { type: String }
@@ -39,4 +39,4 @@ export class CountElement extends LitElement {
 	}
 }
 
-customElements.define('count-element', CountElement);
+customElements.define('aggregate-element', AggregateElement);

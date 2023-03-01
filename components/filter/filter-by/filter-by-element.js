@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-export class GroupElement extends LitElement {
+export class FilterByElement extends LitElement {
 	static properties = {
 		name: { type: String },
 		checked: { type: Boolean }
@@ -44,4 +44,4 @@ export class GroupElement extends LitElement {
 	}
 }
 
-customElements.define('group-element', GroupElement);
+customElements.define('filter-by-element', FilterByElement);

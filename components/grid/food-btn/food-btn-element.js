@@ -1,20 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-export class ItemElement extends LitElement {
-	static properties = {
-		element: { type: Object },
-		name: { type: String },
-		src: { type: String }
-	}
-
-	constructor() {
-		super();
-
-		this.element = {};
-		this.name = '';
-		this.src = '';
-	}
-
+export class FoodButtonElement extends LitElement {
 	static styles = css`
 		:host {
 			display: flex;
@@ -29,13 +15,26 @@ export class ItemElement extends LitElement {
 		}
 	`;
 
+	static properties = {
+		element: { type: Object },
+		name: { type: String },
+		src: { type: String }
+	}
+
+	constructor() {
+		super();
+
+		this.element = {};
+		this.name = '';
+		this.src = '';
+	}
+
 	willUpdate(changedProperties) {
 		this.name = this.element.name;
 		this.src = this.element.src;
 	}
 
 	async handleClick() {
-
 		const options = {
 			detail: {	name: this.name },
 			bubbles: true,
@@ -53,4 +52,4 @@ export class ItemElement extends LitElement {
 	}
 }
 
-customElements.define('item-element', ItemElement);
+customElements.define('food-btn-element', FoodButtonElement);

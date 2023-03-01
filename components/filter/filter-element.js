@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import {GroupElement} from './group-element/group-element.js';
+import {FilterByElement} from './filter-by/filter-by-element.js';
 
 export class FilterElement extends LitElement {
 	static properties = {
@@ -26,7 +26,7 @@ export class FilterElement extends LitElement {
 			${
 				this.filterData.map((object) => {
 					return html`
-						<group-element name=${object.group}></group-element>
+						<filter-by-element name=${object.group}></filter-by-element>
 					`
 				})
 			}
