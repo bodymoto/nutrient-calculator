@@ -1,23 +1,23 @@
 import {LitElement, html, css} from 'lit';
 
 export class FilterByElement extends LitElement {
+	static styles = css`
+		p {
+			margin: 0;
+		}
+	`;
+
 	static properties = {
-		name: { type: String },
+		group: { type: String },
 		checked: { type: Boolean }
 	}
 
 	constructor() {
 		super();
 
-		this.name = '';
+		this.group = '';
 		this.checked = false;
 	}
-
-	static styles = css`
-		p {
-			margin: 0;
-		}
-	`;
 
 	async handleClick() {
 		this.shadowRoot.querySelector('input').click();
@@ -38,8 +38,8 @@ export class FilterByElement extends LitElement {
 
 	render() {
 		return html`
-			<input @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} name=${this.name}>
-			<label @click=${this.handleClick} for=${this.name}>${this.name}</label>
+			<input @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} group=${this.group}>
+			<label @click=${this.handleClick} for=${this.group}>${this.group}</label>
 		`;
 	}
 }
