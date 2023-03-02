@@ -18,31 +18,25 @@ export class CoreElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
+
+		groups: { type: Array },
+		filtered: { type: Object },
 		
-		electData: { type: Array },
 		copyElements: { type: Array },
-
-		checked: { type: Object },
-
 		searchValue: { type: String },
-		searchData: { type: Array },
-
-		optionsData: { type: Array }
+		searchData: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
 
-		this.electData = [];
+		this.groups = [];
+		this.filtered = {};
+
 		this.copyElements = [];
-
-		this.checked = {};
-
 		this.searchValue = '';
 		this.searchData = [];
-
-		this.optionsData = [];
 
 		// listening to SearchElement
 		this.addEventListener('search-input', (event) => {
@@ -60,7 +54,7 @@ export class CoreElement extends LitElement {
 		
 		// listening to ItemElement
 		this.addEventListener('click-subtract', (event) => {
-			let name = event.detail.name;
+			const name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
 				if (value.name === name) {
@@ -78,7 +72,7 @@ export class CoreElement extends LitElement {
 
 		// listening to FoodButtonElement
 		this.addEventListener('click-add', (event) => {
-			let name = event.detail.name;
+			const name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
 				if (value.name === name) {
@@ -91,22 +85,26 @@ export class CoreElement extends LitElement {
 			this.data = Object.values(this.copyElements);
 		});
 
-		// listening to FilterElement
+		// listening to FilterByElement
 		this.addEventListener('filter-event', (event) => {
-			const group = event.detail.filter.name; // 'fruit'
-			const checked = event.detail.filter.checked; // true
+			const group = event.detail.filter.group; // 'fruit'
+			const checked = event.detail.filter.checked // true
 
-			let arr = this.data.filter((object) => {
-				if (object.group === group) {
-					console.log(object.group);
-				}
-			});
-			console.log(arr);
+			this.groups[group] = {'group': group, 'checked': checked};
+			this.filtered = Object.values(this.groups);
+			// (2) [{'group': 'fruit', 'checked': true}, {...}]
 
-			this.checked.group = group;
-			this.checked.checked = checked;
-			// {group: 'fruit', checked: true}
+			// this.filtered = Object.assign({'group': group, 'checked': checked});
+			console.log(this.filtered);
 
+			// this.groups = [];
+			// for (let value of this.data) {
+			// 	if (value.group === group) {
+			// 		value = Object.assign({}, value);
+			// 		this.groups[value.group] = value;
+			// 	}
+			// }
+			// this.searchData = Object.values(this.groups);
 		});
 	}
 
@@ -118,16 +116,16 @@ export class CoreElement extends LitElement {
 		};
 	}
 
+		// <aggregate-element .totals=${this.electData}></aggregate-element>
+
 	render() {
 		return html`
-		<aggregate-element .totals=${this.electData}></aggregate-element>
-		
 		<list-element .data=${this.data}></list-element>
 		<search-element></search-element>
 
-		<filter-element .filterData=${this.optionsData}></filter-element>
+		<filter-element .data=${this.data}></filter-element>
 
-		<grid-element .data=${this.data} .search=${this.searchData} ></grid-element>
+		<grid-element .data=${this.data} .searchData=${this.searchData} ></grid-element>
 		`;
 	}
 }
