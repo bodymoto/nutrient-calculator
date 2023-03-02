@@ -1,4 +1,4 @@
-# food data driven app
+# food-data driven app
 ### *Health is Wealth*
 agree? how many people know how many nutrients and sugars they consume daily, right now?
 *(Wealth is Wealth)*
