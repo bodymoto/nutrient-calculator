@@ -118,19 +118,16 @@ export class CoreElement extends LitElement {
 		};
 	}
 
-		// <filter-element .filterData=${this.optionsData}></filter-element>
-
-		// FIX SEARCH!!
-
 	render() {
 		return html`
 		<aggregate-element .totals=${this.electData}></aggregate-element>
-
+		
 		<list-element .data=${this.data}></list-element>
-
 		<search-element></search-element>
 
-		<grid-element .data=${this.data} ></grid-element>
+		<filter-element .filterData=${this.optionsData}></filter-element>
+
+		<grid-element .data=${this.data} .search=${this.searchData} ></grid-element>
 		`;
 	}
 }
