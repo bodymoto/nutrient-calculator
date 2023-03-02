@@ -11,7 +11,7 @@ export class GridElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
-		search: { type: Array },
+		searchData: { type: Array },
 		_grid: { type: Array }
 	}
 
@@ -19,16 +19,16 @@ export class GridElement extends LitElement {
 		super();
 
 		this.data = [];
-		this.search = [];
+		this.searchData = [];
 		this._grid = [];
 	}
 
 	willUpdate(changedProperties) {
-		// this.search a property triggered by SearchElement
-		if (!this.search.length) {
+		// this.searchData a property triggered by SearchElement
+		if (!this.searchData.length) {
 			this._grid = this.data;
 		} else {
-			this._grid = this.search;
+			this._grid = this.searchData;
 		}
 	}
 
