@@ -10,19 +10,32 @@ export class GridElement extends LitElement {
 	`;
 
 	static properties = {
-		data: { type: Array }
+		data: { type: Array },
+		search: { type: Array },
+		_grid: { type: Array }
 	}
 
 	constructor() {
 		super();
 
 		this.data = [];
+		this.search = [];
+		this._grid = [];
+	}
+
+	willUpdate(changedProperties) {
+		// this.search a property triggered by SearchElement
+		if (!this.search.length) {
+			this._grid = this.data;
+		} else {
+			this._grid = this.search;
+		}
 	}
 
 	render() {
 		return html`
 			${
-				this.data.map((object) => {
+				this._grid.map((object) => {
 					return html`
 					<food-btn-element .element=${object}></food-btn-element>
 					`
