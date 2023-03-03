@@ -18,42 +18,40 @@ export class CoreElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
-		filtered: { type: Array },
-		copyElements: { type: Array },
 		searchValue: { type: String },
-		searchData: { type: Array }
+		filtered: { type: Array },
+		copyElements: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
+		this.searchValue = ''; // for 'search-input'
+		this.filtered = []; // for 'filter-event'
+		this.copyElements = []; // for 'click-subtract'
 
-		// 'filter-event' event properties
-		this.filtered = [];
-
-		// 'click-subtract' event properties
-		this.copyElements = [];
-
-		// 'search-input' event properties
-		this.searchValue = '';
-		this.searchData = [];
-
-		// listening to SearchElement
 		this.addEventListener('search-input', (event) => {
+			// listening to SearchElement
 			this.searchValue = event.detail.input;
-
-			this.searchData = [];
-			this.data.map((word) => {
-				if (word.name.includes(this.searchValue)) {
-					if(!this.searchData.includes(word)) {
-						this.searchData.push(word);
-					}
-				};
-			});
 		});
 		
-		// listening to ItemElement
+		this.addEventListener('filter-event', (event) => {
+			// listening to FilterByElement
+			const group = event.detail.filter.group; // 'fruit'
+			const checked = event.detail.filter.checked // true
+
+			for (let value of this.data) {
+				if (value.group === group) {
+					value.checked = checked;
+					value = Object.assign({}, value);
+				}
+				this.filtered[value.group] = value; 
+			}
+			this.data = Object.values(this.filtered);
+		});
+
 		this.addEventListener('click-subtract', (event) => {
+			// listening to ItemElement
 			const name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
@@ -70,8 +68,8 @@ export class CoreElement extends LitElement {
 			this.data = Object.values(this.copyElements);
 		});
 
-		// listening to FoodButtonElement
 		this.addEventListener('click-add', (event) => {
+			// listening to FoodButtonElement
 			const name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
@@ -83,21 +81,6 @@ export class CoreElement extends LitElement {
 				this.copyElements[value.name] = value;
 			}
 			this.data = Object.values(this.copyElements);
-		});
-
-		// listening to FilterByElement
-		this.addEventListener('filter-event', (event) => {
-			const group = event.detail.filter.group; // 'fruit'
-			const checked = event.detail.filter.checked // true
-
-			for (let value of this.data) {
-				if (value.group === group) {
-					value.checked = checked;
-					value = Object.assign({}, value);
-				}
-				this.filtered[value.group] = value; 
-			}
-			this.data = Object.values(this.filtered);
 		});
 	}
 
@@ -115,7 +98,7 @@ export class CoreElement extends LitElement {
 			<list-element .data=${this.data}></list-element>
 			<search-element></search-element>
 			<filter-element .data=${this.data}></filter-element>
-			<grid-element .data=${this.data} .searchData=${this.searchData} ></grid-element>
+			<grid-element .data=${this.data} .searchData=${this.searchData} searchValue=${this.searchValue} ></grid-element>
 		`;
 	}
 }
