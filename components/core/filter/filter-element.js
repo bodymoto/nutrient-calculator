@@ -9,6 +9,10 @@ export class FilterElement extends LitElement {
 		}
 	`;
 
+	static properties = {
+		searchValue: { type: String }
+	}
+
 	constructor() {
 		super();
 		this.data = [];
@@ -19,7 +23,7 @@ export class FilterElement extends LitElement {
 			${this.data.map(
 				(object) => {
 					return html`
-						<filter-by-element group=${object.group}></filter-by-element>
+						<filter-by-element group=${object.group} searchValue=${this.searchValue}></filter-by-element>
 					`
 				})
 			}
