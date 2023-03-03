@@ -44,9 +44,9 @@ export class GridElement extends LitElement {
 			this._grid = this.searchData;
 		}
 
-		this._grid.map((object) => {
+		this._grid.map((value) => {
 			// boolean set by FilterByElement
-			if (object.checked === true) {
+			if (value.checked === true) {
 				this._grid = this._grid.filter(
 					(boolean) => boolean.checked === true);
 			}
@@ -56,9 +56,9 @@ export class GridElement extends LitElement {
 	render() {
 		return html`
 			${this._grid.map(
-				(object) => {
+				(value) => {
 					return html`
-						<food-btn-element .element=${object}></food-btn-element>
+						<food-btn-element .value=${value}></food-btn-element>
 					`
 				})
 			}
