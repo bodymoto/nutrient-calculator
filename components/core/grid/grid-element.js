@@ -12,6 +12,7 @@ export class GridElement extends LitElement {
 	static properties = {
 		data: { type: Array },
 		searchData: { type: Array },
+		searchValue: { type: String },
 		_grid: { type: Array }
 	}
 
@@ -19,20 +20,33 @@ export class GridElement extends LitElement {
 		super();
 		this.data = [];
 		this.searchData = [];
+		this.searchValue = '';
 		this._grid = [];
 	}
 
 	willUpdate(changedProperties) {
-		// this.searchData is reactive to SearchElement
-		if (!this.searchData.length) {
-			this._grid = this.data;
-		} else {
+		this._grid = this.data;
+
+		if (changedProperties.has('searchValue')) {
+			// property set by SearchElement
+			if (!this.searchValue.length) {
+				this._grid = this.data;
+			}
+
+			this.searchData = [];
+			this.data.map((word) => {
+				if (word.name.includes(this.searchValue)) {
+					if(!this.searchData.includes(word)) {
+						this.searchData.push(word);
+					}
+				};
+			});
 			this._grid = this.searchData;
 		}
-		
-		// boolean is reactive to FilterByElement
+
 		this._grid.map((object) => {
-			if (object.checked !== false) {
+			// boolean set by FilterByElement
+			if (object.checked === true) {
 				this._grid = this._grid.filter(
 					(boolean) => boolean.checked === true);
 			}
