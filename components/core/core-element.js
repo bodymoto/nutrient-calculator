@@ -19,8 +19,7 @@ export class CoreElement extends LitElement {
 	static properties = {
 		data: { type: Array },
 
-		groups: { type: Array },
-		filtered: { type: Object },
+		filtered: { type: Array },
 		
 		copyElements: { type: Array },
 		searchValue: { type: String },
@@ -31,8 +30,7 @@ export class CoreElement extends LitElement {
 		super();
 		this.data = [];
 
-		this.groups = [];
-		this.filtered = {};
+		this.filtered = [];
 
 		this.copyElements = [];
 		this.searchValue = '';
@@ -90,21 +88,14 @@ export class CoreElement extends LitElement {
 			const group = event.detail.filter.group; // 'fruit'
 			const checked = event.detail.filter.checked // true
 
-			this.groups[group] = {'group': group, 'checked': checked};
-			this.filtered = Object.values(this.groups);
-			// (2) [{'group': 'fruit', 'checked': true}, {...}]
-
-			// this.filtered = Object.assign({'group': group, 'checked': checked});
-			console.log(this.filtered);
-
-			// this.groups = [];
-			// for (let value of this.data) {
-			// 	if (value.group === group) {
-			// 		value = Object.assign({}, value);
-			// 		this.groups[value.group] = value;
-			// 	}
-			// }
-			// this.searchData = Object.values(this.groups);
+			for (let value of this.data) {
+				if (value.group === group) {
+					value.checked = checked;
+					value = Object.assign({}, value);
+				}
+				this.filtered[value.group] = value; 
+			}
+			this.data = Object.values(this.filtered);
 		});
 	}
 
