@@ -33,7 +33,6 @@ export class AggregateElement extends LitElement {
 	render() {
 		return html`
 			<p>total carbs: ${this.totalcarbs}</p>
-
 			<button @click=${this.button}>console totals</button>
 		`;
 	}

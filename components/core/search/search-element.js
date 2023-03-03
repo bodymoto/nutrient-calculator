@@ -11,7 +11,7 @@ export class SearchElement extends LitElement {
 
 	constructor() {
 		super();
-
+		
 		this.addEventListener('input', (event) => {
 			this.handleInput(event);
 		});

@@ -17,7 +17,6 @@ export class GridElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.data = [];
 		this.searchData = [];
 		this._grid = [];
@@ -34,17 +33,18 @@ export class GridElement extends LitElement {
 		// boolean is reactive to FilterByElement
 		this._grid.map((object) => {
 			if (object.checked !== false) {
-				this._grid = this._grid.filter((boolean) => boolean.checked === true);
+				this._grid = this._grid.filter(
+					(boolean) => boolean.checked === true);
 			}
 		});
 	}
 
 	render() {
 		return html`
-			${
-				this._grid.map((object) => {
+			${this._grid.map(
+				(object) => {
 					return html`
-					<food-btn-element .element=${object}></food-btn-element>
+						<food-btn-element .element=${object}></food-btn-element>
 					`
 				})
 			}

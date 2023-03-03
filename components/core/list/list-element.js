@@ -16,7 +16,6 @@ export class ListElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.data = [];
 	}
 
@@ -30,8 +29,8 @@ export class ListElement extends LitElement {
 
 	render() {
 		return html`
-			${
-				this.data.map((item) => {
+			${this.data.map(
+				(item) => {
 					if (item.count <= 0) {
 						return;
 					}

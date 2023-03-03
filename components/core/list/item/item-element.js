@@ -15,7 +15,6 @@ export class ItemElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.element = {};
 		this.name = '';
 		this.count = null;

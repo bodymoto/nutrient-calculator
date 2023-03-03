@@ -14,7 +14,6 @@ export class FilterByElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.group = '';
 		this.checked = false;
 	}

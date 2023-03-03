@@ -18,9 +18,7 @@ export class CoreElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
-
 		filtered: { type: Array },
-		
 		copyElements: { type: Array },
 		searchValue: { type: String },
 		searchData: { type: Array }
@@ -30,9 +28,13 @@ export class CoreElement extends LitElement {
 		super();
 		this.data = [];
 
+		// 'filter-event' event properties
 		this.filtered = [];
 
+		// 'click-subtract' event properties
 		this.copyElements = [];
+
+		// 'search-input' event properties
 		this.searchValue = '';
 		this.searchData = [];
 
@@ -107,16 +109,13 @@ export class CoreElement extends LitElement {
 		};
 	}
 
-		// <aggregate-element .totals=${this.electData}></aggregate-element>
-
 	render() {
 		return html`
-		<list-element .data=${this.data}></list-element>
-		<search-element></search-element>
-
-		<filter-element .data=${this.data}></filter-element>
-
-		<grid-element .data=${this.data} .searchData=${this.searchData} ></grid-element>
+			<aggregate-element .data=${this.data}></aggregate-element>
+			<list-element .data=${this.data}></list-element>
+			<search-element></search-element>
+			<filter-element .data=${this.data}></filter-element>
+			<grid-element .data=${this.data} .searchData=${this.searchData} ></grid-element>
 		`;
 	}
 }

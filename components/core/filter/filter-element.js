@@ -11,14 +11,13 @@ export class FilterElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.data = [];
 	}
 
 	render() {
 		return html`
-			${
-				this.data.map((object) => {
+			${this.data.map(
+				(object) => {
 					return html`
 						<filter-by-element group=${object.group}></filter-by-element>
 					`

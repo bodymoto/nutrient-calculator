@@ -23,7 +23,6 @@ export class FoodButtonElement extends LitElement {
 
 	constructor() {
 		super();
-
 		this.element = {};
 		this.name = '';
 		this.src = '';
