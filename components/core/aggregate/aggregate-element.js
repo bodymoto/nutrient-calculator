@@ -1,18 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
 export class AggregateElement extends LitElement {
-	static properties = {
-		totals: { type: Array },
-		totalcarbs: { type: String }
-	}
-
-	constructor() {
-		super();
-
-		this.totals = [];
-		this.totalcarbs = null;
-	}
-
 	static styles = css`
 		:host {
 			margin: 10px;
@@ -20,10 +8,22 @@ export class AggregateElement extends LitElement {
 		}
 	`;
 
-	button() {
-		console.log(this.totals);
+	static properties = {
+		data: { type: Array },
+		totalcarbs: { type: String }
+	}
+
+	constructor() {
+		super();
+		this.data = [];
 		this.totalcarbs = null;
-		this.totals.forEach((object) => {
+	}
+
+	// take totals and display them based on their counts
+
+	button() {
+		this.totalcarbs = null;
+		this.data.forEach((object) => {
 			let carbs = 0;
 			carbs = (object.carbs * object.count);
 			this.totalcarbs += carbs;
