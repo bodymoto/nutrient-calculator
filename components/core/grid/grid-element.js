@@ -24,12 +24,19 @@ export class GridElement extends LitElement {
 	}
 
 	willUpdate(changedProperties) {
-		// this.searchData a property triggered by SearchElement
+		// this.searchData is reactive to SearchElement
 		if (!this.searchData.length) {
 			this._grid = this.data;
 		} else {
 			this._grid = this.searchData;
 		}
+		
+		// boolean is reactive to FilterByElement
+		this._grid.map((object) => {
+			if (object.checked !== false) {
+				this._grid = this._grid.filter((boolean) => boolean.checked === true);
+			}
+		});
 	}
 
 	render() {
