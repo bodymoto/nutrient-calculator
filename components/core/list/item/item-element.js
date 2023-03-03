@@ -8,16 +8,16 @@ export class ItemElement extends LitElement {
 	`;
 	
 	static properties = {
-		element: { type: Object },
+		value: { type: Object },
 		name: { type: String },
-		count: { type: Number }
+		_count: { type: Number }
 	}
 
 	constructor() {
 		super();
-		this.element = {};
+		this.value = {};
 		this.name = '';
-		this.count = null;
+		this._count = 0;
 	}
 
 
@@ -33,13 +33,13 @@ export class ItemElement extends LitElement {
 	}
 
 	willUpdate(changedProperties) {
-		this.name = this.element.name;
-		this.count = this.element.count;
+		this.name = this.value.name;
+		this._count = this.value.count;
 	}
 
 	render() {
 		return html`
-			<div @click=${this.handleClick}>${this.name}, x${this.count}</div>
+			<div @click=${this.handleClick}>${this.name}, x${this._count}</div>
 		`;
 	}
 }

@@ -19,16 +19,22 @@ export class CoreElement extends LitElement {
 	static properties = {
 		data: { type: Array },
 		searchValue: { type: String },
-		filtered: { type: Array },
-		copyElements: { type: Array }
+		_filtered: { type: Array },
+		_copyValues: { type: Array },
+		_name: { type: String },
+		_group: { type: String },
+		_checked: { type: Boolean }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
-		this.searchValue = ''; // for 'search-input'
-		this.filtered = []; // for 'filter-event'
-		this.copyElements = []; // for 'click-subtract'
+		this.searchValue = '';
+		this._filtered = [];
+		this._copyValues = [];
+		this._name = '';
+		this._group = '';
+		this._checked = false;
 
 		this.addEventListener('search-input', (event) => {
 			// listening to SearchElement
@@ -37,25 +43,25 @@ export class CoreElement extends LitElement {
 		
 		this.addEventListener('filter-event', (event) => {
 			// listening to FilterByElement
-			const group = event.detail.filter.group; // 'fruit'
-			const checked = event.detail.filter.checked // true
+			this._group = event.detail.filter.group; // 'fruit'
+			this._checked = event.detail.filter.checked // true
 
 			for (let value of this.data) {
-				if (value.group === group) {
-					value.checked = checked;
+				if (value.group === this._group) {
+					value.checked = this._checked;
 					value = Object.assign({}, value);
 				}
-				this.filtered[value.group] = value; 
+				this._filtered[value.group] = value; 
 			}
-			this.data = Object.values(this.filtered);
+			this.data = Object.values(this._filtered);
 		});
 
 		this.addEventListener('click-subtract', (event) => {
 			// listening to ItemElement
-			const name = event.detail.name; // 'banana'
+			this._name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
-				if (value.name === name) {
+				if (value.name === this._name) {
 					value.count--;
 					if (value.count <= 0){
 						value.count = 0;
@@ -63,24 +69,24 @@ export class CoreElement extends LitElement {
 					// trigger render by reassigning Object in memory
 					value = Object.assign({}, value);
 				}
-				this.copyElements[value.name] = value;
+				this._copyValues[value.name] = value;
 			}
-			this.data = Object.values(this.copyElements);
+			this.data = Object.values(this._copyValues);
 		});
 
 		this.addEventListener('click-add', (event) => {
 			// listening to FoodButtonElement
-			const name = event.detail.name; // 'banana'
+			this._name = event.detail.name; // 'banana'
 
 			for (let value of this.data) {
-				if (value.name === name) {
+				if (value.name === this._name) {
 					value.count++;
 					// trigger render by reassigning Object in memory
 					value = Object.assign({}, value);
 				}
-				this.copyElements[value.name] = value;
+				this._copyValues[value.name] = value;
 			}
-			this.data = Object.values(this.copyElements);
+			this.data = Object.values(this._copyValues);
 		});
 	}
 

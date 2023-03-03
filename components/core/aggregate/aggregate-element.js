@@ -10,29 +10,29 @@ export class AggregateElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
-		totalcarbs: { type: String }
+		_totalcarbs: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
-		this.totalcarbs = null;
+		this._totalcarbs = null;
 	}
 
 	// take totals and display them based on their counts
 
 	button() {
-		this.totalcarbs = null;
+		this._totalcarbs = null;
 		this.data.forEach((object) => {
 			let carbs = 0;
 			carbs = (object.carbs * object.count);
-			this.totalcarbs += carbs;
+			this._totalcarbs += carbs;
 		});
 	}
 
 	render() {
 		return html`
-			<p>total carbs: ${this.totalcarbs}</p>
+			<p>total carbs: ${this._totalcarbs}</p>
 			<button @click=${this.button}>console totals</button>
 		`;
 	}

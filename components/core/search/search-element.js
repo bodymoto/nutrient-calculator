@@ -9,9 +9,13 @@ export class SearchElement extends LitElement {
 		}
 	`;
 
+	static properties = {
+		value: { type: String }
+	}
+
 	constructor() {
 		super();
-		
+		this.value = '';
 		this.addEventListener('input', (event) => {
 			this.handleInput(event);
 		});
@@ -19,10 +23,10 @@ export class SearchElement extends LitElement {
 
 
 	async handleInput(event) {
-		const value = this.shadowRoot.querySelector('input').value;
+		this.value = this.shadowRoot.querySelector('input').value;
 		
 		const options = {
-			detail: {	input: value },
+			detail: {	input: this.value },
 			bubbles: true,
 			composed: true
 		};

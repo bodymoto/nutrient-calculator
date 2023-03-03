@@ -30,12 +30,12 @@ export class ListElement extends LitElement {
 	render() {
 		return html`
 			${this.data.map(
-				(item) => {
-					if (item.count <= 0) {
+				(value) => {
+					if (value.count <= 0) {
 						return;
 					}
 					return html`
-						<item-element .element=${item}></item-element>
+						<item-element .value=${value}></item-element>
 					`
 				})
 			}
