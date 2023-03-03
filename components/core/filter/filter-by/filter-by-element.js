@@ -9,13 +9,15 @@ export class FilterByElement extends LitElement {
 
 	static properties = {
 		group: { type: String },
-		checked: { type: Boolean }
+		checked: { type: Boolean },
+		searchValue: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.group = '';
 		this.checked = false;
+		this.searchValue = '';
 	}
 
 	async handleClick() {
@@ -33,6 +35,14 @@ export class FilterByElement extends LitElement {
 
     await this.updateComplete;
 		this.dispatchEvent(new CustomEvent('filter-event', options));
+	}
+
+	willUpdate(changedProperties) {
+		if (changedProperties.has('searchValue')) {
+			if (this.searchValue.length) {
+				this.shadowRoot.querySelector('input').checked = false;
+			}
+		}
 	}
 
 	render() {
