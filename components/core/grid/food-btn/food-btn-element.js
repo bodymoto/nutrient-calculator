@@ -16,21 +16,21 @@ export class FoodButtonElement extends LitElement {
 	`;
 
 	static properties = {
-		element: { type: Object },
+		value: { type: Object },
 		name: { type: String },
 		src: { type: String }
 	}
 
 	constructor() {
 		super();
-		this.element = {};
+		this.value = {};
 		this.name = '';
 		this.src = '';
 	}
 
 	willUpdate(changedProperties) {
-		this.name = this.element.name;
-		this.src = this.element.src;
+		this.name = this.value.name;
+		this.src = this.value.src;
 	}
 
 	async handleClick() {
