@@ -98,7 +98,7 @@ export class CoreElement extends LitElement {
 			<list-element .data=${this.data}></list-element>
 			<search-element></search-element>
 			<filter-element .data=${this.data}></filter-element>
-			<grid-element .data=${this.data} .searchData=${this.searchData} searchValue=${this.searchValue} ></grid-element>
+			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
 		`;
 	}
 }
