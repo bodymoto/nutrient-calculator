@@ -31,6 +31,7 @@ export class GridElement extends LitElement {
 			// property set by SearchElement
 			if (!this.searchValue.length) {
 				this._grid = this.data;
+				return;
 			}
 
 			this.searchData = [];
