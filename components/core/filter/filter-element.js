@@ -16,6 +16,15 @@ export class FilterElement extends LitElement {
 	constructor() {
 		super();
 		this.data = [];
+		this.searchValue = '';
+	}
+
+	willUpdate(changedProperties) {
+		if (changedProperties.has('searchValue')) {
+			if (this.searchValue.length) {
+				this.data.map((object) => object.checked = false);
+			}
+		}
 	}
 
 	render() {
