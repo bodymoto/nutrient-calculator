@@ -12,8 +12,8 @@ export class FoodButtonElement extends LitElement {
 			padding: 8px;
 			font-size: 12px;
 			text-align: center;
-			width: 90px;
-			height: 90px;
+			width: 84px;
+			height: 84px;
 			cursor: pointer;
 		}
 		img {
