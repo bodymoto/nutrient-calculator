@@ -51,7 +51,8 @@ export class CoreElement extends LitElement {
 					value.checked = this._checked;
 					value = Object.assign({}, value);
 				}
-				this._filtered[value.group] = value; 
+				// value.name must be unique
+				this._filtered[value.name] = value;
 			}
 			this.data = Object.values(this._filtered);
 		});
