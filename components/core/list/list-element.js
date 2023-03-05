@@ -6,17 +6,18 @@ export class ListElement extends LitElement {
 		:host {
 			margin: 10px;
 			border: 1px solid black;
-			height: 60px;
 		}
 	`;
 
 	static properties = {
-		data: { type: Array }
+		data: { type: Array },
+		_valueReset: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
+		this._valueReset = [];
 	}
 
 	willUpdate(changedProperties) {
@@ -27,8 +28,19 @@ export class ListElement extends LitElement {
 		};
 	}
 
+	handleClick() {
+		for (let value of this.data) {
+			value.count = 0;
+			value = Object.assign({}, value);
+			this._valueReset[value.name] = value;
+		}
+		this.data = this._valueReset;
+	}
+
 	render() {
 		return html`
+			<button @click=${this.handleClick}>Clear all</button>
+
 			${this.data.map(
 				(value) => {
 					if (value.count <= 0) {
