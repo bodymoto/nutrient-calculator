@@ -102,10 +102,10 @@ export class CoreElement extends LitElement {
 	render() {
 		return html`
 			<aggregate-element .data=${this.data}></aggregate-element>
-			<list-element .data=${this.data}></list-element>
 			<search-element></search-element>
 			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
 			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
+			<list-element .data=${this.data}></list-element>
 		`;
 	}
 }
