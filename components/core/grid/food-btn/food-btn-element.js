@@ -4,12 +4,13 @@ export class FoodButtonElement extends LitElement {
 	static styles = css`
 		:host {
 			display: flex;
+			flex-direction: column;
 			align-content: center;
 			justify-content: center;
 			border: 1px solid black;
 		}
 		img {
-			width: 76px;
+			width: 48px;
 		}
 	`;
 
@@ -45,6 +46,7 @@ export class FoodButtonElement extends LitElement {
 	render() {
 		return html`
 			<img @click=${this.handleClick} src=${this.src} alt=${this.name} />
+			<p>${this.name.toUpperCase()}</p>
 		`;
 	}
 }
