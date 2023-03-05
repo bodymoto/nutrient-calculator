@@ -8,45 +8,48 @@ export class FoodButtonElement extends LitElement {
 			align-content: center;
 			justify-content: center;
 			border: 1px solid black;
+			border-radius: 10px;
+			padding: 8px;
+			font-size: 12px;
+			text-align: center;
+			width: 90px;
+			height: 90px;
+			cursor: pointer;
 		}
 		img {
-			width: 48px;
+			margin: auto;
+			width: 32px;
+		}
+		p {
+			padding: 0;
+			margin: 0;
 		}
 	`;
 
 	static properties = {
 		value: { type: Object },
-		name: { type: String },
-		src: { type: String }
+		_name: { type: String },
+		_src: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.value = {};
-		this.name = '';
-		this.src = '';
+		this._name = '';
+		this._src = '';
 	}
 
 	willUpdate(changedProperties) {
-		this.name = this.value.name;
-		this.src = this.value.src;
-	}
-
-	async handleClick() {
-		const options = {
-			detail: {	name: this.name },
-			bubbles: true,
-			composed: true
-		};
-
-    await this.updateComplete;
-		this.dispatchEvent(new CustomEvent('click-add', options));
+		this._name = this.value.name;
+		this._src = this.value.src;
 	}
 
 	render() {
 		return html`
-			<img @click=${this.handleClick} src=${this.src} alt=${this.name} />
-			<p>${this.name.toUpperCase()}</p>
+		<div>
+			<img src=${this._src} alt=${this._name} />
+			<p>${this._name.toUpperCase()}</p>
+		</div>
 		`;
 	}
 }
