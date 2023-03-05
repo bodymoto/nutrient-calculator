@@ -28,27 +28,27 @@ export class FoodButtonElement extends LitElement {
 
 	static properties = {
 		value: { type: Object },
-		_name: { type: String },
-		_src: { type: String }
+		name: { type: String },
+		src: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.value = {};
-		this._name = '';
-		this._src = '';
+		this.name = '';
+		this.src = '';
 	}
 
 	willUpdate(changedProperties) {
-		this._name = this.value.name;
-		this._src = this.value.src;
+		this.name = this.value.name;
+		this.src = this.value.src;
 	}
 
 	render() {
 		return html`
 		<div>
-			<img src=${this._src} alt=${this._name} />
-			<p>${this._name.toUpperCase()}</p>
+			<img src=${this.src} alt=${this.name} />
+			<p>${this.name.toUpperCase()}</p>
 		</div>
 		`;
 	}
