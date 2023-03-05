@@ -5,13 +5,11 @@ export class FoodButtonElement extends LitElement {
 		:host {
 			display: flex;
 			align-content: center;
-			justify-content: space-evenly;
-
+			justify-content: center;
 			border: 1px solid black;
-			margin: auto;
 		}
 		img {
-			width: 82px;
+			width: 76px;
 		}
 	`;
 

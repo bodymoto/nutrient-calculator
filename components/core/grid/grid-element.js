@@ -4,7 +4,13 @@ import {FoodButtonElement} from './food-btn/food-btn-element.js';
 export class GridElement extends LitElement {
 	static styles = css`
 		:host {
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 10px;
 			margin: 10px;
+			padding: 10px;
 			border: 1px solid black;
 		}
 	`;
