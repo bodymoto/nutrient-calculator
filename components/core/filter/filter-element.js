@@ -12,16 +12,16 @@ export class FilterElement extends LitElement {
 	static properties = {
 		data: { type: Array },
 		searchValue: { type: String },
-		_copyGroups: { type: Object },
-		unique: { type: Array }
+		_dataGroups: { type: Array },
+		_uniqueValues: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
 		this.searchValue = '';
-		this._copyGroups = {};
-		this.unique = [];
+		this._dataGroups = [];
+		this._uniqueValues = [];
 	}
 
 	willUpdate(changedProperties) {
@@ -29,10 +29,11 @@ export class FilterElement extends LitElement {
 			if (!this.data.length) {
 				return;
 			}
-			this._copyGroups = this.data.map(
-				(object) => this._copyGroups[object.group] = object.group);
-			this.unique = this._copyGroups.filter((element, index) => {
-				return this._copyGroups.indexOf(element) === index;
+			this._dataGroups = this.data.map(
+				(object) => this._dataGroups[object.group] = object.group);
+			this._uniqueValues = this._dataGroups.filter(
+				(element, index) => {
+				return this._dataGroups.indexOf(element) === index;
 			});
 		}
 
@@ -45,10 +46,10 @@ export class FilterElement extends LitElement {
 
 	render() {
 		return html`
-			${this.unique.map(
-				(object) => {
+			${this._uniqueValues.map(
+				(value) => {
 					return html`
-						<filter-by-element group=${object} searchValue=${this.searchValue}></filter-by-element>
+						<filter-by-element group=${value} searchValue=${this.searchValue}></filter-by-element>
 					`
 				})
 			}
