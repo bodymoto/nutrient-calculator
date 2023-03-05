@@ -60,12 +60,23 @@ export class GridElement extends LitElement {
 		});
 	}
 
+	async handleClick(event) {
+		const options = {
+			detail: {	name: event.target.name },
+			bubbles: true,
+			composed: true
+		};
+
+    await this.updateComplete;
+		this.dispatchEvent(new CustomEvent('click-add', options));
+	}
+
 	render() {
 		return html`
 			${this._grid.map(
 				(value) => {
 					return html`
-						<food-btn-element .value=${value}></food-btn-element>
+						<food-btn-element @click=${this.handleClick} name=${value.name} .value=${value}></food-btn-element>
 					`
 				})
 			}
