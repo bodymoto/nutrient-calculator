@@ -19,7 +19,8 @@ export class GridElement extends LitElement {
 		data: { type: Array },
 		searchData: { type: Array },
 		searchValue: { type: String },
-		_grid: { type: Array }
+		_grid: { type: Array },
+		name: { type: String }
 	}
 
 	constructor() {
@@ -28,6 +29,7 @@ export class GridElement extends LitElement {
 		this.searchData = [];
 		this.searchValue = '';
 		this._grid = [];
+		this.name = '';
 	}
 
 	willUpdate(changedProperties) {
@@ -61,12 +63,12 @@ export class GridElement extends LitElement {
 	}
 
 	async handleClick(event) {
+		this.name = event.target.name;
 		const options = {
-			detail: {	name: event.target.name },
+			detail: {	name: this.name },
 			bubbles: true,
 			composed: true
 		};
-
     await this.updateComplete;
 		this.dispatchEvent(new CustomEvent('click-add', options));
 	}
