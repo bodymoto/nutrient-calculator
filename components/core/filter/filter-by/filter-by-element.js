@@ -2,8 +2,9 @@ import {LitElement, html, css} from 'lit';
 
 export class FilterByElement extends LitElement {
 	static styles = css`
-		p {
-			margin: 0;
+		label,
+		input {
+			cursor: pointer;
 		}
 	`;
 
