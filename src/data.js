@@ -1,6 +1,7 @@
 export const data = [
 	{
 		"src": "./src/img/fruit.svg",
+		"style": '#b5e7a0',
 	  "group": 'fruit',
 	  "name": 'banana',
 	  "count": 0,
@@ -9,54 +10,61 @@ export const data = [
   },
   {
 		"src": "./src/img/fruit.svg",
+		"style": '#b5e7a0',
 	  "group": 'fruit',
-	  "name": 'strawberry',
+	  "name": 'straw berry',
 	  "count": 0,
 	  "carbs": 0.922,
 	  "checked": false
   },
   {
   	"src": "./src/img/fruit.svg",
+  	"style": '#b5e7a0',
     "group": 'fruit',
-    "name": 'avocado',
+    "name": 'avo cado',
     "count": 0,
     "carbs": 11.8,
     "checked": false
   },
   {
 		"src": "./src/img/vegetable.svg",
+		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'tomatoe',
+	  "name": 'toma toe',
 	  "count": 0,
 	  "carbs": 7.08,
 	  "checked": false
   },
   {
 		"src": "./src/img/vegetable.svg",
+		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'broccoli',
+	  "name": 'broc coli',
 	  "count": 0,
 	  "carbs": 10,
 	  "checked": false
   },
   {
 		"src": "./src/img/vegetable.svg",
+		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'cucumber',
+	  "name": 'cucu mber',
 	  "count": 0,
 	  "carbs": 10.9,
 	  "checked": false
   },
   {
 		"src": "./src/img/meat.svg",
+		"style": '#c94c4c',
 	  "group": 'meat',
-	  "name": 'steak tenderloin',
+	  "name": 'steak t.loin',
 	  "count": 0,
 	  "carbs": 0,
 	  "checked": false
   },
   {
 		"src": "./src/img/meat.svg",
+		"style": '#c94c4c',
 	  "group": 'meat',
 	  "name": 'chicken breast',
 	  "count": 0,
@@ -65,22 +73,25 @@ export const data = [
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#80ced6',
 	  "group": 'fish',
-	  "name": 'atlantic cod',
+	  "name": 'atl. cod',
 	  "count": 0,
 	  "carbs": 0,
 	  "checked": false
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#80ced6',
 	  "group": 'fish',
-	  "name": 'atlantic salmon',
+	  "name": 'atl. salmon',
 	  "count": 0,
 	  "carbs": 0,
 	  "checked": false
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#80ced6',
 	  "group": 'fish',
 	  "name": 'tilapia',
 	  "count": 0,
@@ -89,6 +100,7 @@ export const data = [
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#6b5b95',
 	  "group": 'shellfish',
 	  "name": 'blue crab',
 	  "count": 0,
@@ -97,6 +109,7 @@ export const data = [
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#6b5b95',
 	  "group": 'shellfish',
 	  "name": 'lobster',
 	  "count": 0,
@@ -105,6 +118,7 @@ export const data = [
   },
   {
 		"src": "./src/img/fish.svg",
+		"style": '#6b5b95',
 	  "group": 'shellfish',
 	  "name": 'blue mussel',
 	  "count": 0,
@@ -113,6 +127,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
+		"style": '#fefbd8',
 	  "group": 'dairy',
 	  "name": 'egg',
 	  "count": 0,
@@ -121,6 +136,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
+		"style": '#fefbd8',
 	  "group": 'dairy',
 	  "name": 'plain yogurt',
 	  "count": 0,
@@ -129,14 +145,16 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
+		"style": '#fefbd8',
 	  "group": 'dairy',
-	  "name": 'cottage cheese',
+	  "name": 'cott. cheese',
 	  "count": 0,
 	  "carbs": 6.68,
 	  "checked": false
   },
   {
 		"src": "./src/img/nuts.svg",
+		"style": '#8b6f47',
 	  "group": 'kernels',
 	  "name": 'almond',
 	  "count": 0,
@@ -145,16 +163,18 @@ export const data = [
   },
   {
 		"src": "./src/img/nuts.svg",
+		"style": '#8b6f47',
 	  "group": 'kernels',
-	  "name": 'peanuts',
+	  "name": 'pea nuts',
 	  "count": 0,
 	  "carbs": 23.5,
 	  "checked": false
   },
   {
 		"src": "./src/img/nuts.svg",
+		"style": '#8b6f47',
 	  "group": 'kernels',
-	  "name": 'pistachio',
+	  "name": 'pist achio',
 	  "count": 0,
 	  "carbs": 0.19,
 	  "checked": false
