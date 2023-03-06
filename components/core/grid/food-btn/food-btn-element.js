@@ -5,7 +5,7 @@ export class FoodButtonElement extends LitElement {
 		:host {
 			border: 1px solid black;
 			border-radius: 10px;
-			font-size: 14px;
+			font-size: 12px;
 			text-align: center;
 			width: 59px;
 			height: 59px;
@@ -29,9 +29,11 @@ export class FoodButtonElement extends LitElement {
 		p {
 			font-family: Andale Mono;
 			margin: auto;
+			padding: 0 4px 0 4px;
 			color: #FFFF99;
 			font-weight: 700;
 			text-shadow: -1px 2px 1px black;
+			word-break: break-word;
 		}
 	`;
 
