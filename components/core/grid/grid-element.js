@@ -15,6 +15,15 @@ export class GridElement extends LitElement {
 			height: 400px;
 			overflow: scroll;
 		}
+
+		food-btn-element {
+			box-shadow: -3px 3px black;
+		}
+
+		food-btn-element:active {
+			box-shadow: none;
+			transform: translate(-3px, 3px);
+		}
 	`;
 
 	static properties = {
