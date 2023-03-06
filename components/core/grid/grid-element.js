@@ -5,13 +5,15 @@ export class GridElement extends LitElement {
 	static styles = css`
 		:host {
 			display: flex;
-			align-content: center;
+			align-content: start;
 			justify-content: center;
 			flex-wrap: wrap;
 			gap: 10px;
 			margin: 10px;
 			padding: 10px;
 			border: 1px solid black;
+			height: 400px;
+			overflow: scroll;
 		}
 	`;
 
