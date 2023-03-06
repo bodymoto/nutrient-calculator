@@ -1,7 +1,7 @@
 export const data = [
 	{
 		"src": "./src/img/fruit.svg",
-		"style": '#b5e7a0',
+		"style": '#5b9aa0',
 	  "group": 'fruit',
 	  "name": 'banana',
 	  "count": 0,
@@ -10,7 +10,7 @@ export const data = [
   },
   {
 		"src": "./src/img/fruit.svg",
-		"style": '#b5e7a0',
+		"style": '#5b9aa0',
 	  "group": 'fruit',
 	  "name": 'straw berry',
 	  "count": 0,
@@ -19,7 +19,7 @@ export const data = [
   },
   {
   	"src": "./src/img/fruit.svg",
-  	"style": '#b5e7a0',
+  	"style": '#5b9aa0',
     "group": 'fruit',
     "name": 'avo cado',
     "count": 0,
@@ -127,7 +127,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#fefbd8',
+		"style": '#f1e3dd',
 	  "group": 'dairy',
 	  "name": 'egg',
 	  "count": 0,
@@ -136,7 +136,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#fefbd8',
+		"style": '#f1e3dd',
 	  "group": 'dairy',
 	  "name": 'plain yogurt',
 	  "count": 0,
@@ -145,7 +145,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#fefbd8',
+		"style": '#f1e3dd',
 	  "group": 'dairy',
 	  "name": 'cott. cheese',
 	  "count": 0,
