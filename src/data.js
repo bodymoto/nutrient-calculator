@@ -12,7 +12,7 @@ export const data = [
 		"src": "./src/img/fruit.svg",
 		"style": '#5b9aa0',
 	  "group": 'fruit',
-	  "name": 'straw berry',
+	  "name": 'strawberry',
 	  "count": 0,
 	  "carbs": 0.922,
 	  "checked": false
@@ -21,7 +21,7 @@ export const data = [
   	"src": "./src/img/fruit.svg",
   	"style": '#5b9aa0',
     "group": 'fruit',
-    "name": 'avo cado',
+    "name": 'avocado',
     "count": 0,
     "carbs": 11.8,
     "checked": false
@@ -30,7 +30,7 @@ export const data = [
 		"src": "./src/img/vegetable.svg",
 		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'toma toe',
+	  "name": 'tomatoe',
 	  "count": 0,
 	  "carbs": 7.08,
 	  "checked": false
@@ -39,7 +39,7 @@ export const data = [
 		"src": "./src/img/vegetable.svg",
 		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'broc coli',
+	  "name": 'broccoli',
 	  "count": 0,
 	  "carbs": 10,
 	  "checked": false
@@ -48,7 +48,7 @@ export const data = [
 		"src": "./src/img/vegetable.svg",
 		"style": '#86af49',
 	  "group": 'vegetable',
-	  "name": 'cucu mber',
+	  "name": 'cucumber',
 	  "count": 0,
 	  "carbs": 10.9,
 	  "checked": false
@@ -165,7 +165,7 @@ export const data = [
 		"src": "./src/img/nuts.svg",
 		"style": '#8b6f47',
 	  "group": 'kernels',
-	  "name": 'pea nuts',
+	  "name": 'peanuts',
 	  "count": 0,
 	  "carbs": 23.5,
 	  "checked": false
@@ -174,7 +174,7 @@ export const data = [
 		"src": "./src/img/nuts.svg",
 		"style": '#8b6f47',
 	  "group": 'kernels',
-	  "name": 'pist achio',
+	  "name": 'pistachio',
 	  "count": 0,
 	  "carbs": 0.19,
 	  "checked": false
