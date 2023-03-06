@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import {AggregateElement} from './aggregate/aggregate-element.js';
 import {ListElement} from './list/list-element.js';
-import {SearchElement} from './search/search-element.js';
+// import {SearchElement} from './search/search-element.js';
 import {FilterElement} from './filter/filter-element.js';
 import {GridElement} from './grid/grid-element.js';
 
@@ -18,28 +18,39 @@ export class CoreElement extends LitElement {
 
 	static properties = {
 		data: { type: Array },
-		searchValue: { type: String },
+		// searchValue: { type: String },
 		_filtered: { type: Array },
 		_copyValues: { type: Array },
 		_name: { type: String },
 		_group: { type: String },
-		_checked: { type: Boolean }
+		_checked: { type: Boolean },
+		_valueReset: { type: Array }
 	}
 
 	constructor() {
 		super();
 		this.data = [];
-		this.searchValue = '';
+		// this.searchValue = '';
 		this._filtered = [];
 		this._copyValues = [];
 		this._name = '';
 		this._group = '';
 		this._checked = false;
+		this._valueReset = [];
 
-		this.addEventListener('search-input', (event) => {
-			// listening to SearchElement
-			this.searchValue = event.detail.input;
+		this.addEventListener('clear-count', () => {
+			for (let value of this.data) {
+				value.count = 0;
+				value = Object.assign({}, value);
+				this._valueReset[value.name] = value;
+			}
+			this.data = Object.values(this._valueReset);
 		});
+
+		// this.addEventListener('search-input', (event) => {
+		// 	// listening to SearchElement
+		// 	this.searchValue = event.detail.input;
+		// });
 		
 		this.addEventListener('filter-event', (event) => {
 			// listening to FilterByElement
@@ -100,10 +111,10 @@ export class CoreElement extends LitElement {
 	}
 
 	render() {
+		// <search-element></search-element>
 		return html`
 			<aggregate-element .data=${this.data}></aggregate-element>
 			<list-element .data=${this.data}></list-element>
-			<search-element></search-element>
 			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
 			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
 		`;
