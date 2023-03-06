@@ -30,13 +30,13 @@ export class ListElement extends LitElement {
 		};
 	}
 
-	handleClick() {
-		for (let value of this.data) {
-			value.count = 0;
-			value = Object.assign({}, value);
-			this._valueReset[value.name] = value;
-		}
-		this.data = this._valueReset;
+	async handleClick() {
+		const options = {
+			bubbles: true,
+			composed: true
+		};
+		await this.updateComplete;
+		this.dispatchEvent(new CustomEvent('clear-count', options));
 	}
 
 	render() {
