@@ -5,16 +5,18 @@ export class FoodButtonElement extends LitElement {
 		:host {
 			border: 1px solid black;
 			border-radius: 10px;
-
 			font-size: 14px;
 			text-align: center;
 			width: 59px;
 			height: 59px;
 			cursor: pointer;
+			user-select: none;
+			transition-duration: 0.3s;
 		}
 
 		div {
 			display: flex;
+			flex-direction: column;
 			align-content: center;
 			justify-content: center;
 			padding: 0;
@@ -23,21 +25,21 @@ export class FoodButtonElement extends LitElement {
 			height: 100%;
 			border-radius: 10px;
 		}
+
 		p {
-			background-color: black;
-			box-shadow: inset 120px 120px 300px rgba(234, 244, 178, .8), inset -120px -120px 300px rgba(0, 0, 0, .8);
 			font-family: Andale Mono;
 			margin: auto;
-			color: white;
+			color: #FFFF99;
 			font-weight: 700;
-			text-shadow: .5px .5px 1px black;
+			text-shadow: -1px 2px 1px black;
 		}
 	`;
 
 	static properties = {
 		value: { type: Object },
 		name: { type: String },
-		style: { type: String }
+		style: { type: String },
+		count: { type: Number }
 	}
 
 	constructor() {
@@ -45,18 +47,21 @@ export class FoodButtonElement extends LitElement {
 		this.value = {};
 		this.name = '';
 		this.style = '';
+		this.count = 0;
 	}
 
 	willUpdate(changedProperties) {
 		this.name = this.value.name;
 		this.style = this.value.style;
+		this.count = this.value.count;
 	}
 
 	render() {
 		return html`
-		<div class="circle" style="background-color: ${this.style}">
+		<div style="background-color: ${this.style}">
 			<div>
 				<p>${this.name.toUpperCase()}</p>
+				<p>x${this.count}</p>
 			</div>
 		</div>
 		`;
