@@ -4,6 +4,8 @@ import {ItemElement} from './item/item-element.js';
 export class ListElement extends LitElement {
 	static styles = css`
 		:host {
+			height: 140px;
+			overflow: scroll;
 			margin: 10px;
 			border: 1px solid black;
 		}
