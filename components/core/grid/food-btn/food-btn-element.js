@@ -3,52 +3,61 @@ import {LitElement, html, css} from 'lit';
 export class FoodButtonElement extends LitElement {
 	static styles = css`
 		:host {
-			display: flex;
-			flex-direction: column;
-			align-content: center;
-			justify-content: center;
 			border: 1px solid black;
 			border-radius: 10px;
-			padding: 8px;
-			font-size: 12px;
+
+			font-size: 14px;
 			text-align: center;
-			width: 84px;
-			height: 84px;
+			width: 59px;
+			height: 59px;
 			cursor: pointer;
 		}
-		img {
-			margin: auto;
-			width: 32px;
-		}
-		p {
+
+		div {
+			display: flex;
+			align-content: center;
+			justify-content: center;
 			padding: 0;
 			margin: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+		}
+		p {
+			background-color: black;
+			box-shadow: inset 120px 120px 300px rgba(234, 244, 178, .8), inset -120px -120px 300px rgba(0, 0, 0, .8);
+			font-family: Andale Mono;
+			margin: auto;
+			color: white;
+			font-weight: 700;
+			text-shadow: .5px .5px 1px black;
 		}
 	`;
 
 	static properties = {
 		value: { type: Object },
 		name: { type: String },
-		src: { type: String }
+		style: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.value = {};
 		this.name = '';
-		this.src = '';
+		this.style = '';
 	}
 
 	willUpdate(changedProperties) {
 		this.name = this.value.name;
-		this.src = this.value.src;
+		this.style = this.value.style;
 	}
 
 	render() {
 		return html`
-		<div>
-			<img src=${this.src} alt=${this.name} />
-			<p>${this.name.toUpperCase()}</p>
+		<div class="circle" style="background-color: ${this.style}">
+			<div>
+				<p>${this.name.toUpperCase()}</p>
+			</div>
 		</div>
 		`;
 	}
