@@ -20,7 +20,11 @@ export class GridElement extends LitElement {
 			border: 1px solid black;
 			height: 400px;
 			overflow: auto;
-			background: linear-gradient(0.65turn, #96ceb4, #ffeead, #ffcc5c, #ff6f69);
+			background: linear-gradient(0.65turn, 
+				rgba(150, 206, 180, 0.8), 
+				rgba(255, 238, 173, 0.8), 
+				rgba(255, 204, 92, 0.8), 
+				rgba(255, 111, 105, 0.8));
 		}
 
 		food-btn-element {
