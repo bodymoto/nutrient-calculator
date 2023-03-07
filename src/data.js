@@ -127,7 +127,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#f1e3dd',
+		"style": '#D3D3D3',
 	  "group": 'dairy',
 	  "name": 'egg',
 	  "count": 0,
@@ -136,7 +136,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#f1e3dd',
+		"style": '#D3D3D3',
 	  "group": 'dairy',
 	  "name": 'plain yogurt',
 	  "count": 0,
@@ -145,7 +145,7 @@ export const data = [
   },
   {
 		"src": "./src/img/dairy.svg",
-		"style": '#f1e3dd',
+		"style": '#D3D3D3',
 	  "group": 'dairy',
 	  "name": 'cott. cheese',
 	  "count": 0,
