@@ -2,23 +2,56 @@ import {LitElement, html, css} from 'lit';
 
 export class FilterByElement extends LitElement {
 	static styles = css`
+	  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+		:host {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
 		label,
 		input {
 			cursor: pointer;
+			user-select: none;
+		}
+
+		input[type="checkbox"] {
+			appearance: none;
+			background-color: white;
+			width: 16px;
+			height: 16px;
+			border: 1px solid #FFFF99;
+			border-radius: 2px;
+		}
+
+		label {
+			padding: 6px;
+			padding-left: 0;
+			font-size: 16px;
+			font-weight: 700;
+			color: #FFFF99;
+			font-family: sans-serif;
 		}
 	`;
 
 	static properties = {
 		group: { type: String },
 		checked: { type: Boolean },
-		searchValue: { type: String }
+		style: { type: String }
+		// searchValue: { type: String }
 	}
 
 	constructor() {
 		super();
 		this.group = '';
 		this.checked = false;
-		this.searchValue = '';
+		this.style = '';
+		// this.searchValue = '';
 	}
 
 	async handleClick() {
@@ -39,17 +72,17 @@ export class FilterByElement extends LitElement {
 	}
 
 	willUpdate(changedProperties) {
-		if (changedProperties.has('searchValue')) {
-			if (this.searchValue.length) {
-				this.shadowRoot.querySelector('input').checked = false;
-			}
-		}
+		// if (changedProperties.has('searchValue')) {
+		// 	if (this.searchValue.length) {
+		// 		this.shadowRoot.querySelector('input').checked = false;
+		// 	}
+		// }
 	}
 
 	render() {
 		return html`
-			<input @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} group=${this.group}>
-			<label @click=${this.handleClick} for=${this.group}>${this.group}</label>
+			<input style="background-color: ${this.style}" @change=${this.handleChecked} type="checkbox" ?checked=${this.checked} group=${this.group}>
+			<label style="background-color: ${this.style}" @click=${this.handleClick} for=${this.group}>${this.group.toUpperCase()}</label>
 		`;
 	}
 }
