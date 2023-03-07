@@ -3,33 +3,41 @@ import {FoodButtonElement} from './food-btn/food-btn-element.js';
 
 export class GridElement extends LitElement {
 	static styles = css`
+		* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
 		:host {
 			display: flex;
 			align-content: start;
-			justify-content: center;
+			justify-content: start;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 5px;
 			margin: 10px;
-			padding: 10px;
+			padding: 10px 30px 10px 10px;
 			border: 1px solid black;
 			height: 400px;
-			overflow: scroll;
+			overflow: auto;
+			background: linear-gradient(0.65turn, #96ceb4, #ffeead, #ffcc5c, #ff6f69);
 		}
 
 		food-btn-element {
-			box-shadow: -3px 3px black;
+			box-shadow: -4px 4px black;
 		}
 
 		food-btn-element:active {
 			box-shadow: none;
+			filter: brightness(125%);
 			transform: translate(-3px, 3px);
 		}
 	`;
 
 	static properties = {
 		data: { type: Array },
-		searchData: { type: Array },
-		searchValue: { type: String },
+		// searchData: { type: Array },
+		// searchValue: { type: String },
 		_grid: { type: Array },
 		name: { type: String }
 	}
@@ -37,8 +45,8 @@ export class GridElement extends LitElement {
 	constructor() {
 		super();
 		this.data = [];
-		this.searchData = [];
-		this.searchValue = '';
+		// this.searchData = [];
+		// this.searchValue = '';
 		this._grid = [];
 		this.name = '';
 	}
@@ -48,20 +56,20 @@ export class GridElement extends LitElement {
 
 		if (changedProperties.has('searchValue')) {
 			// property set by SearchElement
-			if (!this.searchValue.length) {
-				this._grid = this.data;
-				return;
-			}
+			// if (!this.searchValue.length) {
+			// 	this._grid = this.data;
+			// 	return;
+			// }
 
-			this.searchData = [];
-			this.data.map((word) => {
-				if (word.name.includes(this.searchValue)) {
-					if(!this.searchData.includes(word)) {
-						this.searchData.push(word);
-					}
-				};
-			});
-			this._grid = this.searchData;
+			// this.searchData = [];
+			// this.data.map((word) => {
+			// 	if (word.name.includes(this.searchValue)) {
+			// 		if(!this.searchData.includes(word)) {
+			// 			this.searchData.push(word);
+			// 		}
+			// 	};
+			// });
+			// this._grid = this.searchData;
 		}
 
 		this._grid.map((value) => {
