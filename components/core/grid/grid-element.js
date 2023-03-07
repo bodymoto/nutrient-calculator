@@ -17,7 +17,7 @@ export class GridElement extends LitElement {
 			gap: 5px;
 			margin: 10px;
 			padding: 10px 30px 10px 10px;
-			border: 1px solid black;
+			border-radius: 10px;
 			height: 400px;
 			overflow: auto;
 			background: linear-gradient(0.65turn, 

@@ -3,8 +3,8 @@ import {LitElement, html, css} from 'lit';
 export class FoodButtonElement extends LitElement {
 	static styles = css`
 		:host {
-			border: 1px solid black;
-			border-radius: 10px;
+
+			border-radius: 5px;
 			font-size: 12px;
 			text-align: center;
 			width: 68px;
