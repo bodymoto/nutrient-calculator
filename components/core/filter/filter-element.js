@@ -12,11 +12,13 @@ export class FilterElement extends LitElement {
 		:host {
 			display: flex;
 			flex-wrap: wrap;
+			flex-direction: column;
 			justify-content: center;
+			gap: 6px;
+			height: 200px;
 			margin: 10px;
-			padding: 10px;
+			padding: 10px 18px;
 			border: 1px solid black;
-			background-color: black;
 		}
 	`;
 
