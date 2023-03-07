@@ -7,8 +7,8 @@ export class FoodButtonElement extends LitElement {
 			border-radius: 10px;
 			font-size: 12px;
 			text-align: center;
-			width: 59px;
-			height: 59px;
+			width: 68px;
+			height: 68px;
 			cursor: pointer;
 			user-select: none;
 			transition-duration: 0.3s;
@@ -16,24 +16,29 @@ export class FoodButtonElement extends LitElement {
 
 		div {
 			display: flex;
-			flex-direction: column;
 			align-content: center;
-			justify-content: center;
-			padding: 0;
+			flex-direction: column;
 			margin: 0;
 			width: 100%;
 			height: 100%;
 			border-radius: 10px;
 		}
 
+		.name {
+			margin-top: 10px;
+		}
+
 		p {
-			font-family: Andale Mono;
+			font-family: sans-serif;
 			margin: auto;
-			padding: 0 4px 0 4px;
 			color: #FFFF99;
 			font-weight: 700;
 			text-shadow: -1px 2px 1px black;
 			word-break: break-word;
+		}
+
+		.count {
+			font-size: 22px;
 		}
 	`;
 
@@ -62,8 +67,8 @@ export class FoodButtonElement extends LitElement {
 		return html`
 		<div style="background-color: ${this.style}">
 			<div>
-				<p>${this.name.toUpperCase()}</p>
-				<p>x${this.count}</p>
+				<p class="name">${this.name.toUpperCase()}</p>
+				<p class="count">x${this.count}</p>
 			</div>
 		</div>
 		`;
