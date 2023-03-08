@@ -14,11 +14,10 @@ export class GridElement extends LitElement {
 			align-content: start;
 			justify-content: start;
 			flex-wrap: wrap;
-			gap: 5px;
 			margin: 10px;
 			padding: 10px 30px 10px 10px;
 			border-radius: 10px;
-			height: 400px;
+			height: 300px;
 			overflow: auto;
 			background: linear-gradient(0.65turn, 
 				rgba(150, 206, 180, 0.8), 
@@ -28,13 +27,12 @@ export class GridElement extends LitElement {
 		}
 
 		food-btn-element {
-			box-shadow: -4px 4px black;
+			border: 1px solid white;
 		}
 
 		food-btn-element:active {
 			box-shadow: none;
-			filter: brightness(125%);
-			transform: translate(-3px, 3px);
+			filter: brightness(145%);
 		}
 	`;
 
