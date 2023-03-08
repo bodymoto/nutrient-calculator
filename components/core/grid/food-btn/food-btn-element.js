@@ -3,7 +3,6 @@ import {LitElement, html, css} from 'lit';
 export class FoodButtonElement extends LitElement {
 	static styles = css`
 		:host {
-
 			border-radius: 5px;
 			font-size: 12px;
 			text-align: center;
@@ -16,7 +15,6 @@ export class FoodButtonElement extends LitElement {
 
 		div {
 			display: flex;
-			align-content: center;
 			flex-direction: column;
 			margin: 0;
 			width: 100%;
