@@ -2,12 +2,17 @@ import {LitElement, html, css} from 'lit';
 
 export class FoodButtonElement extends LitElement {
 	static styles = css`
+		* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
 		:host {
-			border-radius: 5px;
-			font-size: 12px;
+			font-size: 13px;
 			text-align: center;
-			width: 68px;
-			height: 68px;
+			width: 76px;
+			height: 76px;
 			cursor: pointer;
 			user-select: none;
 			transition-duration: 0.3s;
@@ -19,24 +24,21 @@ export class FoodButtonElement extends LitElement {
 			margin: 0;
 			width: 100%;
 			height: 100%;
-			border-radius: 10px;
-		}
-
-		.name {
-			margin-top: 10px;
 		}
 
 		p {
-			font-family: sans-serif;
-			margin: auto;
-			color: #FFFF99;
+			font-family: Trebuchet MS;
 			font-weight: 700;
+			padding: 0 4px;
+			color: #FFFF99;
 			text-shadow: -1px 2px 1px black;
 			word-break: break-word;
 		}
 
 		.count {
-			font-size: 22px;
+			font-family: Georgia;
+			font-size: 20px;
+			margin: 7px;
 		}
 	`;
 
@@ -65,8 +67,8 @@ export class FoodButtonElement extends LitElement {
 		return html`
 		<div style="background-color: ${this.style}">
 			<div>
-				<p class="name">${this.name.toUpperCase()}</p>
-				<p class="count">x${this.count}</p>
+				<p class="count">${this.count}</p>
+				<p>${this.name.toUpperCase()}</p>
 			</div>
 		</div>
 		`;
