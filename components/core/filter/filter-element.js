@@ -16,9 +16,7 @@ export class FilterElement extends LitElement {
 			justify-content: center;
 			gap: 6px;
 			height: 200px;
-			margin: 10px;
-			padding: 10px 12px;
-			background-color: #FAF9F6;
+			padding: 10px 16px;
 			border-radius: 10px;
 		}
 	`;
