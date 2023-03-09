@@ -10,12 +10,13 @@ export class ListElement extends LitElement {
 		}
 
 		:host {
-			margin: 10px;
+			background-color: #FAF9F6;
 		}
 
 		.item {
 			font-family: Trebuchet MS;
-			border: 1px solid black;
+			border-top: 1px solid black;
+		 	border-bottom: 1px solid black;
 			height: 140px;
 			overflow: auto;
 		}
@@ -39,6 +40,11 @@ export class ListElement extends LitElement {
 				rgba(255, 238, 173, 0.8), 
 				rgba(255, 204, 92, 0.8), 
 				rgba(255, 111, 105, 0.8));
+			transition-duration: 300ms;
+		}
+
+		button:active {
+			filter: brightness(150%);
 		}
 	`;
 
