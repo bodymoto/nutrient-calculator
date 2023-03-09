@@ -2,15 +2,25 @@ import {LitElement, html, css} from 'lit';
 
 export class ItemElement extends LitElement {
 	static styles = css`
-		 div {
-		 	margin: 2px;
-		 }
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			text-transform: uppercase;
+			font-family: Trebuchet MS;
+			font-size: 16px;
+			height: 32px;
+		 	margin: 2px 40px 2px 2px;
+		 	padding: 2px 4px;
+		 	border: 1px solid black;
+		}
 	`;
 	
 	static properties = {
 		value: { type: Object },
 		name: { type: String },
-		_count: { type: Number }
+		_count: { type: Number },
+		_portion: { type: Number }
 	}
 
 	constructor() {
@@ -18,6 +28,7 @@ export class ItemElement extends LitElement {
 		this.value = {};
 		this.name = '';
 		this._count = 0;
+		this._portion = 0;
 	}
 
 
@@ -35,11 +46,16 @@ export class ItemElement extends LitElement {
 	willUpdate(changedProperties) {
 		this.name = this.value.name;
 		this._count = this.value.count;
+		this._portion = (this._count * this.value.portion);
 	}
 
 	render() {
 		return html`
-			<div @click=${this.handleClick}>${this.name}, x${this._count}</div>
+			<div @click=${this.handleClick}>
+				<p>${this._count}</p>
+				<p>${this.name}</p>
+				<p>portion: ${this._portion}g</p>
+			</div>
 		`;
 	}
 }
