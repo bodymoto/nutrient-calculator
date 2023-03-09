@@ -39,9 +39,10 @@ export class FilterByElement extends LitElement {
 			align-items: center;
 			text-shadow: -1px 2px 1px black;
 			height: 32px;
-			padding: 0 6px;
+			padding: 0 16px;
 			margin: 4px 6px;
-			font-size: 20px;
+			font-size: 16px;
+			letter-spacing: 0.7px;
 			font-weight: 700;
 			color: #FFFF99;
 			font-family: sans-serif;
