@@ -6,19 +6,33 @@ export class ItemElement extends LitElement {
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
-			text-transform: uppercase;
+			text-shadow: -1px 2px 1px black;
+			letter-spacing: 1px;
 			font-family: Trebuchet MS;
 			font-size: 16px;
+			font-weight: 700;
+			color: white;
 			height: 32px;
-		 	margin: 2px 40px 2px 2px;
+		 	margin: 2px 55px 2px 15px;
 		 	padding: 2px 4px;
-		 	border: 1px solid black;
+		 	border-top: 1px solid black;
+		 	border-bottom: 1px solid black;
+		 	box-shadow: inset 40px 40px 5px rgba(0,0,0,0.15);
+		}
+
+		div:active {
+			filter: brightness(140%);
+		}
+
+		.name {
+			text-transform: capitalize;
 		}
 	`;
 	
 	static properties = {
 		value: { type: Object },
 		name: { type: String },
+		_style: { type: String },
 		_count: { type: Number },
 		_portion: { type: Number }
 	}
@@ -27,6 +41,7 @@ export class ItemElement extends LitElement {
 		super();
 		this.value = {};
 		this.name = '';
+		this._style = '';
 		this._count = 0;
 		this._portion = 0;
 	}
@@ -45,16 +60,17 @@ export class ItemElement extends LitElement {
 
 	willUpdate(changedProperties) {
 		this.name = this.value.name;
+		this._style = this.value.style;
 		this._count = this.value.count;
 		this._portion = (this._count * this.value.portion);
 	}
 
 	render() {
 		return html`
-			<div @click=${this.handleClick}>
+			<div @click=${this.handleClick} style="background-color: ${this._style}">
 				<p>${this._count}</p>
-				<p>${this.name}</p>
-				<p>portion: ${this._portion}g</p>
+				<p class="name">${this.name}</p>
+				<p>Portion: ${this._portion}g</p>
 			</div>
 		`;
 	}
