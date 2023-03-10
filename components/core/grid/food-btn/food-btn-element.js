@@ -9,7 +9,6 @@ export class FoodButtonElement extends LitElement {
     }
 
 		:host {
-			font-size: 12px;
 			text-align: center;
 			width: 78px;
 			height: 78px;
@@ -28,6 +27,7 @@ export class FoodButtonElement extends LitElement {
 
 		p {
 			font-family: Trebuchet MS;
+			font-size: 12px;
 			font-weight: 700;
 			padding: 0 6px;
 			color: #FFFF99;
