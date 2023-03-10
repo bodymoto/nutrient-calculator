@@ -15,7 +15,7 @@ export class FoodButtonElement extends LitElement {
 			height: 78px;
 			cursor: pointer;
 			user-select: none;
-			transition-duration: 0.3s;
+			transition-duration: 300ms;
 		}
 
 		div {
