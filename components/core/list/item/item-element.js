@@ -3,6 +3,8 @@ import {LitElement, html, css} from 'lit';
 export class ItemElement extends LitElement {
 	static styles = css`
 		div {
+			cursor: pointer;
+			user-select: none;
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
