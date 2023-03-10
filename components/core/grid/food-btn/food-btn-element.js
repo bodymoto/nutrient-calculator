@@ -9,10 +9,10 @@ export class FoodButtonElement extends LitElement {
     }
 
 		:host {
-			font-size: 13px;
+			font-size: 12px;
 			text-align: center;
-			width: 76px;
-			height: 76px;
+			width: 78px;
+			height: 78px;
 			cursor: pointer;
 			user-select: none;
 			transition-duration: 0.3s;
@@ -21,15 +21,15 @@ export class FoodButtonElement extends LitElement {
 		div {
 			display: flex;
 			flex-direction: column;
-			margin: 0;
 			width: 100%;
 			height: 100%;
+			box-shadow: inset 5px 5px white, inset -5px -5px white;
 		}
 
 		p {
 			font-family: Trebuchet MS;
 			font-weight: 700;
-			padding: 0 4px;
+			padding: 0 6px;
 			color: #FFFF99;
 			text-shadow: -1px 2px 1px black;
 			word-break: break-word;
@@ -37,7 +37,7 @@ export class FoodButtonElement extends LitElement {
 
 		.count {
 			font-family: Georgia;
-			font-size: 20px;
+			font-size: 23px;
 			margin: 7px;
 		}
 	`;
