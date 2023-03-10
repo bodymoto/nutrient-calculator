@@ -17,7 +17,6 @@ export class FilterElement extends LitElement {
 			gap: 6px;
 			height: 200px;
 			padding: 10px 16px;
-			border-radius: 10px;
 		}
 	`;
 
