@@ -22,6 +22,7 @@ export class ListElement extends LitElement {
 			display: flex;
 			align-content: center;
 			justify-content: center;
+			height: 32px;
 		}
 
 		button {
@@ -29,19 +30,16 @@ export class ListElement extends LitElement {
 			font-family: Trebuchet MS;
 			font-weight: 700;
 			letter-spacing: 1px;
-			padding: 10px 32px;
+			width: 100%;
+			height: 100%;
 			margin: 5px;
 			border-radius: 10px;
-			background: linear-gradient(0.55turn, 
-				rgba(150, 206, 180, 0.8), 
-				rgba(255, 238, 173, 0.8), 
-				rgba(255, 204, 92, 0.8), 
-				rgba(255, 111, 105, 0.8));
+			background:	rgba(150, 206, 180, 0.8);
 			transition-duration: 300ms;
 		}
 
 		button:active {
-			filter: brightness(150%);
+			filter: brightness(140%);
 		}
 	`;
 
