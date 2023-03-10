@@ -13,6 +13,7 @@ export class GridElement extends LitElement {
 			display: flex;
 			align-content: start;
 			justify-content: start;
+			gap: 1px;
 			flex-wrap: wrap;
 			padding: 0 30px;
 			height: 300px;
@@ -20,11 +21,10 @@ export class GridElement extends LitElement {
 		}
 
 		food-btn-element {
-			border: 1px solid white;
+			border: 1px solid #FAF9F6;
 		}
 
 		food-btn-element:active {
-			box-shadow: none;
 			filter: brightness(145%);
 		}
 	`;
