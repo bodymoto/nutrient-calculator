@@ -1,7 +1,7 @@
 export const data = [
 	// https://fdc.nal.usda.gov/fdc-app.html#/
 
-	/*
+/*
 	{
 	  group: "",
 		style: "#",
@@ -26,7 +26,8 @@ export const data = [
 	  vita_b6: ,
 	  cholesterol: 
   },
-	*/
+*/
+
 	{
 	  group: "fruit",
 		style: "#5b9aa0",
