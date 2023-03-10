@@ -26,6 +26,7 @@ export class ListElement extends LitElement {
 		}
 
 		button {
+			cursor: pointer;
 			text-transform: uppercase;
 			font-family: Trebuchet MS;
 			font-weight: 700;
