@@ -9,16 +9,13 @@ export class ListElement extends LitElement {
 			border-sizing: border-box;
 		}
 
-		:host {
-			background-color: #FAF9F6;
-		}
-
 		.item {
 			font-family: Trebuchet MS;
 			border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
 			height: 140px;
 			overflow: auto;
+			background-color: #FAF9F6;
 		}
 
 		.button {
