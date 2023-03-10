@@ -15,7 +15,7 @@ export class GridElement extends LitElement {
 			justify-content: start;
 			gap: 1px;
 			flex-wrap: wrap;
-			padding: 0 30px;
+			padding: 0 22.5px;
 			height: 300px;
 			overflow: auto;
 		}
