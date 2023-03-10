@@ -32,6 +32,7 @@ export class FilterByElement extends LitElement {
 
 		input[type="checkbox"]:checked {
 			box-shadow: inset 0 0 0 6px white, inset 0 0 0 16px black;
+			border: 2px solid #fff;
 		}
 
 		label {
