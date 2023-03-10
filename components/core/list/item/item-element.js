@@ -70,7 +70,7 @@ export class ItemElement extends LitElement {
 			<div @click=${this.handleClick} style="background-color: ${this._style}">
 				<p>${this._count}</p>
 				<p class="name">${this.name}</p>
-				<p>Portion: ${this._portion}g</p>
+				<p>Portion: ${this._portion.toFixed(1)}g</p>
 			</div>
 		`;
 	}
