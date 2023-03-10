@@ -13,6 +13,10 @@ export class AggregateElement extends LitElement {
 			border: 1px solid black;
 		}
 
+		p {
+			font-size: 22px;
+		}
+
 		.button {
 			display: flex;
 			align-content: center;
@@ -21,6 +25,8 @@ export class AggregateElement extends LitElement {
 
 		button {
 			text-transform: uppercase;
+			cursor: pointer;
+			user-select: none;
 			font-family: Trebuchet MS;
 			font-weight: 700;
 			letter-spacing: 1px;
