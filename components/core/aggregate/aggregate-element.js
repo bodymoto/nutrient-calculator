@@ -19,8 +19,6 @@ export class AggregateElement extends LitElement {
 		this._totalcarbs = null;
 	}
 
-	// take totals and display them based on their counts
-
 	button() {
 		this._totalcarbs = null;
 		this.data.forEach((object) => {
