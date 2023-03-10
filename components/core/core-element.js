@@ -13,6 +13,7 @@ export class CoreElement extends LitElement {
 	  	align-content: center;
 	  	justify-content: center;
 	  	flex-direction: column;
+	  	gap: 25px;
 	  }
 	`;
 
