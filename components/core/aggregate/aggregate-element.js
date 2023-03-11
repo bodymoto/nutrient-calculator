@@ -9,12 +9,15 @@ export class AggregateElement extends LitElement {
 		}
 
 		:host {
+
 			margin: 10px;
 			border: 1px solid black;
 		}
 
 		p {
-			font-size: 22px;
+			font-size: 16px;
+			font-family: Trebuchet MS;
+			padding: 1px 4px;
 		}
 
 		.button {
