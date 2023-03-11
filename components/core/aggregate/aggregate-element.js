@@ -9,15 +9,32 @@ export class AggregateElement extends LitElement {
 		}
 
 		:host {
-
 			margin: 10px;
 			border: 1px solid black;
+		}
+
+		.row {
+			display: flex;
+  		flex-direction: row;
+  		flex-wrap: wrap;
+  		width: 100%;
+		}
+
+		.column {
+			display: flex;
+  		flex-direction: column;
+  		flex-basis: 100%;
+  		flex: 1;
+  		margin: auto;
 		}
 
 		p {
 			font-size: 16px;
 			font-family: Trebuchet MS;
-			padding: 1px 4px;
+			border: 1px solid black;
+			padding: 5px 5px 0 5px;
+			margin: 5px auto;
+			width: 140px;
 		}
 
 		.button {
@@ -136,22 +153,51 @@ export class AggregateElement extends LitElement {
 
 	render() {
 		return html`
-			<p>Carbs: ${this._carbs.toFixed(1)}g</p>
-			<p>Net Carbs: ${this._netCarbs.toFixed(1)}g</p>
-			<p>Proteins: ${this._protein.toFixed(1)}g</p>
-			<p>Cholesterol: ${this._cholesterol.toFixed(1)}g</p>
-			<p>Fats: ${this._fat.toFixed(1)}g</p>
-			<p>Fiber: ${this._fiber.toFixed(1)}g</p>
-			<p>Sugars: ${this._sugars.toFixed(1)}g</p>
-			<p>Calcium: ${this._calcium.toFixed(1)}g</p>
-			<p>Iron: ${this._iron.toFixed(1)}g</p>
-			<p>Magnesium: ${this._magnesium.toFixed(1)}g</p>
-			<p>Phosphorus: ${this._phosphorus.toFixed(1)}g</p>
-			<p>Potassium: ${this._potassium.toFixed(1)}g</p>
-			<p>Sodium: ${this._sodium.toFixed(1)}g</p>
-			<p>Vitamin C: ${this._vitaC.toFixed(1)}g</p>
-			<p>Vitamin B6: ${this._vitaB6.toFixed(1)}g</p>
-			<p>Water: ${this._water.toFixed(1)}g</p>
+			<div class="row">
+				<div class="column">
+					<p>Carbs:</p>
+					<p>Net Carbs:</p>
+					<p>Proteins:</p>
+					<p>Cholesterol:</p>
+					<p>Fats:</p>
+					<p>Fiber:</p>
+					<p>Sugars:</p>
+					<p>Calcium:</p>
+				</div>
+
+				<div class="column">
+					<p>${this._carbs.toFixed(1)}g</p>
+					<p>${this._netCarbs.toFixed(1)}g</p>
+					<p>${this._protein.toFixed(1)}g</p>
+					<p>${this._cholesterol.toFixed(1)}g</p>
+					<p>${this._fat.toFixed(1)}g</p>
+					<p>${this._fiber.toFixed(1)}g</p>
+					<p>${this._sugars.toFixed(1)}g</p>
+					<p>${this._calcium.toFixed(1)}g</p>
+				</div>
+
+				<div class="column">
+					<p>Iron:</p>
+					<p>Magnesium:</p>
+					<p>Phosphorus:</p>
+					<p>Potassium:</p>
+					<p>Sodium:</p>
+					<p>Vitamin C:</p>
+					<p>Vitamin B6:</p>
+					<p>Water:</p>
+				</div>
+
+				<div class="column">
+					<p>${this._iron.toFixed(1)}g</p>
+					<p>${this._magnesium.toFixed(1)}g</p>
+					<p>${this._phosphorus.toFixed(1)}g</p>
+					<p>${this._potassium.toFixed(1)}g</p>
+					<p>${this._sodium.toFixed(1)}g</p>
+					<p>${this._vitaC.toFixed(1)}g</p>
+					<p>${this._vitaB6.toFixed(1)}g</p>
+					<p>${this._water.toFixed(1)}g</p>
+				</div>
+			</div>
 
 			<div class="button">
 				<button @click=${this.button}>reveal nutritional value</button>
