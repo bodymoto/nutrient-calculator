@@ -14,6 +14,7 @@ export class CoreElement extends LitElement {
 	  	justify-content: center;
 	  	flex-direction: column;
 	  	gap: 25px;
+	  	border: 1px solid black;
 	  }
 	`;
 
