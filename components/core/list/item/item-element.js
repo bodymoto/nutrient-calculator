@@ -7,23 +7,37 @@ export class ItemElement extends LitElement {
 			user-select: none;
 			display: flex;
 			align-items: center;
-			justify-content: space-around;
 			text-shadow: -1px 2px 1px black;
 			letter-spacing: 1px;
 			font-family: Trebuchet MS;
-			font-size: 16px;
+			font-size: 12px;
 			font-weight: 700;
 			color: white;
 			height: 32px;
-		 	margin: 2px 55px 2px 15px;
+		 	margin: 2px 15px 2px 1px;
 		 	padding: 2px 4px;
 		 	border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
 		 	box-shadow: inset 40px 40px 5px rgba(0,0,0,0.15);
+		 	border-radius: 10px 0 10px 0;
 		}
 
 		div:active {
 			filter: brightness(140%);
+		}
+		 p {
+		 	margin: auto;
+		 }
+
+		.count,
+		.portion,
+		.name {
+			margin: 10px;
+		}
+
+		.count,
+		.name {
+			font-size: 16px
 		}
 
 		.name {
@@ -73,10 +87,10 @@ export class ItemElement extends LitElement {
 	render() {
 		return html`
 			<div @click=${this.handleClick} style="background-color: ${this._style}">
-				<p>${this._count}</p>
+				<p class="count">${this._count}</p>
 				<p class="name">${this.name}</p>
 				<p>${this._comment}</p>
-				<p>${this._portion.toFixed(1)}g</p>
+				<p class="portion">${this._portion.toFixed(1)}g</p>
 			</div>
 		`;
 	}
