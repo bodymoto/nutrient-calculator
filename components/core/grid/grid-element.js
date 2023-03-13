@@ -13,9 +13,8 @@ export class GridElement extends LitElement {
 			display: flex;
 			align-content: start;
 			justify-content: start;
-			gap: 1px;
 			flex-wrap: wrap;
-			padding: 0 22.5px;
+			padding: 0 10px;
 			height: 420px;
 			overflow: auto;
 		}
