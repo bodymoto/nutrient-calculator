@@ -23,6 +23,7 @@ export class FilterByElement extends LitElement {
 
 		input[type="checkbox"] {
       appearance: none;
+      border-radius: 5px;
 		  background-color: #fff;
 			width: 32px;
 			height: 32px;
@@ -41,9 +42,9 @@ export class FilterByElement extends LitElement {
 			text-shadow: -1px 2px 1px black;
 			height: 32px;
 			padding: 0 16px;
-			margin: 4px 6px;
+			margin: 4px;
 			font-size: 16px;
-			letter-spacing: 0.7px;
+			letter-spacing: 0.5px;
 			font-weight: 700;
 			color: #FFFF99;
 			font-family: sans-serif;
