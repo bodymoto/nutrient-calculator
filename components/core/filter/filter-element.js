@@ -15,7 +15,7 @@ export class FilterElement extends LitElement {
 			flex-direction: column;
 			justify-content: center;
 			gap: 6px;
-			height: 200px;
+			height: 270px;
 			padding: 10px 16px;
 		}
 	`;
@@ -59,7 +59,6 @@ export class FilterElement extends LitElement {
 				return this._dataStyles.indexOf(element) === index;
 			});
 		}
-
 		// if (changedProperties.has('searchValue')) {
 		// 	if (this.searchValue.length) {
 		// 		this.data.map((object) => object.checked = false);
