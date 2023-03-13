@@ -2179,7 +2179,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "cream cheese",
 	  count: 0,
 	  checked: false,
@@ -2204,7 +2204,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "half & half",
 	  count: 0,
 	  checked: false,
@@ -2229,7 +2229,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "sour cream",
 	  count: 0,
 	  checked: false,
@@ -2254,7 +2254,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "egg",
 	  count: 0,
 	  checked: false,
@@ -2279,7 +2279,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "plain yogurt",
 	  count: 0,
 	  checked: false,
@@ -2304,7 +2304,7 @@ export const data = [
   },
   {
 	  group: "dairy",
-		style: "#D3D3D3",
+		style: "#ada397",
 	  name: "cottage cheese",
 	  count: 0,
 	  checked: false,
