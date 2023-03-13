@@ -430,7 +430,7 @@ export const data = [
   {
 	  group: "vegetable",
 		style: "#86af49",
-	  name: "green bell pepper",
+	  name: "gr. bell pepper",
 	  count: 0,
 	  checked: false,
 	  fdc_id: 2258588,
@@ -455,7 +455,7 @@ export const data = [
   {
 	  group: "vegetable",
 		style: "#86af49",
-	  name: "yellow bell pepper",
+	  name: "ye. bell pepper",
 	  count: 0,
 	  checked: false,
 	  fdc_id: 2258589,
@@ -755,11 +755,11 @@ export const data = [
   {
 	  group: "vegetable",
 		style: "#86af49",
-	  name: "portabella mushroom",
+	  name: "portabella",
 	  count: 0,
 	  checked: false,
 	  fdc_id: 170143,
-	  comment: "diced, cup",
+	  comment: "cup, diced mushroom",
 	  portion: 86,
 	  water: 79.8,
 	  protein: 1.82,
@@ -1005,11 +1005,11 @@ export const data = [
   {
 	  group: "vegetable",
 		style: "#86af49",
-	  name: "yellow summer squash",
+	  name: "yellow squash",
 	  count: 0,
 	  checked: false,
 	  fdc_id: 2345327,
-	  comment: "cup",
+	  comment: "cup, summer",
 	  portion: 115,
 	  water: 108,
 	  protein: 1.16,
@@ -2404,7 +2404,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "fresh coconut",
 	  count: 0,
 	  checked: false,
@@ -2429,7 +2429,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "walnut",
 	  count: 0,
 	  checked: false,
@@ -2454,7 +2454,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "sunflower seed",
 	  count: 0,
 	  checked: false,
@@ -2479,7 +2479,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "sesame seeds",
 	  count: 0,
 	  checked: false,
@@ -2504,7 +2504,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "pumpkin seeds",
 	  count: 0,
 	  checked: false,
@@ -2529,7 +2529,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "poppy seeds",
 	  count: 0,
 	  checked: false,
@@ -2554,7 +2554,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "pine nut",
 	  count: 0,
 	  checked: false,
@@ -2579,7 +2579,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "pecan",
 	  count: 0,
 	  checked: false,
@@ -2604,7 +2604,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "macadamia",
 	  count: 0,
 	  checked: false,
@@ -2629,7 +2629,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "hemp seeds",
 	  count: 0,
 	  checked: false,
@@ -2654,7 +2654,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "hazelnut",
 	  count: 0,
 	  checked: false,
@@ -2679,7 +2679,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "flax seeds",
 	  count: 0,
 	  checked: false,
@@ -2704,7 +2704,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "chia seeds",
 	  count: 0,
 	  checked: false,
@@ -2729,7 +2729,7 @@ export const data = [
   },
   {
 	  group: "kernels",
-		style: "#5b9aa0",
+		style: "#8b6f47",
 	  name: "brazil nut",
 	  count: 0,
 	  checked: false,
@@ -3155,7 +3155,7 @@ export const data = [
   {
 	  group: "sweets",
 		style: "#ffb6b9",
-	  name: "dry powder cocoa",
+	  name: "powder cocoa",
 	  count: 0,
 	  checked: false,
 	  fdc_id: 169593,
