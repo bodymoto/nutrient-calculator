@@ -13,9 +13,10 @@ export class ListElement extends LitElement {
 			font-family: Trebuchet MS;
 			border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
-			height: 340px;
+			height: 260px;
 			overflow: auto;
-			background-color: #FAF9F6;
+			background-color: #96ceb4;
+			background-image: linear-gradient(43deg, #96ceb4 0%, #ffeead 36%, #ffcc5c 61%, #ff6f69 100%);
 		}
 
 		.button {
