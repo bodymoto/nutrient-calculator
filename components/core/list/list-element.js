@@ -1,6 +1,5 @@
 import {LitElement, html, css} from 'lit';
 import {ItemElement} from './item/item-element.js';
-import {AddBtnElement} from './add-btn/add-btn-element.js';
 
 export class ListElement extends LitElement {
 	static styles = css`
@@ -24,11 +23,6 @@ export class ListElement extends LitElement {
 			align-content: center;
 			justify-content: center;
 			height: 32px;
-		}
-
-		.add {
-			width: 30px;
-			height: 30px;
 		}
 
 		button {
@@ -87,7 +81,6 @@ export class ListElement extends LitElement {
 					return;
 				}
 				return html`
-					<add-btn-element name=${value.name}></add-btn-element>
 					<item-element .value=${value}></item-element>
 				`
 			})
