@@ -14,9 +14,9 @@ export class FilterElement extends LitElement {
 			flex-wrap: wrap;
 			flex-direction: column;
 			justify-content: center;
-			gap: 6px;
+			gap: 4px 0;
 			height: 270px;
-			padding: 10px 16px;
+			padding: 10px 12px;
 		}
 	`;
 
