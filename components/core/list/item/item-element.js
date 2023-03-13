@@ -36,7 +36,8 @@ export class ItemElement extends LitElement {
 		name: { type: String },
 		_style: { type: String },
 		_count: { type: Number },
-		_portion: { type: Number }
+		_portion: { type: Number },
+		_comment: { type: String }
 	}
 
 	constructor() {
@@ -46,6 +47,7 @@ export class ItemElement extends LitElement {
 		this._style = '';
 		this._count = 0;
 		this._portion = 0;
+		this._comment = '';
 	}
 
 
@@ -64,6 +66,7 @@ export class ItemElement extends LitElement {
 		this.name = this.value.name;
 		this._style = this.value.style;
 		this._count = this.value.count;
+		this._comment = this.value.comment;
 		this._portion = (this._count * this.value.portion);
 	}
 
@@ -72,7 +75,8 @@ export class ItemElement extends LitElement {
 			<div @click=${this.handleClick} style="background-color: ${this._style}">
 				<p>${this._count}</p>
 				<p class="name">${this.name}</p>
-				<p>Portion: ${this._portion.toFixed(1)}g</p>
+				<p>${this._comment}</p>
+				<p>${this._portion.toFixed(1)}g</p>
 			</div>
 		`;
 	}
