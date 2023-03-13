@@ -112,12 +112,12 @@ export class CoreElement extends LitElement {
 		};
 	}
 
+			// <aggregate-element .data=${this.data}></aggregate-element>
 	render() {
 		// <search-element></search-element>
 		return html`
-			<aggregate-element .data=${this.data}></aggregate-element>
-			<list-element .data=${this.data}></list-element>
 			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
+			<list-element .data=${this.data}></list-element>
 			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
 		`;
 	}
