@@ -10,14 +10,27 @@ export class FilterElement extends LitElement {
     }
     
 		:host {
+			height: 300px;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
-			justify-content: center;
-			gap: 4px 0;
-			height: 270px;
-			padding: 10px 12px;
+			align-content: start;
+			gap: 8px 0;
+			padding: 2px 12px 30px 12px;
 		}
+
+		div {
+			display: block;
+		}
+
+	  p {
+	  	background-color: #3e3e42;
+	  	clip-path: polygon(97% 0, 100% 50%, 97% 100%, 0 100%, 0 0);
+	  	color: #fff;
+	  	font-size: 14px;
+	  	padding: 5px 15px;
+	  	letter-spacing: 1px;
+	  }
 	`;
 
 	static properties = {
