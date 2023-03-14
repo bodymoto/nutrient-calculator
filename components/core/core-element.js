@@ -1,10 +1,12 @@
 import {LitElement, html, css} from 'lit';
-import {AggregateElement} from './aggregate/aggregate-element.js';
-import {ListElement} from './list/list-element.js';
-// import {SearchElement} from './search/search-element.js';
+import {FilterHeadElement} from './filter/filter-head-element.js';
 import {FilterElement} from './filter/filter-element.js';
+import {GridHeadElement} from './grid/grid-head-element.js';
 import {GridElement} from './grid/grid-element.js';
+import {ListElement} from './list/list-element.js';
+import {AggregateElement} from './aggregate/aggregate-element.js';
 
+// import {SearchElement} from './search/search-element.js';
 
 export class CoreElement extends LitElement {
 	static styles = css`
@@ -13,8 +15,6 @@ export class CoreElement extends LitElement {
 	  	align-content: center;
 	  	justify-content: center;
 	  	flex-direction: column;
-	  	gap: 25px;
-	  	border: 1px solid black;
 	  }
 	`;
 
@@ -115,10 +115,15 @@ export class CoreElement extends LitElement {
 	render() {
 		// <search-element></search-element>
 		return html`
-			<aggregate-element .data=${this.data}></aggregate-element>
+			<filter-head-element></filter-head-element>
 			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
-			<list-element .data=${this.data}></list-element>
+
+			<grid-head-element></grid-head-element>
 			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
+
+			<list-element .data=${this.data}></list-element>
+
+			<aggregate-element .data=${this.data}></aggregate-element>
 		`;
 	}
 }
