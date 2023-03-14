@@ -14,13 +14,16 @@ export class GridElement extends LitElement {
 			align-content: start;
 			justify-content: start;
 			flex-wrap: wrap;
-			padding: 0 10px;
-			height: 420px;
+			padding: 0 5px 5px 5px;
+			margin: 0 30px 15px 0;
+			height: 318px;
 			overflow: auto;
+			background-color: #fff;
+			gap: 1px;
 		}
 
 		food-btn-element {
-			border: 1px solid #FAF9F6;
+			border: 0.5px solid #3e3e42;
 		}
 
 		food-btn-element:active {
