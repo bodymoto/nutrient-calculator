@@ -19,15 +19,15 @@ export class FoodButtonElement extends LitElement {
 
 		div {
 			display: flex;
-			border-radius: 10px;
+			border-radius: 5px;
 			flex-direction: column;
 			width: 100%;
 			height: 100%;
-			box-shadow: inset 5px 5px white, inset -5px -5px white;
+			box-shadow: inset 2.5px 2.5px #3e3e42, inset -2.5px -2.5px #3e3e42;
 		}
 
 		p {
-			font-family: Trebuchet MS;
+			font-family: Trebuchet MS, Tahoma, sans-serif;
 			font-size: 12px;
 			font-weight: 700;
 			padding: 0 6px;
@@ -37,7 +37,7 @@ export class FoodButtonElement extends LitElement {
 		}
 
 		.count {
-			font-family: Georgia;
+			font-family: Georgia, serif;
 			font-size: 23px;
 			margin: 7px;
 		}
