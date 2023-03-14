@@ -7,19 +7,18 @@ export class ItemElement extends LitElement {
 			user-select: none;
 			display: flex;
 			align-items: center;
-			text-shadow: -1px 2px 1px black;
+			text-shadow: -1px 3px 1px black;
 			letter-spacing: 1px;
-			font-family: Trebuchet MS;
 			font-size: 12px;
 			font-weight: 700;
 			color: white;
-			height: 32px;
-		 	margin: 2px 15px 2px 1px;
+			height: 42px;
+		 	margin: 2px 8px 3px 2px;
 		 	padding: 2px 4px;
 		 	border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
 		 	box-shadow: inset 40px 40px 5px rgba(0,0,0,0.15);
-		 	border-radius: 10px 0 10px 0;
+		 	border-radius: 10px 0;
 		}
 
 		div:active {
@@ -89,7 +88,7 @@ export class ItemElement extends LitElement {
 			<div @click=${this.handleClick} style="background-color: ${this._style}">
 				<p class="count">${this._count}</p>
 				<p class="name">${this.name}</p>
-				<p>${this._comment}</p>
+				<p>${this._count}x ${this._comment}</p>
 				<p class="portion">${this._portion.toFixed(1)}g</p>
 			</div>
 		`;
