@@ -9,34 +9,51 @@ export class ListElement extends LitElement {
 			border-sizing: border-box;
 		}
 
-		.item {
-			font-family: Trebuchet MS;
-			border-top: 1px solid black;
-		 	border-bottom: 1px solid black;
-			height: 260px;
-			overflow: auto;
+		:host {
 			background-color: #96ceb4;
-			background-image: linear-gradient(43deg, #96ceb4 0%, #ffeead 36%, #ffcc5c 61%, #ff6f69 100%);
+			background: linear-gradient(0.55turn, 
+				rgba(150, 206, 180, 0.8), 
+				rgba(255, 238, 173, 0.8), 
+				rgba(255, 204, 92, 0.8), 
+				rgba(255, 111, 105, 0.8));
+			user-select: none;
+			font-family: Trebuchet MS, Tahoma, sans-serif;
+		}
+
+		.item {
+			background: rgba(0, 0, 0, 0.2);
+			height: 232px;
+			margin: 0 7px 10px 7px;
+			overflow: auto;
+			border-radius: 5px;
+		}
+
+		p {
+			border: 1px solid white;
+			border-radius: 10px 0;
+	  	background-color: #3e3e42;
+			font-size: 12px;
+	  	color: #fff;
+			padding: 5px 15px;
+			margin: 15px 30px 2px 7px;
+	  	letter-spacing: 1px;
 		}
 
 		.button {
 			display: flex;
-			align-content: center;
 			justify-content: center;
-			height: 32px;
+			margin: 50px 30px 15px 30px;
 		}
 
 		button {
+			border: none;
 			cursor: pointer;
 			text-transform: uppercase;
-			font-family: Trebuchet MS;
 			font-weight: 700;
 			letter-spacing: 1px;
-			width: 100%;
-			height: 100%;
-			margin: 5px;
+			padding: 16px 16px;
 			border-radius: 10px;
-			background:	rgba(150, 206, 180, 0.8);
+			background:	rgba(150, 206, 180, 1);
 			transition-duration: 300ms;
 		}
 
@@ -75,20 +92,22 @@ export class ListElement extends LitElement {
 
 	render() {
 		return html`
-		<div class="item">
-		${this.data.map(
-			(value) => {
-				if (value.count <= 0) {
-					return;
-				}
-				return html`
-					<item-element .value=${value}></item-element>
-				`
-			})
-		}
-		</div>
 		<div class="button">
-			<button @click=${this.handleClick}>Clear all</button>
+			<button @click=${this.handleClick}>clear all selected</button>
+		</div>
+
+		<p>Tap listed food to incrementally decrease:</p>
+		<div class="item">
+			${this.data.map(
+				(value) => {
+					if (value.count <= 0) {
+						return;
+					}
+					return html`
+						<item-element .value=${value}></item-element>
+					`
+				})
+			}
 		</div>
 		`;
 	}
