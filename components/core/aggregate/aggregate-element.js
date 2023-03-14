@@ -3,38 +3,13 @@ import {LitElement, html, css} from 'lit';
 export class AggregateElement extends LitElement {
 	static styles = css`
 		* {
-			margin: 0;
 			padding: 0;
 			border-sizing: border-box;
 		}
 
 		:host {
-			margin: 10px;
-			border: 1px solid black;
-		}
-
-		.row {
-			display: flex;
-  		flex-direction: row;
-  		flex-wrap: wrap;
-  		width: 100%;
-		}
-
-		.column {
-			display: flex;
-  		flex-direction: column;
-  		flex-basis: 100%;
-  		flex: 1;
-  		margin: auto;
-		}
-
-		p {
-			font-size: 16px;
-			font-family: Trebuchet MS;
-			border: 1px solid black;
-			padding: 5px 5px 0 5px;
-			margin: 5px auto;
-			width: 140px;
+			margin: 0 5px;
+			background-color: #3e3e42;
 		}
 
 		.button {
@@ -48,21 +23,45 @@ export class AggregateElement extends LitElement {
 			cursor: pointer;
 			user-select: none;
 			font-family: Trebuchet MS;
+			font-size: 18px;
 			font-weight: 700;
 			letter-spacing: 1px;
-			padding: 10px 32px;
-			margin: 5px;
+			padding: 12px 5px;
+			margin: 50px 45px 15px 45px;
+			border: none;
+			box-shadow: -2px 2px 1px black;
 			border-radius: 10px;
-			background: linear-gradient(0.55turn, 
-				rgba(150, 206, 180, 0.8), 
-				rgba(255, 238, 173, 0.8), 
-				rgba(255, 204, 92, 0.8), 
-				rgba(255, 111, 105, 0.8));
+			background:	rgba(150, 206, 180, 1);
 			transition-duration: 300ms;
 		}
 
 		button:active {
 			filter: brightness(140%);
+			box-shadow: none;
+			transform: translate(-2px, 2px);
+		}
+
+		.row {
+			display: flex;
+			align-content: center;
+			justify-content: center;
+  		flex-direction: row;
+  		flex-wrap: wrap;
+  		width: 100%;
+  		margin-bottom: 50px;
+		}
+
+		p {
+			background-color: #2d2d30;
+			margin: 10px 0;
+			font-size: 17px;
+			letter-spacing: 0.7px;
+			color: #fff;
+			font-family: Trebuchet MS, Tahoma, sans-serif;
+			font-family: Georgia, serif;
+			border: 2px solid rgba(255, 238, 173, 0.8);
+			padding: 5px 20px 2px 5px;
+			width: 100px;
 		}
 	`;
 
@@ -153,6 +152,10 @@ export class AggregateElement extends LitElement {
 
 	render() {
 		return html`
+			<div class="button">
+				<button @click=${this.button}>calculate total nutritional value</button>
+			</div>
+			
 			<div class="row">
 				<div class="column">
 					<p>Carbs:</p>
@@ -163,20 +166,6 @@ export class AggregateElement extends LitElement {
 					<p>Fiber:</p>
 					<p>Sugars:</p>
 					<p>Calcium:</p>
-				</div>
-
-				<div class="column">
-					<p>${this._carbs.toFixed(1)}g</p>
-					<p>${this._netCarbs.toFixed(1)}g</p>
-					<p>${this._protein.toFixed(1)}g</p>
-					<p>${this._cholesterol.toFixed(1)}g</p>
-					<p>${this._fat.toFixed(1)}g</p>
-					<p>${this._fiber.toFixed(1)}g</p>
-					<p>${this._sugars.toFixed(1)}g</p>
-					<p>${this._calcium.toFixed(1)}g</p>
-				</div>
-
-				<div class="column">
 					<p>Iron:</p>
 					<p>Magnesium:</p>
 					<p>Phosphorus:</p>
@@ -188,19 +177,23 @@ export class AggregateElement extends LitElement {
 				</div>
 
 				<div class="column">
-					<p>${this._iron.toFixed(1)}g</p>
-					<p>${this._magnesium.toFixed(1)}g</p>
-					<p>${this._phosphorus.toFixed(1)}g</p>
-					<p>${this._potassium.toFixed(1)}g</p>
-					<p>${this._sodium.toFixed(1)}g</p>
-					<p>${this._vitaC.toFixed(1)}g</p>
-					<p>${this._vitaB6.toFixed(1)}g</p>
-					<p>${this._water.toFixed(1)}g</p>
+					<p>${this._carbs.toFixed(2)}g</p>
+					<p>${this._netCarbs.toFixed(2)}g</p>
+					<p>${this._protein.toFixed(2)}g</p>
+					<p>${this._cholesterol.toFixed(2)}g</p>
+					<p>${this._fat.toFixed(2)}g</p>
+					<p>${this._fiber.toFixed(2)}g</p>
+					<p>${this._sugars.toFixed(2)}g</p>
+					<p>${this._calcium.toFixed(2)}g</p>
+					<p>${this._iron.toFixed(2)}g</p>
+					<p>${this._magnesium.toFixed(2)}g</p>
+					<p>${this._phosphorus.toFixed(2)}g</p>
+					<p>${this._potassium.toFixed(2)}g</p>
+					<p>${this._sodium.toFixed(2)}g</p>
+					<p>${this._vitaC.toFixed(2)}g</p>
+					<p>${this._vitaB6.toFixed(2)}g</p>
+					<p>${this._water.toFixed(2)}g</p>
 				</div>
-			</div>
-
-			<div class="button">
-				<button @click=${this.button}>reveal nutritional value</button>
 			</div>
 		`;
 	}
