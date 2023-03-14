@@ -25,14 +25,14 @@ export class FilterByElement extends LitElement {
       appearance: none;
       border-radius: 5px;
 		  background-color: #fff;
-			width: 32px;
-			height: 32px;
+			width: 38px;
+			height: 38px;
 			border: 2px solid black;
 		  transition: 300ms;
 		}
 
 		input[type="checkbox"]:checked {
-			box-shadow: inset 0 0 0 6px white, inset 0 0 0 16px black;
+			box-shadow: inset 0 0 0 8px white, inset 0 0 0 20px black;
 			border: 2px solid #fff;
 		}
 
@@ -40,14 +40,14 @@ export class FilterByElement extends LitElement {
 			display: flex;
 			align-items: center;
 			text-shadow: -1px 2px 1px black;
-			height: 32px;
+			height: 42px;
 			padding: 0 16px;
-			margin: 4px;
+			margin: 0 4px;
 			font-size: 16px;
-			letter-spacing: 0.5px;
+			letter-spacing: 1px;
 			font-weight: 700;
 			color: #FFFF99;
-			font-family: sans-serif;
+			font-family: Trebuchet MS, Tahoma, sans-serif;
 		}
 
 		label:active {
