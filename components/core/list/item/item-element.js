@@ -7,7 +7,7 @@ export class ItemElement extends LitElement {
 			user-select: none;
 			display: flex;
 			align-items: center;
-			text-shadow: -1px 3px 1px black;
+			text-shadow: -1px 1px 1px black;
 			letter-spacing: 1px;
 			font-size: 12px;
 			font-weight: 700;
