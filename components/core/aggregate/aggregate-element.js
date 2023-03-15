@@ -23,10 +23,10 @@ export class AggregateElement extends LitElement {
 			cursor: pointer;
 			user-select: none;
 			font-family: Trebuchet MS;
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: 700;
 			letter-spacing: 1px;
-			padding: 12px 5px;
+			padding: 12px 15px;
 			margin: 50px 45px 15px 45px;
 			border: none;
 			box-shadow: -2px 2px 1px black;
