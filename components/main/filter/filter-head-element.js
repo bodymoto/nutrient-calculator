@@ -8,10 +8,6 @@ export class FilterHeadElement extends LitElement {
       box-sizing: border-box;
     }
 
-    :host {
-    	margin-top: 50px;
-    }
-
 	  p {
 	  	background-color: #3e3e42;
 	  	clip-path: polygon(97% 0, 100% 50%, 97% 100%, 0 100%, 0 0);

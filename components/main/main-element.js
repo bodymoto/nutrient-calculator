@@ -5,12 +5,13 @@ import {GridHeadElement} from './grid/grid-head-element.js';
 import {GridElement} from './grid/grid-element.js';
 import {ListElement} from './list/list-element.js';
 import {AggregateElement} from './aggregate/aggregate-element.js';
+import {SubscribeElement} from './subscribe/subscribe-element.js';
 
 // import {SearchElement} from './search/search-element.js';
 
-export class CoreElement extends LitElement {
+export class MainElement extends LitElement {
 	static styles = css`
-	  :host {
+	  main {
 	  	display: flex;
 	  	align-content: center;
 	  	justify-content: center;
@@ -115,6 +116,8 @@ export class CoreElement extends LitElement {
 	render() {
 		// <search-element></search-element>
 		return html`
+		<main>
+
 			<filter-head-element></filter-head-element>
 			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
 
@@ -124,8 +127,13 @@ export class CoreElement extends LitElement {
 			<list-element .data=${this.data}></list-element>
 
 			<aggregate-element .data=${this.data}></aggregate-element>
+
+
+			<subscribe-element></subscribe-element>
+
+		</main>
 		`;
 	}
 }
 
-customElements.define('core-element', CoreElement);
+customElements.define('main-element', MainElement);

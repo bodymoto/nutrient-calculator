@@ -19,6 +19,8 @@ export class AggregateElement extends LitElement {
 		}
 
 		button {
+			color: #FFFF99;
+			text-shadow: -1px 1px 1px black;
 			text-transform: uppercase;
 			cursor: pointer;
 			user-select: none;

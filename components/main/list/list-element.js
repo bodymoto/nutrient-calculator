@@ -18,40 +18,45 @@ export class ListElement extends LitElement {
 				rgba(255, 111, 105, 0.8));
 			user-select: none;
 			font-family: Trebuchet MS, Tahoma, sans-serif;
+			padding: 30px 0;
 		}
 
 		.item {
-			background: rgba(0, 0, 0, 0.2);
-			height: 232px;
-			margin: 0 7px 10px 7px;
+			border-left: 4px solid rgba(0, 0, 0, 0.2);
+			border-right: 4px solid rgba(0, 0, 0, 0.2);
+			min-height: 40px;
+			max-height: 232px;
+			margin: 10px 7px 10px 7px;
 			overflow: auto;
 			border-radius: 5px;
 		}
 
 		p {
-			border: 1px solid white;
 			border-radius: 10px 0;
 	  	background-color: #3e3e42;
 			font-size: 12px;
 	  	color: #fff;
 			padding: 5px 15px;
-			margin: 15px 30px 2px 7px;
+			margin: 15px 30px 2px 11px;
 	  	letter-spacing: 1px;
 		}
 
 		.button {
 			display: flex;
 			justify-content: center;
-			margin: 50px 30px 15px 30px;
+			margin: 0 30px 15px 30px;
 		}
 
 		button {
+			color: #FFFF99;
+			text-shadow: -1px 1px 1px black;
 			border: none;
 			cursor: pointer;
 			text-transform: uppercase;
 			font-weight: 700;
 			letter-spacing: 1px;
 			padding: 16px 16px;
+			border: 1px solid black;
 			border-radius: 10px;
 			background:	rgba(150, 206, 180, 1);
 			transition-duration: 300ms;
@@ -92,10 +97,6 @@ export class ListElement extends LitElement {
 
 	render() {
 		return html`
-		<div class="button">
-			<button @click=${this.handleClick}>clear all selected</button>
-		</div>
-
 		<p>Tap listed food to incrementally decrease:</p>
 		<div class="item">
 			${this.data.map(
@@ -108,6 +109,9 @@ export class ListElement extends LitElement {
 					`
 				})
 			}
+		</div>
+		<div class="button">
+			<button @click=${this.handleClick}>clear all selected</button>
 		</div>
 		`;
 	}
