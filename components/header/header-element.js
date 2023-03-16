@@ -9,12 +9,13 @@ export class HeaderElement extends LitElement {
 		}
 
 		.title {
+			text-transform: lowercase;
 			color: #3e3e42;
 			font-size: 32px;
-			font-family: Marker Felt, sans-serif;
+			font-family: Geneva, sans-serif;
 			margin: 30px 0 0 15px;
 			padding: 0;
-			letter-spacing: 0;
+			letter-spacing: -1.1px;
 		}
 
 		.intro {
@@ -60,7 +61,7 @@ export class HeaderElement extends LitElement {
 			<h1 class="title">bodyboon</h1>
 			<div class="intro">
 				<h1><span>Calculate</span> your meals <span>total</span> <span>nutritional</span> value<span>.</span></h1>
-				<p>Total carbohydrates, proteins, net carbs, cholesterol, vitamin c, calcium, iron, and more.</p>
+				<p>Total carbohydrates, proteins, net carbs, cholesterol, vitamin c, calcium, iron, & more!</p>
 			</div>
 		</header>
 		`;
