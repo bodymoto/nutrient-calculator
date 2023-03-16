@@ -115,19 +115,17 @@ export class MainElement extends LitElement {
 
 	render() {
 		// <search-element></search-element>
+			// <filter-head-element></filter-head-element>
+			// <filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
+
+			// <grid-head-element></grid-head-element>
+			// <grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
+
+			// <list-element .data=${this.data}></list-element>
+
+			// <aggregate-element .data=${this.data}></aggregate-element>
 		return html`
 		<main>
-
-			<filter-head-element></filter-head-element>
-			<filter-element .data=${this.data} searchValue=${this.searchValue}></filter-element>
-
-			<grid-head-element></grid-head-element>
-			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
-
-			<list-element .data=${this.data}></list-element>
-
-			<aggregate-element .data=${this.data}></aggregate-element>
-
 
 			<subscribe-element></subscribe-element>
 

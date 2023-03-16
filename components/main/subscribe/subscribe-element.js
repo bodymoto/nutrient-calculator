@@ -11,7 +11,17 @@ export class SubscribeElement extends LitElement {
 
 	render() {
 		return html`
-			<p>SUBSCRIBE ELEMENT</p>
+			<h3>BodyBoon Progress List</h3>
+			<p>Stay in touch to changes...</p>
+			<form>
+				<fieldset>
+					<legend>Email Subscription</legend>
+					<p>
+						<input type="email" name="email" placeholder="Type your email..." />
+						<button type="submit" tabindex="0">Subscribe</button>
+					</p>
+				</fieldset>
+			</form>
 		`;
 	}
 }
