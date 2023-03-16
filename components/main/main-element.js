@@ -5,7 +5,7 @@ import {GridHeadElement} from './grid/grid-head-element.js';
 import {GridElement} from './grid/grid-element.js';
 import {ListElement} from './list/list-element.js';
 import {AggregateElement} from './aggregate/aggregate-element.js';
-import {SubscribeElement} from './subscribe/subscribe-element.js';
+import {SocialElement} from './social/social-element.js';
 
 // import {SearchElement} from './search/search-element.js';
 
@@ -127,7 +127,7 @@ export class MainElement extends LitElement {
 		return html`
 		<main>
 
-			<subscribe-element></subscribe-element>
+			<social-element></social-element>
 
 		</main>
 		`;
