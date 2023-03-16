@@ -7,5 +7,5 @@ const main = document.createElement('main-element');
 
 main.data = data;
 
-// document.body.appendChild(header);
+document.body.appendChild(header);
 document.body.appendChild(main);
