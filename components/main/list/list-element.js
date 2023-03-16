@@ -10,12 +10,7 @@ export class ListElement extends LitElement {
 		}
 
 		:host {
-			background-color: #96ceb4;
-			background: linear-gradient(0.55turn, 
-				rgba(150, 206, 180, 0.8), 
-				rgba(255, 238, 173, 0.8), 
-				rgba(255, 204, 92, 0.8), 
-				rgba(255, 111, 105, 0.8));
+			background-color: #2d2d30;
 			user-select: none;
 			font-family: Trebuchet MS, Tahoma, sans-serif;
 			padding: 30px 0;
@@ -48,17 +43,19 @@ export class ListElement extends LitElement {
 		}
 
 		button {
-			color: #FFFF99;
-			text-shadow: -1px 1px 1px black;
+
 			border: none;
 			cursor: pointer;
 			text-transform: uppercase;
 			font-weight: 700;
-			letter-spacing: 1px;
 			padding: 16px 16px;
 			border: 1px solid black;
 			border-radius: 10px;
-			background:	rgba(150, 206, 180, 1);
+			background: linear-gradient(0.55turn, 
+				rgba(150, 206, 180, 0.8), 
+				rgba(255, 238, 173, 0.8), 
+				rgba(255, 204, 92, 0.8), 
+				rgba(255, 111, 105, 0.8));
 			transition-duration: 300ms;
 		}
 
