@@ -8,8 +8,8 @@ export class AggregateElement extends LitElement {
 		}
 
 		:host {
-			margin: 0 5px;
-			background-color: #3e3e42;
+			margin: 5px;
+			background-color: #96ceb4;
 		}
 
 		.button {
@@ -19,21 +19,18 @@ export class AggregateElement extends LitElement {
 		}
 
 		button {
-			color: #FFFF99;
-			text-shadow: -1px 1px 1px black;
 			text-transform: uppercase;
 			cursor: pointer;
 			user-select: none;
 			font-family: Trebuchet MS;
-			font-size: 16px;
+			font-size: 20px;
 			font-weight: 700;
-			letter-spacing: 1px;
 			padding: 12px 15px;
 			margin: 50px 45px 15px 45px;
 			border: none;
 			box-shadow: -2px 2px 1px black;
 			border-radius: 10px;
-			background:	rgba(150, 206, 180, 1);
+			background: #ffcc5c;
 			transition-duration: 300ms;
 		}
 
@@ -50,19 +47,18 @@ export class AggregateElement extends LitElement {
   		flex-direction: row;
   		flex-wrap: wrap;
   		width: 100%;
-  		margin-bottom: 50px;
+  		margin-bottom: 40px;
 		}
 
 		p {
 			background-color: #2d2d30;
-			margin: 10px 0;
+			margin: 5px 0;
 			font-size: 17px;
 			letter-spacing: 0.7px;
 			color: #fff;
 			font-family: Trebuchet MS, Tahoma, sans-serif;
 			font-family: Georgia, serif;
-			border: 2px solid rgba(255, 238, 173, 0.8);
-			padding: 5px 20px 2px 5px;
+			padding: 10px 20px 2px 5px;
 			width: 100px;
 		}
 	`;
