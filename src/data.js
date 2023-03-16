@@ -1,5 +1,4 @@
 export const data = [
-// https://fdc.nal.usda.gov/fdc-app.html#/
 /*
 	{
 	  group: "",
