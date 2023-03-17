@@ -10,6 +10,7 @@ export class CalculateElement extends LitElement {
 		:host {
 			margin: 5px;
 			background-color: #96ceb4;
+			font-family: Trebuchet MS, Tahoma, sans-serif;
 		}
 
 		.button {
@@ -22,13 +23,12 @@ export class CalculateElement extends LitElement {
 			text-transform: uppercase;
 			cursor: pointer;
 			user-select: none;
-			font-family: Trebuchet MS;
 			font-size: 20px;
 			font-weight: 700;
 			padding: 12px 15px;
 			margin: 50px 45px 15px 45px;
 			border: none;
-			box-shadow: -2px 2px 1px black;
+			box-shadow: -1px 4px 5px black;
 			border-radius: 10px;
 			background: #ffcc5c;
 			transition-duration: 300ms;
@@ -37,7 +37,7 @@ export class CalculateElement extends LitElement {
 		button:active {
 			filter: brightness(140%);
 			box-shadow: none;
-			transform: translate(-2px, 2px);
+			transform: translate(-1px, 4px);
 		}
 
 		.row {
@@ -56,8 +56,6 @@ export class CalculateElement extends LitElement {
 			font-size: 17px;
 			letter-spacing: 0.7px;
 			color: #fff;
-			font-family: Trebuchet MS, Tahoma, sans-serif;
-			font-family: Georgia, serif;
 			padding: 10px 20px 2px 5px;
 			width: 100px;
 		}
