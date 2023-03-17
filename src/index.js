@@ -11,4 +11,4 @@ main.data = data;
 
 document.body.appendChild(header);
 document.body.appendChild(main);
-// document.body.appendChild(footer);
+document.body.appendChild(footer);
