@@ -10,12 +10,12 @@ export class FilterElement extends LitElement {
     }
     
 		:host {
-			height: 300px;
+			height: 310px;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
 			align-content: start;
-			gap: 8px 0;
+			gap: 10px 0;
 			padding: 2px 12px 30px 12px;
 		}
 
