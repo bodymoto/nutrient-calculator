@@ -32,7 +32,7 @@ export class FoodButtonElement extends LitElement {
 			font-weight: 700;
 			padding: 0 6px;
 			color: #FFFF99;
-			text-shadow: -1px 2px 1px black;
+			text-shadow: -1px 2px 7px black;
 			word-break: break-word;
 		}
 
