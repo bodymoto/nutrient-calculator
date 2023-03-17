@@ -126,6 +126,8 @@ export class MainElement extends LitElement {
 
 			<aggregate-element .data=${this.data}></aggregate-element>
 
+			<p>placeholder - why we matter</p>
+
 			<social-element></social-element>
 
 		</main>
