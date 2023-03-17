@@ -23,10 +23,9 @@ export class FilterByElement extends LitElement {
 
 		input[type="checkbox"] {
       appearance: none;
-      border-radius: 5px;
 		  background-color: #fff;
-			width: 38px;
-			height: 38px;
+			width: 34px;
+			height: 34px;
 			border: 2px solid black;
 		  transition: 300ms;
 		}
@@ -39,14 +38,14 @@ export class FilterByElement extends LitElement {
 		label {
 			display: flex;
 			align-items: center;
-			text-shadow: -1px 2px 1px black;
+			text-shadow: -1px 2px 3px black;
 			height: 42px;
 			padding: 0 16px;
 			margin: 0 4px;
 			font-size: 16px;
 			letter-spacing: 1px;
 			font-weight: 700;
-			color: #FFFF99;
+			color: white;
 			font-family: Trebuchet MS, Tahoma, sans-serif;
 		}
 
