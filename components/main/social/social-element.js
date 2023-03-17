@@ -9,10 +9,71 @@ export class SocialElement extends LitElement {
 		}
 
 		:host {
-			margin: 5px;
-			height: 400px;
-			border: 1px solid black;
+			margin: 80px 20px;
+			padding: 70px 0 80px 0;
+			min-height: 400px;
+			box-shadow: 0 0 0 20px #f4aab9, 0 0 0 40px #66ccff;
+			border-radius: 20px;
 		}
+
+		h3 {
+			font-size: 36px;
+			padding: 30px 30px 0 30px;
+			text-transform: uppercase;
+			line-height: 30px;
+		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+			margin: 35px;
+		}
+
+		.flex {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 20px;
+			font-size: 18px;
+		}
+
+		.sub-text {
+			display: flex;
+			align-items: center;
+			font-size: 13px;
+			font-style: italic;
+		}
+
+		img:hover {
+			animation-duration: 0.7s;
+			animation-name: jump;
+		}
+
+		img:active {
+			filter: brightness(140%);
+		}
+
+		@keyframes jump {
+			25% {transform: translateY(-5px);}
+			50% {transform: translateY(0);}
+			75% {transform: translateY(-3px);}
+		}
+
+		.email {
+			margin: -12px;
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		hr {
+			width: 30px;
+			margin-right: 5px;
+		}
+
+		span:nth-child(1) { color: #ff6f69 }
+		span:nth-child(2) { color: #96ceb4 }
+		span:nth-child(3) { color: #ffcc5c }
 	`;
 
 	constructor() {
@@ -21,15 +82,46 @@ export class SocialElement extends LitElement {
 
 	render() {
 		return html`
-			<p>A special message to everyone who made it here. We don't know how, but you did it. You are the first to spelunk this phat dieting tech. We want to do so much more than what you see here today, but we need your help to survive! Follow us, tell us what's working, what's missing, and what's up...</p>
+			<h3>
+				<span>support</span>
+				<span>dieters<br/></span>
+				<span>everywhere</span>
+			</h3>
 
-			<p>Were on Reddit</p>
-			<img width="78" height="78" src="../../img/reddit-circle-onwhite.svg" alt="reddit logo" />
-
-			<p>Follow on Twitter</p>
-			<img width="52" height="52" src="../../img/twitter-logo-blue.svg" alt="twitter logo" />
-
-			<p>Send a friendly email:</p>
+			<div class="grid">
+				<div class="flex">
+					<div>
+						<p>Join us on Reddit</p>
+						<div class="sub-text">
+							<hr/>
+							<p>let us hear your story</p>
+						</div>
+					</div>
+					<a href="https://www.reddit.com/r/bodyboon/" target="_blank"><img width="78" height="78" style="margin: -20px 0" src="../../img/reddit-circle-onwhite.svg" alt="reddit logo" /></a>
+				</div>
+				<div class="flex">
+					<div>
+						<p>Follow us on Twitter</p>
+						<div class="sub-text">
+							<hr/>
+							<p>receive the latest</p>
+						</div>
+					</div>
+					<a href="https://twitter.com/_bodyboon" target="_blank"><img width="48" height="48" style="margin: 0 16px" src="../../img/twitter-logo-blue.svg" alt="twitter logo" /></a>
+					</div>
+				<div class="flex">
+					<div>
+						<p>Email us</p>
+							<div class="sub-text">
+								<hr/>
+								<p>have an idea?</p>
+							</div>
+					</div>
+					<div class="email">
+						<p>feedback@<br/>bodyboon.com</p>
+					</div>
+				</div>
+			</div>
 		`;
 	}
 }
