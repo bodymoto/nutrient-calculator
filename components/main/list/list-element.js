@@ -103,7 +103,7 @@ export class ListElement extends LitElement {
 			}
 		</div>
 		<div class="button">
-			<button @click=${this.handleClick}>clear all selected</button>
+			<button @click=${this.handleClick}>clear all</button>
 		</div>
 		`;
 	}
