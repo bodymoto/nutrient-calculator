@@ -17,6 +17,27 @@ export class MainElement extends LitElement {
 	  	justify-content: center;
 	  	flex-direction: column;
 	  }
+
+	  a {
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		a:link {
+			color: #2d2d30;
+		}
+
+		a:visited {
+			color: #ffb6b9;
+		}
+
+		a:hover {
+			color: #ff6f69;
+		}
+
+		a:active {
+			color: #96ceb4;
+		}
 	`;
 
 	static properties = {
