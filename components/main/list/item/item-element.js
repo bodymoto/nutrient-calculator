@@ -17,7 +17,7 @@ export class ItemElement extends LitElement {
 		 	padding: 2px 4px;
 		 	border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
-		 	box-shadow: inset 40px 40px 5px rgba(0,0,0,0.15);
+		 	box-shadow: inset 50px 50px 10px rgba(0,0,0,0.15);
 		 	border-radius: 10px;
 		}
 
