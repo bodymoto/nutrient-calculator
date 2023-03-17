@@ -13,12 +13,12 @@ export class ItemElement extends LitElement {
 			font-weight: 700;
 			color: white;
 			height: 42px;
-		 	margin: 2px 8px 3px 2px;
+		 	margin: 2px;
 		 	padding: 2px 4px;
 		 	border-top: 1px solid black;
 		 	border-bottom: 1px solid black;
 		 	box-shadow: inset 40px 40px 5px rgba(0,0,0,0.15);
-		 	border-radius: 10px 0;
+		 	border-radius: 10px;
 		}
 
 		div:active {
