@@ -36,26 +36,24 @@ export class SelectedElement extends LitElement {
 	  	letter-spacing: 1px;
 		}
 
-		.button {
-			display: flex;
-			justify-content: center;
-			margin: 0 30px 15px 30px;
-		}
-
 		button {
+			display: flex;
+			margin: auto;
 			border: none;
 			cursor: pointer;
 			text-transform: uppercase;
 			font-weight: 700;
-			padding: 16px 16px;
-			border-radius: 10px;
+			padding: 10px 62px;
+			border-radius: 25px;
 			background: #ff6f69;
-			transition-duration: 400ms;
+			transition-duration: 300ms;
+			box-shadow: -1px 2px 10px black;
 		}
 
 		button:active {
 			filter: brightness(140%);
-			border-radius: 20px;
+			box-shadow: none;
+			transform: translate(-1px, 4px);
 		}
 	`;
 
@@ -102,9 +100,7 @@ export class SelectedElement extends LitElement {
 				})
 			}
 		</div>
-		<div class="button">
-			<button @click=${this.handleClick}>clear all</button>
-		</div>
+		<button @click=${this.handleClick}>clear all</button>
 		`;
 	}
 }
