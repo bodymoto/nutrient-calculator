@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-export class AggregateElement extends LitElement {
+export class CalculateElement extends LitElement {
 	static styles = css`
 		* {
 			padding: 0;
@@ -197,4 +197,4 @@ export class AggregateElement extends LitElement {
 	}
 }
 
-customElements.define('aggregate-element', AggregateElement);
+customElements.define('calculate-element', CalculateElement);

@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import {ItemElement} from './item/item-element.js';
 
-export class ListElement extends LitElement {
+export class SelectedElement extends LitElement {
 	static styles = css`
 		* {
 			padding: 0;
@@ -109,4 +109,4 @@ export class ListElement extends LitElement {
 	}
 }
 
-customElements.define('list-element', ListElement);
+customElements.define('selected-element', SelectedElement);

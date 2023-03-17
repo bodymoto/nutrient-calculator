@@ -3,9 +3,10 @@ import {FilterHeadElement} from './filter/filter-head-element.js';
 import {FilterElement} from './filter/filter-element.js';
 import {GridHeadElement} from './grid/grid-head-element.js';
 import {GridElement} from './grid/grid-element.js';
-import {ListElement} from './list/list-element.js';
-import {AggregateElement} from './aggregate/aggregate-element.js';
+import {SelectedElement} from './selected/selected-element.js';
+import {CalculateElement} from './calculate/calculate-element.js';
 import {SocialElement} from './social/social-element.js';
+import {AboutElement} from './about/about-element.js';
 // import {SearchElement} from './search/search-element.js';
 
 export class MainElement extends LitElement {
@@ -122,13 +123,13 @@ export class MainElement extends LitElement {
 			<grid-head-element></grid-head-element>
 			<grid-element .data=${this.data} searchValue=${this.searchValue} ></grid-element>
 
-			<list-element .data=${this.data}></list-element>
+			<selected-element .data=${this.data}></selected-element>
 
-			<aggregate-element .data=${this.data}></aggregate-element>
-
-			<p>placeholder - why we matter</p>
+			<calculate-element .data=${this.data}></calculate-element>
 
 			<social-element></social-element>
+
+			<about-element></about-element>
 
 		</main>
 		`;
