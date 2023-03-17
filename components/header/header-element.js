@@ -27,12 +27,15 @@ export class HeaderElement extends LitElement {
 			height: 380px;
 			margin: 10px;
 			padding: 10px;
+			background: url(../../img/man-jumping-yogendra-singh-pexels.jpg) no-repeat;
+			background-size: cover;
+			box-shadow: inset 160px 120px 300px rgba(62, 62, 66, 0.8), inset -120px -160px 300px rgba(62, 62, 66, 0.8);
 			clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
 		}
 
 		h1 {
 			text-transform: uppercase;
-			padding: 0 40px 20px 0;
+			padding: 0 80px 20px 0;
 			letter-spacing: 1px;
 			line-height: 30px;
 		}
@@ -40,7 +43,7 @@ export class HeaderElement extends LitElement {
 		p {
 			font-size: 17px;
 			letter-spacing: 0.5px;
-			padding: 0 90px 20px 0;
+			padding: 0 120px 20px 0;
 		}
 
 		span:nth-child(1) { color: #96ceb4 }
@@ -60,7 +63,7 @@ export class HeaderElement extends LitElement {
 		<header>
 			<h1 class="title">bodyboon</h1>
 			<div class="intro">
-				<h1><span>Calculate</span> your meals <span>total</span> <span>nutritional</span> value<span>.</span></h1>
+				<h1><span>Calculate</span> your meals <span>total</span> <span>nutritional value</span><span>.</span></h1>
 				<p>Total carbohydrates, proteins, net carbs, cholesterol, vitamin c, calcium, iron, & more!</p>
 			</div>
 		</header>
