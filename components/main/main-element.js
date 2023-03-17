@@ -130,7 +130,6 @@ export class MainElement extends LitElement {
 			<social-element></social-element>
 
 			<about-element></about-element>
-
 		</main>
 		`;
 	}
