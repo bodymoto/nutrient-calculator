@@ -19,8 +19,7 @@ export class SelectedElement extends LitElement {
 		.item {
 			border-left: 4px solid rgba(0, 0, 0, 0.2);
 			border-right: 4px solid rgba(0, 0, 0, 0.2);
-			min-height: 40px;
-			max-height: 232px;
+			height: 180px;
 			margin: 10px 7px 10px 7px;
 			overflow: auto;
 			border-radius: 5px;
@@ -54,6 +53,25 @@ export class SelectedElement extends LitElement {
 			filter: brightness(140%);
 			box-shadow: none;
 			transform: translate(-1px, 4px);
+		}
+
+		@media screen and (min-width: 768px) {
+			.item {
+				margin: 20px;
+			}
+			p {
+				font-size: 16px;
+				padding: 5px 6%;
+			}
+			button {
+				padding: 14px 66px;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			.item {
+				margin: 0 20%;
+			}
 		}
 	`;
 
