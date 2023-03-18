@@ -19,6 +19,14 @@ export class GridHeadElement extends LitElement {
 	  	margin-bottom: 5px;
 	  	letter-spacing: 1px;
 	  }
+
+	  @media screen and (min-width: 768px) {
+	  	p {
+		  	clip-path: polygon(98% 0, 100% 50%, 98% 100%, 0 100%, 0 0);
+		  	font-size: 18px;
+		  	padding: 5px 6%;
+		  }
+	  }
 	`;
 
 	constructor() {
