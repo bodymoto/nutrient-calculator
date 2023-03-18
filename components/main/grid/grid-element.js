@@ -29,6 +29,21 @@ export class GridElement extends LitElement {
 		food-btn-element:active {
 			filter: brightness(145%);
 		}
+
+		@media screen and (min-width: 768px) {
+			:host {
+				padding: 0 5px 5px 5px;
+				margin: 0 55px 36px 0;
+				height: 400px;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			:host {
+				padding: 20px;
+				margin: 0 20px 40px 20px;
+			}
+		}
 	`;
 
 	static properties = {
