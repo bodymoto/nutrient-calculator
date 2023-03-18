@@ -9,7 +9,7 @@ export class FooterElement extends LitElement {
 		}
 
 		footer {
-			min-height: 400px;
+			height: 400px;
 			background-color: #2d2d30;
 			color: #fff;
 		}
@@ -57,6 +57,19 @@ export class FooterElement extends LitElement {
 		span:nth-child(2) { color: #ff6f69 }
 		span:nth-child(3) { color: #ffcc5c }
 		span:nth-child(4) { color: #96ceb4 }
+
+		@media screen and (min-width: 768px) {
+			footer {
+				padding: 10%;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			footer {
+				height: 200px;
+				padding: 5% 10%;
+			}
+		}
 	`;
 
 	constructor() {
