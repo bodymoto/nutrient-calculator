@@ -14,10 +14,18 @@ export class FilterHeadElement extends LitElement {
 	  	color: #fff;
 	  	font-size: 14px;
 	  	height: 100%;
-	  	padding: 5px 15px;
+	  	padding: 5px 6%;
 	  	margin-right: 30px;
 	  	margin-bottom: 5px;
 	  	letter-spacing: 1px;
+	  }
+
+	  @media screen and (min-width: 768px) {
+	  	p {
+		  	clip-path: polygon(98% 0, 100% 50%, 98% 100%, 0 100%, 0 0);
+		  	font-size: 18px;
+		  	padding: 5px 6%;
+		  }
 	  }
 	`;
 
