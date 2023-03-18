@@ -10,13 +10,13 @@ export class FilterElement extends LitElement {
     }
     
 		:host {
-			height: 310px;
+			height: 400px;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
 			align-content: start;
 			gap: 10px 0;
-			padding: 2px 12px 30px 12px;
+			padding: 2px 12px 25px 12px;
 		}
 
 		div {
@@ -34,7 +34,7 @@ export class FilterElement extends LitElement {
 
 	  @media screen and (min-width: 768px) {
 	  	:host {
-				height: 225px;
+				height: 285px;
 				gap: 10px 10px;
 				padding: 10px 16px 60px 16px;
 			}
@@ -42,7 +42,7 @@ export class FilterElement extends LitElement {
 
 	  @media screen and (min-width: 1024px) {
 	  	:host {
-				height: 200px;
+				height: 240px;
 			}
 	  }
 
