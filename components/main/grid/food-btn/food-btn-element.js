@@ -41,6 +41,19 @@ export class FoodButtonElement extends LitElement {
 			font-size: 23px;
 			margin: 7px;
 		}
+
+		@media screen and (min-width: 768px) {
+			:host {
+				width: 98px;
+				height: 98px;
+			}
+			p {
+				font-size: 15px;
+			}
+			.count {
+				font-size: 24px;
+			}
+		}
 	`;
 
 	static properties = {
