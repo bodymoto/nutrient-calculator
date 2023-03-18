@@ -27,8 +27,8 @@ export class HeaderElement extends LitElement {
 			height: 380px;
 			margin: 10px;
 			padding: 10px;
-			background: url(../../img/man-jumping-yogendra-singh-pexels.jpg) no-repeat;
-			background-size: cover;
+			background: url(../../img/pexels-emiliano-arano.jpg) no-repeat;
+			background-position: bottom 30% right 55%;
 			box-shadow: inset 160px 120px 300px rgba(62, 62, 66, 0.8), inset -120px -160px 300px rgba(62, 62, 66, 0.8);
 			clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
 		}
@@ -65,8 +65,8 @@ export class HeaderElement extends LitElement {
 				height: 450px;
 				margin: 20px;
 				padding: 20px 6%;
-				background: url(../../img/man-jumping-yogendra-singh-pexels.jpg) no-repeat;
-				background-position: bottom 30% right 60%;
+				background: url(../../img/pexels-emiliano-arano.jpg) no-repeat;
+				background-position: bottom 20% right 60%;
 				box-shadow: inset 250px 190px 300px rgba(62, 62, 66, 0.8), inset -190px -250px 300px rgba(62, 62, 66, 0.8);
 				clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
 			}
