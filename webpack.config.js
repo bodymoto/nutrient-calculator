@@ -8,8 +8,7 @@ module.exports = {
     },
   watch: true,
   target: "web",
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
   module: {
     rules: [
       {
