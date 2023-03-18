@@ -9,7 +9,7 @@ export class FooterElement extends LitElement {
 		}
 
 		footer {
-			height: 400px;
+			height: 320px;
 			background-color: #2d2d30;
 			color: #fff;
 		}
