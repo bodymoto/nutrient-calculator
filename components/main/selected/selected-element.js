@@ -13,7 +13,7 @@ export class SelectedElement extends LitElement {
 			background-color: #2d2d30;
 			user-select: none;
 			font-family: Trebuchet MS, Tahoma, sans-serif;
-			padding: 30px 0;
+			padding: 30px 30px 30px 0;
 		}
 
 		.item {
