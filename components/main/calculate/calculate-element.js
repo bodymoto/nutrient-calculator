@@ -59,6 +59,23 @@ export class CalculateElement extends LitElement {
 			padding: 10px 20px 2px 5px;
 			width: 100px;
 		}
+
+		@media screen and (min-width: 768px) {
+			:host {
+				margin: 20px;
+			}
+			button {
+				font-size: 24px;
+				padding: 16px 30px;
+				margin: 50px 45px 15px 45px;
+			}
+			p {
+				width: 160px;
+				margin: 7px 0;
+				font-size: 24px;
+				text-align: center;
+			}
+		}
 	`;
 
 	static properties = {
@@ -149,7 +166,7 @@ export class CalculateElement extends LitElement {
 	render() {
 		return html`
 			<div class="button">
-				<button @click=${this.button}>calculate total nutritional value</button>
+				<button @click=${this.button}>calculate total<br/> nutritional value</button>
 			</div>
 			
 			<div class="row">
