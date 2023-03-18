@@ -136,6 +136,7 @@ export class MainElement extends LitElement {
 
 	render() {
 		// <search-element></search-element>
+			// <about-element></about-element>
 		return html`
 		<main>
 			<filter-head-element></filter-head-element>
@@ -150,7 +151,6 @@ export class MainElement extends LitElement {
 
 			<social-element></social-element>
 
-			<about-element></about-element>
 		</main>
 		`;
 	}
