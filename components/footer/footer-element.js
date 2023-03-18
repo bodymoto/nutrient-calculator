@@ -90,6 +90,7 @@ export class FooterElement extends LitElement {
 					<a href="https://twitter.com/_bodyboon" target="_blank"><img width="28" height="28" style="margin: -5px 0" src="../../img/twitter-logo-blue.svg" alt="twitter logo" /></a>
 				</div>
 			</div>
+			<p><i>All food data is sourced from the USDA's U.S. Department of Agriculture, Agricultural Research Service.</i></p>
 		</footer>
 		`;
 	}
