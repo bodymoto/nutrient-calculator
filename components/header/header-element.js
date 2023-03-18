@@ -50,6 +50,49 @@ export class HeaderElement extends LitElement {
 		span:nth-child(2) { color: #ff6f69 }
 		span:nth-child(3) { color: #ffcc5c }
 		span:nth-child(4) { color: #96ceb4 }
+
+		@media screen and (min-width: 768px) {
+			h1 {
+				font-size: 54px;
+				line-height: 46px;
+				padding: 0 240px 20px 0;
+			}
+			.title {
+				font-size: 36px;
+				margin: 30px 0 -12px 20px;
+			}
+			.intro {
+				height: 450px;
+				margin: 20px;
+				padding: 20px 6%;
+				background: url(../../img/man-jumping-yogendra-singh-pexels.jpg) no-repeat;
+				background-position: bottom 30% right 60%;
+				box-shadow: inset 250px 190px 300px rgba(62, 62, 66, 0.8), inset -190px -250px 300px rgba(62, 62, 66, 0.8);
+				clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+			}
+			p {
+				font-size: 22px;
+				letter-spacing: 0.5px;
+				padding: 0 395px 20px 0;
+				line-height: 22px;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			.intro {
+				height: 600px;
+				padding: 20px 16%;
+				background: url(../../img/pexels-emiliano-arano.jpg) no-repeat;
+				background-position: left 20% bottom 5%;
+				clip-path: polygon(0 0, 90% 0, 100% 15%, 100% 100%, 10% 100%, 0 85%);
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			.intro {
+				padding: 20px 22%;
+			}
+		}
 	`;
 
 	static properties = {}
