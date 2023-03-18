@@ -10,8 +10,8 @@ export class FoodButtonElement extends LitElement {
 
 		:host {
 			text-align: center;
-			width: 78px;
-			height: 78px;
+			width: 86px;
+			height: 86px;
 			cursor: pointer;
 			user-select: none;
 			transition-duration: 300ms;
