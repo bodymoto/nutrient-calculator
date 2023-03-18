@@ -12,3 +12,10 @@ main.data = data;
 document.body.appendChild(header);
 document.body.appendChild(main);
 document.body.appendChild(footer);
+
+// @media screen and (min-width: 768px) {}
+// @media screen and (min-width: 1024px) {}
+// @media screen and (min-width: 1280px) {}
+// @media screen and (min-width: 1336px) {}
+// @media screen and (min-width: 1536px) {}
+// @media screen and (min-width: 1920px) {}
