@@ -31,6 +31,26 @@ export class FilterElement extends LitElement {
 	  	padding: 5px 15px;
 	  	letter-spacing: 1px;
 	  }
+
+	  @media screen and (min-width: 768px) {
+	  	:host {
+				height: 225px;
+				gap: 10px 10px;
+				padding: 10px 16px 60px 16px;
+			}
+	  }
+
+	  @media screen and (min-width: 1024px) {
+	  	:host {
+				height: 200px;
+			}
+	  }
+
+	  @media screen and (min-width: 1280px) {
+	  	:host {
+				padding: 2% 10% 4% 10%;
+			}
+	  }
 	`;
 
 	static properties = {
