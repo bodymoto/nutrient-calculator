@@ -52,6 +52,18 @@ export class FilterByElement extends LitElement {
 		label:active {
 			filter: brightness(125%);
 		}
+
+		@media screen and (min-width: 768px) {
+			label {
+				height: 48px;
+				padding: 0 24px;
+				margin: 0 8px;
+				font-size: 24px;
+			}
+			input[type="checkbox"]:checked {
+				box-shadow: inset 0 0 0 6px white, inset 0 0 0 20px black;
+			}
+		}
 	`;
 
 	static properties = {
