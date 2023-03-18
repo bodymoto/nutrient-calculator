@@ -9,16 +9,16 @@ export class SocialElement extends LitElement {
 		}
 
 		:host {
-			margin: 80px 20px;
+			margin: 120px 20px;
 			padding: 70px 0 80px 0;
 			min-height: 400px;
-			box-shadow: 0 0 0 20px #f4aab9, 0 0 0 40px #66ccff;
-			border-radius: 20px;
+			background-color: #FAF9F6;
+			border: 1px solid black;
 		}
 
 		h3 {
 			font-size: 36px;
-			padding: 30px 30px 0 30px;
+			padding: 10px 30px 0 40px;
 			text-transform: uppercase;
 			line-height: 30px;
 		}
@@ -28,6 +28,7 @@ export class SocialElement extends LitElement {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, 1fr);
 			margin: 35px;
+			color: #2d2d30;
 		}
 
 		.flex {
@@ -74,6 +75,27 @@ export class SocialElement extends LitElement {
 		span:nth-child(1) { color: #ff6f69 }
 		span:nth-child(2) { color: #96ceb4 }
 		span:nth-child(3) { color: #ffcc5c }
+
+		@media screen and (min-width: 768px) {
+			:host {
+				margin: 15%;
+				min-height: 400px;
+			}
+			h3 {
+				font-size: 64px;
+				padding-left: 25%;
+				line-height: 50px;
+			}
+			.grid {
+				padding: 30px 15% 0 15%;;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			.grid {
+				padding: 30px 25% 0 25%;;
+			}
+		}
 	`;
 
 	constructor() {
@@ -83,9 +105,9 @@ export class SocialElement extends LitElement {
 	render() {
 		return html`
 			<h3>
-				<span>support</span>
-				<span>dieters<br/></span>
-				<span>everywhere</span>
+				<span>spread<br/></span>
+				<span>the<br/></span>
+				<span>word</span>
 			</h3>
 
 			<div class="grid">
