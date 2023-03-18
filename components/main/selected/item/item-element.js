@@ -42,6 +42,26 @@ export class ItemElement extends LitElement {
 		.name {
 			text-transform: capitalize;
 		}
+
+		@media screen and (min-width: 768px) {
+			div {
+				font-size: 16px;
+				height: 32px;
+			 	margin: 2px 14px;
+			 	padding: 2px 4px;
+			}
+
+			.count,
+			.name {
+				font-size: 20px
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			div {
+			 	margin: 2px 4%;
+			}
+		}
 	`;
 	
 	static properties = {
