@@ -4,9 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
     "test": "web-test-runner test/**/*.test.js --node-resolve --watch --coverage",
+    "build": "rollup -c rollup.config.js --watch",
     "web": "python3 -m http.server 8000"
   },
   "repository": {
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/boshimoto/keto#readme",
   "dependencies": {
+    "firebase": "^9.18.0",
     "lit": "^2.6.1"
   },
   "devDependencies": {
@@ -27,8 +27,11 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@open-wc/testing": "^3.1.7",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@web/test-runner": "^0.15.0",
     "babel-loader": "^9.1.2",
+    "firebase-tools": "^11.24.1",
+    "rollup": "^2.79.1",
     "webpac": "^0.0.1-security",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
