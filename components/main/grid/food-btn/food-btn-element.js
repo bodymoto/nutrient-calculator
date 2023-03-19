@@ -38,7 +38,7 @@ export class FoodButtonElement extends LitElement {
 
 		.count {
 			font-family: Georgia, serif;
-			font-size: 23px;
+			font-size: 22px;
 			margin: 7px;
 		}
 
@@ -48,7 +48,7 @@ export class FoodButtonElement extends LitElement {
 				height: 98px;
 			}
 			p {
-				font-size: 15px;
+				font-size: 14px;
 			}
 			.count {
 				font-size: 24px;
