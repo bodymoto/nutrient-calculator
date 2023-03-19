@@ -6,6 +6,7 @@
   "scripts": {
     "test": "web-test-runner test/**/*.test.js --node-resolve --watch --coverage",
     "build": "rollup -c rollup.config.js --watch",
+    "bundle": "webpack",
     "web": "python3 -m http.server 8000"
   },
   "repository": {

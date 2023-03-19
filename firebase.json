@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/",
+    "public": "/",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,5 +15,10 @@
       "enabled": true
     },
     "singleProjectMode": true
-  }
+  },
+  "source": "**/*.@(jpg|jpeg|gif|png)",
+  "headers": [ {
+    "key": "Cache-Control",
+    "value": "max-age=7200"
+  } ]
 }
