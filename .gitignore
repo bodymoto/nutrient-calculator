@@ -7,4 +7,4 @@ dist
 #open-wc
 coverage
 
-.firebase/*
+.firebase
