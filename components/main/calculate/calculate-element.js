@@ -161,6 +161,16 @@ export class CalculateElement extends LitElement {
 		  this._vitaB6 += (object.vita_b6 * this._count) / 1000;
 		  this._cholesterol += (object.cholesterol * this._count / 1000);
 		});
+
+		gtag("event", "select_content", {
+		  content_type: "calculation made"
+		});
+
+		analytics.track("Calculator Click", {
+			"id": "calculator",
+			"name": "calculator",
+		  "clicked": true
+		});
 	}
 
 	render() {
