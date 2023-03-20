@@ -6,6 +6,6 @@ this is the delicious truth
 
 Add pricing page -> a good metric to measure if people find the product valuable. Can just state the product is free
 
-video tutorial -> wins
+video tutorial -> win
 
 metric tracking - free - https://mixpanel.com/home/
