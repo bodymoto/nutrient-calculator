@@ -1,6 +1,6 @@
 ### *Health is Wealth*
 how many people know how many nutrients and sugars they consume daily, right now?
-*Wealth is Wealth*
+### *Wealth is Wealth*
 agree? how many people know how much is in their bank account, right now?
 this is the delicious truth
 
