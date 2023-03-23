@@ -8,4 +8,4 @@ Add pricing page -> a good metric to measure if people find the product valuable
 
 video tutorial -> win
 
-metric tracking - free - https://mixpanel.com/home/123
+metric tracking - free - https://mixpanel.com/home/12
