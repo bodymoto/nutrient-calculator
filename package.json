@@ -1,5 +1,5 @@
 {
-  "name": "keto",
+  "name": "meal-nutrition-calculator",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boshimoto/keto.git"
+    "url": "git+https://github.com/boshimoto/meal-nutrition-calculator.git"
   },
   "author": "Evan Lanese",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/boshimoto/keto/issues"
+    "url": "https://github.com/boshimoto/meal-nutrition-calculator/issues"
   },
-  "homepage": "https://github.com/boshimoto/keto#readme",
+  "homepage": "https://github.com/boshimoto/meal-nutrition-calculator#readme",
   "dependencies": {
     "firebase": "^9.18.0",
     "lit": "^2.6.1"
