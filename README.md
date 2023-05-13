@@ -1,5 +1,5 @@
 A prototype app and the first iteration of my [Nutritional Food Graph](https://github.com/boshimoto/nutritional-food-graph).<br/>
-Using a limited sample data set of approx 200 food objects a user can calculate a meals nutritional value for making healthier life choices. Originally inspired to help aid in keto dieting.<br/>
+Using a limited data set of approx 200 food objects a user can calculate a meals nutritional value for making healthier life choices. Originally inspired to help aid in keto dieting.<br/>
 Supports filtering by food group.<br/>
 Users add or remove different foods listed and later calculate their totals.<br/>
 <br/>
