@@ -4,7 +4,7 @@ Supports filtering by food group.<br/>
 Users add or remove different foods listed and later calculate their totals.<br/>
 <br/>
 My first **TESTED** project, using Open-WC and Web Test Runner, as recommended by the Lit documentation.<br/>
-To run test suite, run: ```npm run test```
+To launch the test suite, run: ```npm run test```
 <br/><br/>
 This project boasts an event-up, properties-down approach -- each components lives isolated from one another within the shadow DOM and runs independently of the parent/child relationship. Completely framework agnostic!<br/>
 
