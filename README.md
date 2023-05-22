@@ -1,13 +1,8 @@
-A prototype app and the first iteration of my [Nutritional Food Graph](https://github.com/boshimoto/nutritional-food-graph).<br/>
-<br/>
-Using a limited data set of approx 200 food objects a user can calculate a meals nutritional value for making healthier life choices. Originally inspired to help aid in keto dieting.<br/>
-<br/>
-Supports filtering by food group.<br/>
-Users add or remove different foods listed and later calculate their totals.<br/>
-<br/>
-This project boasts an event-up, properties-down approach -- each components lives isolated from one another within the shadow DOM and runs independently of the parent/child relationship. And is completely framework agnostic!<br/>
-<br/>
-Inspired, I've set out to further iterate on this idea with [bodyboon.com](https://bodyboon.com)!
+Custom built dataset of approx 200 objects representing various foods.<br/>
+Filter by food group.<br/>
+Select different foods on the screen, stacking certain foods to represent your portion sizes.<br/>
+And calculate the macro/micro intake.<br/>
+Originally inspired to help aid in keto dieting.<br/>
 
 ### PREVIEW:
 
