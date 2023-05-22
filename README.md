@@ -3,7 +3,7 @@ Select different foods on the screen, stacking items to mirror the portion sizes
 And calculate the macro/micro intake.<br/>
 Uses a custom built dataset of approx 200 objects representing various foods and respective nutritional data.<br/>
 Powered by Web Components.<br/>
-This project was inspired to iterate and improve upon my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
+The inspiration for this project came from my desire iterate and improve upon my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
 
 ### PREVIEW:
 
