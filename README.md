@@ -1,8 +1,9 @@
-Custom built dataset of approx 200 objects representing various foods.<br/>
-Filter by food group.<br/>
-Select different foods on the screen, stacking certain foods to represent your portion sizes.<br/>
+Choose to filter by food group.<br/>
+Select different foods on the screen, stacking items to mirror the portion sizes of the food you are eating.<br/>
 And calculate the macro/micro intake.<br/>
+Uses a custom built dataset of approx 200 objects representing various foods and respective nutritional data.<br/>
 Originally inspired to help aid in keto dieting.<br/>
+Powered by Web Components.<br/>
 
 ### PREVIEW:
 
