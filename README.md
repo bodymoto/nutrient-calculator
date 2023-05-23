@@ -1,9 +1,9 @@
-Choose to filter by food group.<br/>
-Select different foods on the screen, stacking items to mirror the portion sizes of the food you are eating.<br/>
-And calculate the macro/micro intake.<br/>
-Uses a custom built dataset of approx 200 objects representing various foods and respective nutritional data.<br/>
+The user may choose to filter foods by food category.<br/>
+Then select food choices on the screen and stack food choices so that the portion size mirrors the portion sizes of the food you are eating.<br/>
+And calculate the total macro/micro intake: *(carbs, net carbs, proteins, cholesterol, fats, fiber, sugars, calcium, iron, magnesium, phosphorus, potassium, sodium, vitamin C, vitamin B6, & water)*<br/>
+A custom built dataset of approx 200 objects representing various foods and their respective nutritional data.<br/>
 Powered by Web Components.<br/>
-The inspiration for this project came from my desire iterate and improve upon my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
+The inspiration for this project came from a desire to iterate/improve my idea for a [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
 
 ### PREVIEW:
 
