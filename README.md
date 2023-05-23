@@ -3,7 +3,7 @@ Then select food choices on the screen and stack food choices so that the displa
 And calculate the total macro/micro intake: *(carbs, net carbs, proteins, cholesterol, fats, fiber, sugars, calcium, iron, magnesium, phosphorus, potassium, sodium, vitamin C, vitamin B6, & water)*<br/>
 A custom built dataset of approx 200 objects representing various foods and their respective nutritional data.<br/>
 Powered by Web Components.<br/>
-The inspiration for this project came from a desire to iterate/improve my idea for a [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
+The inspiration for this project came from a desire to iterate/improve my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
 
 ### PREVIEW:
 
