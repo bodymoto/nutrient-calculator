@@ -1,9 +1,5 @@
-The user may choose to filter foods by food category.<br/>
-Then select food choices on the screen and stack food choices so that the displayed portion size mirrors that of your meal.<br/>
-And calculate the total macro/micro intake: *(carbs, net carbs, proteins, cholesterol, fats, fiber, sugars, calcium, iron, magnesium, phosphorus, potassium, sodium, vitamin C, vitamin B6, & water)*<br/>
-I used a custom built dataset of approx 200 objects representing various foods and their respective nutritional data.<br/>
-Powered by Web Components.<br/>
-The inspiration for this project came from a desire to iterate/improve my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
+The app allows users to filter foods by category, select food choices that match their meal portion size, and calculate the total intake of macronutrients and micronutrients. It utilizes a custom dataset of around 200 food objects with nutritional data and is powered by Web Components.<br/>
+This project was inspired by my goal to enhance and iterate on my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
 
 ### PREVIEW:
 
