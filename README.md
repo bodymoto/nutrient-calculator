@@ -13,6 +13,6 @@ This project was inspired by my goal to enhance and iterate on my [food-nutritio
 **(4) VISIT IT:**
 ```http://localhost:8000/```
 
-**VIEW IT (SCREENSHOT PROVIDED BELOW):**<br/><br/><br/>
+**(SCREENSHOT PROVIDED BELOW)**<br/><br/><br/>
 
 <img src="../../blob/main/bodyboon-ss.png" alt="A screenshot of meal nutrition calculator prototype" />
