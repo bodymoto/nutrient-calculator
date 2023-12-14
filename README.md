@@ -1,18 +1,17 @@
-The app allows users to filter foods by category, select food choices that match their meal portion size, and calculate the total intake of macronutrients and micronutrients. It utilizes a custom dataset of around 200 food objects with nutritional data and is powered by Web Components.<br/>
-This project was inspired by my goal to enhance and iterate on my [food-nutrition-graph](https://github.com/boshimoto/food-nutrition-graph)<br/>
+A food nutrient calculator. <br/>
+Filter different foods by category, select a food choice (pick from 200+), & calculate your total nutrition including both macronutrients & micronutrients. <br/>
+Lit framework, Web components, Babel, Rollup, Firebase. <br/>
 
-**(1) INSTALL IT:**
+*Install:*<br/>
 ```npm i```
 
-**(2) BUILD IT:**
+*Build:*<br/>
 ```npm run build```
 
-**(3) RUN IT:**
+*Run:*<br/>
 ```npm run web```
 
-**(4) VISIT IT:**
+*Visit:*<br/>
 ```http://localhost:8000/```
-
-**(SCREENSHOT PROVIDED BELOW)**<br/><br/><br/>
 
 <img src="../../blob/main/bodyboon-ss.png" alt="A screenshot of meal nutrition calculator prototype" />
