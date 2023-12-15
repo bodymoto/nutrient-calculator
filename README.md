@@ -1,5 +1,10 @@
 A food nutrient calculator. <br/>
-Filter different foods by category, select a food choice (pick from 200+), & calculate your total nutrition including both macronutrients & micronutrients. <br/>
+<br/>
+Filter different foods by category *(14 categories total)*<br/>
+Construct a list of various food choices to analyze *(ie: fresh coconut, butter, whole milk, etc)*<br/> 
+200+ total food choices<br/> 
+Calculate the total nutrition of all selected food *(both macro & micro nutrients)* <br/>
+<br/>
 JavaScript, Lit framework, Web components, Babel, Rollup, Firebase <br/>
 Data-structures, component-architecture, shadow DOM, mobile responsive <br/>
 
