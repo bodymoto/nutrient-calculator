@@ -8,16 +8,11 @@ Calculate the total nutrition of all selected food *(both macro & micro nutrient
 JavaScript, Lit framework, Web components, Babel, Rollup, Firebase <br/>
 Data-structures, component-architecture, shadow DOM, mobile responsive <br/>
 
-*Install:*<br/>
-```npm i```
+Install: ```npm i```<br/>
+Build: ```npm run build```<br/>
+Run: ```npm run web```<br/>
+Visit: ```http://localhost:8000/```<br/>
 
-*Build:*<br/>
-```npm run build```
-
-*Run:*<br/>
-```npm run web```
-
-*Visit:*<br/>
-```http://localhost:8000/```
+<br/><hr/>
 
 <img src="../../blob/main/bodyboon-ss.png" alt="A screenshot of meal nutrition calculator prototype" />
