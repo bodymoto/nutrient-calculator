@@ -4,7 +4,7 @@ Construct a list of various food options to then analyze nutrition content *(ie;
 200+ total food options across 14x categories.<br/> 
 Custom algorithm to analyze the total nutrient amounts for the selected food portions *(16x total nutrients)* <br/>
 <br/>
-JavaScript · Lit · Web components · Babel · Rollup · Firebase hosting · data-structures · custom algorithm · mobile responsive design <br/>
+JavaScript · Lit · Web components · Babel · Rollup · Firebase hosting · data-structures · custom algorithm · responsive mobile design <br/>
 
 Install: ```npm i```<br/>
 Build: ```npm run build```<br/>
