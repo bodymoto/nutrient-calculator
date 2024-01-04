@@ -4,7 +4,7 @@ An interactive food nutrient calculator. Designed with the intention to better a
 · 200+ total food options across 14x categories.<br/> 
 · A custom algorithm is used to analyze the total nutrient amounts for the selected food portions *(16x total nutrients)* <br/>
 <br/>
-*JavaScript · Lit · Web components · Babel · Rollup · Firebase hosting · data structures · algorithm · responsive mobile design* <br/>
+*JavaScript · Lit · Web components · Babel · Rollup · Firebase hosting · custom data structure & algorithms · responsive mobile design* <br/>
 
 Install: ```npm i```<br/>
 Build: ```npm run build```<br/>
