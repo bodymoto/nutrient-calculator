@@ -13,4 +13,4 @@ Visit: ```http://localhost:8000/```<br/>
 
 <br/><hr/>
 
-<img src="../../blob/main/bodyboon-ss.png" alt="A screenshot of meal nutrition calculator prototype" />
+<img src="../../blob/main/calculator-ss.png" alt="A screenshot of nutrient calculator" />
