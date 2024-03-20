@@ -1,4 +1,4 @@
-An interactive food & nutrient calculator. An interation - to improve my [food-nutrient-graph](https://github.com/bodymoto/food-nutrient-graph). <br/>
+An interactive food & nutrient calculator. Designed to try and improve my [food-nutrient-graph](https://github.com/bodymoto/food-nutrient-graph). <br/>
 
 · Filter page results by food category *(vetegables, fruits, meats, etc,.)*<br/> 
 · Users may compile a list of food options and then analyze their nutrition<br/> 
