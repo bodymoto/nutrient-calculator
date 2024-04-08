@@ -4,9 +4,9 @@ import {ItemElement} from './item/item-element.js';
 export class SelectedElement extends LitElement {
 	static styles = css`
 		* {
+			border-sizing: border-box;
 			padding: 0;
 			margin: 0;
-			border-sizing: border-box;
 		}
 
 		:host {
