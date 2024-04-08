@@ -3,9 +3,9 @@ import {LitElement, html, css} from 'lit';
 export class HeaderElement extends LitElement {
 	static styles = css`
 		* {
+			border-sizing: border-box;
 			margin: 0;
 			padding: 0;
-			box-sizing: border-box;
 		}
 
 		.title {
