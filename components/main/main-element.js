@@ -13,9 +13,9 @@ export class MainElement extends LitElement {
 	static styles = css`
 	  main {
 	  	display: flex;
+    		flex-direction: column;
 	  	align-content: center;
 	  	justify-content: center;
-	  	flex-direction: column;
 	  }
 
 	  a {
